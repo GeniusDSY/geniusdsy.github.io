@@ -114,7 +114,7 @@
 <meta property="og:description" content="level 1拿到一个计算器的题目，大家一定会想到，使用switch判断符号，进入分支后计算 demo: 1234567891011121314151617181920212223242526272829Operation.java    public static Operation getResult(double numberA,double numberB,String operate)&amp;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/3/16771b6f5398ad32?w=602&h=225&f=png&s=22005">
-<meta property="og:updated_time" content="2019-01-24T12:29:09.183Z">
+<meta property="og:updated_time" content="2019-01-25T05:48:47.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单工厂模式">
 <meta name="twitter:description" content="level 1拿到一个计算器的题目，大家一定会想到，使用switch判断符号，进入分支后计算 demo: 1234567891011121314151617181920212223242526272829Operation.java    public static Operation getResult(double numberA,double numberB,String operate)&amp;">
@@ -423,12 +423,24 @@
                 
               
 
-              <time title="创建时间：2019-01-24 20:24:25 / 修改时间：20:29:09" itemprop="dateCreated datePublished" datetime="2019-01-24T20:24:25+08:00">2019-01-24</time>
+              <time title="创建时间：2019-01-24 20:24:25" itemprop="dateCreated datePublished" datetime="2019-01-24T20:24:25+08:00">2019-01-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-25 13:48:47" itemprop="dateModified" datetime="2019-01-25T13:48:47+08:00">2019-01-25</time>
               
             
           </span>
@@ -506,7 +518,7 @@
 <p>demo:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Operation.java</span><br><span class="line">    public static Operation getResult(double numberA,double numberB,String operate)&#123;</span><br><span class="line">        double result = 0;</span><br><span class="line">        //判断类型，创建对象</span><br><span class="line">        switch (operate)&#123;</span><br><span class="line">            case &quot;+&quot;:</span><br><span class="line">                result = numberA + numberB;</span><br><span class="line">                break;</span><br><span class="line">            case &quot;-&quot;:</span><br><span class="line">                result = numberA - numberB;</span><br><span class="line">                break;</span><br><span class="line">            case &quot;*&quot;:</span><br><span class="line">                result = numberA * numberB;</span><br><span class="line">                break;</span><br><span class="line">            case &quot;/&quot;:</span><br><span class="line">                result = numberA / numberB;</span><br><span class="line">                break;</span><br><span class="line">            default:</span><br><span class="line">                System.out.println(&quot;输入有误！请检查后重新输入!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">Client.java</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        //此处略去输入赋值</span><br><span class="line">        double result = Operation.getResult(numberA,numberB,operate);</span><br><span class="line">        System.out.println(&quot;计算结果为:&quot;+result);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>这样一个简单的计算器就行写好了，但是你有没有发现一个问题，虽然将服务端和客户端进行了分离，但是如果需要完善这个计算器，增加新的运算方式，比如开平方的sqrt运算？？？如何解决？？</p>
-<p>解决方案：<br>​<br>    更改Operation.java文件，在switch中增加一个分支。</p>
+<p>解决方案：<br>​<br>​    更改Operation.java文件，在switch中增加一个分支。</p>
 <p>结果：</p>
 <pre><code>1、这样仅仅是增加一个新的算法，却要使所有的算法都重新进行编译，也就是一个算法可以影响到所有的算法，这样使代码的
 耦合度太高，不利于再次开发与维护。
