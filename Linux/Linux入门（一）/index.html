@@ -105,25 +105,42 @@
 
 
 
-  <meta name="description" content="运行速度 StringBuilder &amp;gt; StringBuffer &amp;gt; String String运行速度慢的原因 数据类型的不同 1）String为字符串常量  字符串常量存储于常量池中，不可以被更改   123String str = &amp;quot;i am&amp;quot;;str = str + &amp;quot;Tom&amp;quot;;这种并不是直接在原有的str上增加了&amp;quot;Tom&amp;q">
-<meta name="keywords" content="JavaSE">
+  <meta name="description" content="一、认识Shell我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景：  简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令 查看当前系统时间和">
+<meta name="keywords" content="Shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="String、StringBuilder和StringBuffer">
-<meta property="og:url" content="https://geniusdsy.github.io/JAVA/String、StringBuilder和StringBuffer/index.html">
+<meta property="og:title" content="Linux入门（一）">
+<meta property="og:url" content="https://geniusdsy.github.io/Linux/Linux入门（一）/index.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="运行速度 StringBuilder &amp;gt; StringBuffer &amp;gt; String String运行速度慢的原因 数据类型的不同 1）String为字符串常量  字符串常量存储于常量池中，不可以被更改   123String str = &amp;quot;i am&amp;quot;;str = str + &amp;quot;Tom&amp;quot;;这种并不是直接在原有的str上增加了&amp;quot;Tom&amp;q">
+<meta property="og:description" content="一、认识Shell我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景：  简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令 查看当前系统时间和">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-25T03:33:43.086Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2d3e29862108?w=333&h=34&f=png&s=2653">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2dd4c79855b8?w=329&h=36&f=png&s=5714">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2de2ee6cd539?w=269&h=141&f=png&s=9716">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2dfa5556aeca?w=690&h=184&f=png&s=29819">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2e44655ea1f2?w=720&h=74&f=png&s=10341">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2e6dfdc2fccc?w=362&h=35&f=png&s=4711">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2f492fc55c02?w=344&h=39&f=png&s=6651">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2f7c20104bd9?w=549&h=37&f=png&s=8658">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c30a582474d34?w=695&h=145&f=png&s=38048">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2f9d9a178f08?w=413&h=127&f=png&s=14843">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c3008eccf3bb8?w=352&h=57&f=png&s=5255">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c301a62a411db?w=342&h=57&f=png&s=5779">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c3036a094398b?w=333&h=55&f=png&s=5635">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c305723defd76?w=323&h=55&f=png&s=6519">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c306638c4fd9e?w=302&h=62&f=png&s=6777">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c307d15353813?w=424&h=57&f=png&s=7705">
+<meta property="og:updated_time" content="2019-02-06T13:59:06.459Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="String、StringBuilder和StringBuffer">
-<meta name="twitter:description" content="运行速度 StringBuilder &amp;gt; StringBuffer &amp;gt; String String运行速度慢的原因 数据类型的不同 1）String为字符串常量  字符串常量存储于常量池中，不可以被更改   123String str = &amp;quot;i am&amp;quot;;str = str + &amp;quot;Tom&amp;quot;;这种并不是直接在原有的str上增加了&amp;quot;Tom&amp;q">
+<meta name="twitter:title" content="Linux入门（一）">
+<meta name="twitter:description" content="一、认识Shell我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景：  简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令 查看当前系统时间和">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2d3e29862108?w=333&h=34&f=png&s=2653">
 
 
 
 
 
 
-  <link rel="canonical" href="https://geniusdsy.github.io/JAVA/String、StringBuilder和StringBuffer/">
+  <link rel="canonical" href="https://geniusdsy.github.io/Linux/Linux入门（一）/">
 
 
 
@@ -133,7 +150,7 @@
   };
 </script>
 
-  <title>String、StringBuilder和StringBuffer | 邓思远的Blog</title>
+  <title>Linux入门（一） | 邓思远的Blog</title>
   
 
 
@@ -378,7 +395,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://geniusdsy.github.io/JAVA/String、StringBuilder和StringBuffer/">
+    <link itemprop="mainEntityOfPage" href="https://geniusdsy.github.io/Linux/Linux入门（一）/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="邓思远">
@@ -395,7 +412,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">String、StringBuilder和StringBuffer
+          <h1 class="post-title" itemprop="name headline">Linux入门（一）
 
               
             
@@ -421,24 +438,12 @@
                 
               
 
-              <time title="创建时间：2019-01-24 21:04:56" itemprop="dateCreated datePublished" datetime="2019-01-24T21:04:56+08:00">2019-01-24</time>
+              <time title="创建时间：2019-02-06 20:18:46 / 修改时间：21:59:06" itemprop="dateCreated datePublished" datetime="2019-02-06T20:18:46+08:00">2019-02-06</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-25 11:33:43" itemprop="dateModified" datetime="2019-01-25T11:33:43+08:00">2019-01-25</time>
               
             
           </span>
@@ -455,7 +460,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -473,8 +478,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/JAVA/String、StringBuilder和StringBuffer/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="JAVA/String、StringBuilder和StringBuffer/" itemprop="commentCount"></span>
+                <a href="/Linux/Linux入门（一）/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Linux/Linux入门（一）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -512,21 +517,76 @@
       
 
       
-        <h1 id="运行速度"><a href="#运行速度" class="headerlink" title="运行速度"></a>运行速度</h1><p> StringBuilder &gt; StringBuffer &gt; String</p>
-<h3 id="String运行速度慢的原因"><a href="#String运行速度慢的原因" class="headerlink" title="String运行速度慢的原因"></a>String运行速度慢的原因</h3><ol>
-<li><p>数据类型的不同</p>
-<p>1）String为字符串常量</p>
-<p> 字符串常量存储于常量池中，不可以被更改</p>
+        <h2 id="一、认识Shell"><a href="#一、认识Shell" class="headerlink" title="一、认识Shell"></a>一、认识Shell</h2><p>我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。</p>
+<p>我们打开终端，就可以看见下面的场景：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2d3e29862108?w=333&amp;h=34&amp;f=png&amp;s=2653" alt="终端"></p>
+<p>简单解释一下这些含义：</p>
+<p>用户名@机器名:当前工作目录$ 待输入的指令</p>
+<p>而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利</p>
+<h3 id="1、简单的命令"><a href="#1、简单的命令" class="headerlink" title="1、简单的命令"></a>1、简单的命令</h3><ul>
+<li>查看当前系统时间和日期</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2dd4c79855b8?w=329&amp;h=36&amp;f=png&amp;s=5714" alt=""></p>
+<ul>
+<li>查看当月的日历</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2de2ee6cd539?w=269&amp;h=141&amp;f=png&amp;s=9716" alt=""></p>
+<ul>
+<li>查看磁盘驱动器已用、可用、挂载点</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2dfa5556aeca?w=690&amp;h=184&amp;f=png&amp;s=29819" alt=""></p>
+<ul>
+<li>查看可用内存</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2e44655ea1f2?w=720&amp;h=74&amp;f=png&amp;s=10341" alt=""></p>
+<ul>
+<li>退出终端</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2e6dfdc2fccc?w=362&amp;h=35&amp;f=png&amp;s=4711" alt=""></p>
+<h3 id="2、文件系统"><a href="#2、文件系统" class="headerlink" title="2、文件系统"></a>2、文件系统</h3><p>Linux系统中存在一个文件系统树，当然会涉及到很多的文件的操作指令，记录一下</p>
+<ul>
+<li>查看当前工作目录</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2f492fc55c02?w=344&amp;h=39&amp;f=png&amp;s=6651" alt=""></p>
+<ul>
+<li><p>列出目录内容</p>
+<ul>
+<li><p>一般情况</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2f7c20104bd9?w=549&amp;h=37&amp;f=png&amp;s=8658" alt=""></p>
 </li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;i am&quot;;</span><br><span class="line">str = str + &quot;Tom&quot;;</span><br><span class="line">这种并不是直接在原有的str上增加了&quot;Tom&quot;,而是JVM回收了之前的str，产生新的str，并将&quot;i am Tom&quot;赋值给了它</span><br></pre></td></tr></table></figure>
-<p>   2)StringBuilder和StringBuffer为字符串变量</p>
-<p>字符串变量存放在栈中，从栈中读取数据的速度仅次于寄存器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">与上面同样的操作</span><br><span class="line">StringBuffer str = new StringBuffer();</span><br><span class="line">StringBuffer str1 = mew StringBuffer(&quot;i am&quot;);</span><br><span class="line">StringBuffer str2 = new StringBuffer(&quot;Tom&quot;);</span><br><span class="line">str = str1 + str2;//此运行速度不是最快</span><br><span class="line">str = str.append(str1).append(str2);//使用Java中自带的函数，运行速度会加快，可以使语句在运行时，减少创建对象的数量，从而减少运行时间</span><br></pre></td></tr></table></figure>
-<h3 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h3><p>在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的</p>
-<p>　　如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有<a href="http://www.cnblogs.com/GnagWang/archive/2011/02/27/1966606.html" target="_blank" rel="noopener">synchronized</a>关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。</p>
-<p>所以如果要进行的操作是==多线程==的，那么就要使用==StringBuffer==，但是在==单线程==的情况下，还是建议使用速度比较快的==StringBuilder==。</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><h5 id="String：适用于少量的字符串操作的情况"><a href="#String：适用于少量的字符串操作的情况" class="headerlink" title="String：适用于少量的字符串操作的情况"></a>String：适用于少量的字符串操作的情况</h5><h5 id="StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况"><a href="#StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况" class="headerlink" title="StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况"></a>StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</h5><h5 id="StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况"><a href="#StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况" class="headerlink" title="StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况"></a>StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</h5>
+<li><p>列出包含隐藏文件(以.开头的文件为隐藏文件)</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c30a582474d34?w=695&amp;h=145&amp;f=png&amp;s=38048" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>更改当前工作目录</p>
+<ul>
+<li><p>绝对路径名</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2f9d9a178f08?w=413&amp;h=127&amp;f=png&amp;s=14843" alt=""></p>
+</li>
+<li><p>相对路径名</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c3008eccf3bb8?w=352&amp;h=57&amp;f=png&amp;s=5255" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c301a62a411db?w=342&amp;h=57&amp;f=png&amp;s=5779" alt=""></p>
+<p>一般在任何情况下都可以省略./，即：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c3036a094398b?w=333&amp;h=55&amp;f=png&amp;s=5635" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>切换到主目录</p>
+</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c305723defd76?w=323&amp;h=55&amp;f=png&amp;s=6519" alt=""></p>
+<ul>
+<li>返回到上一次的工作目录</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c306638c4fd9e?w=302&amp;h=62&amp;f=png&amp;s=6777" alt=""></p>
+<ul>
+<li>将工作目录更改为username所在的主目录</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c307d15353813?w=424&amp;h=57&amp;f=png&amp;s=7705" alt=""></p>
+<h3 id="3、Linux系统"><a href="#3、Linux系统" class="headerlink" title="3、Linux系统"></a>3、Linux系统</h3><h1 id="未完待续……"><a href="#未完待续……" class="headerlink" title="未完待续……"></a>未完待续……</h1>
       
     </div>
 
@@ -578,7 +638,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaSE/" rel="tag"># JavaSE</a>
+            <a href="/tags/Shell/" rel="tag"># Shell</a>
           
         </div>
       
@@ -645,8 +705,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/设计/简单工厂模式/" rel="next" title="简单工厂模式">
-                <i class="fa fa-chevron-left"></i> 简单工厂模式
+              <a href="/应用容器/初识Docker（一）/" rel="next" title="初识Docker（一）">
+                <i class="fa fa-chevron-left"></i> 初识Docker（一）
               </a>
             
           </div>
@@ -654,10 +714,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/工具/关于Git-Commit/" rel="prev" title="关于Git Commit">
-                关于Git Commit <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -892,7 +948,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#运行速度"><span class="nav-number">1.</span> <span class="nav-text">运行速度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String运行速度慢的原因"><span class="nav-number">1.0.1.</span> <span class="nav-text">String运行速度慢的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程安全"><span class="nav-number">1.0.2.</span> <span class="nav-text">线程安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.0.3.</span> <span class="nav-text">小结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#String：适用于少量的字符串操作的情况"><span class="nav-number">1.0.3.0.1.</span> <span class="nav-text">String：适用于少量的字符串操作的情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况"><span class="nav-number">1.0.3.0.2.</span> <span class="nav-text">StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况"><span class="nav-number">1.0.3.0.3.</span> <span class="nav-text">StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、认识Shell"><span class="nav-number">1.</span> <span class="nav-text">一、认识Shell</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、简单的命令"><span class="nav-number">1.1.</span> <span class="nav-text">1、简单的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、文件系统"><span class="nav-number">1.2.</span> <span class="nav-text">2、文件系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、Linux系统"><span class="nav-number">1.3.</span> <span class="nav-text">3、Linux系统</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#未完待续……"><span class="nav-number"></span> <span class="nav-text">未完待续……</span></a></li></div>
             
 
           </div>
@@ -1072,9 +1128,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://geniusdsy.github.io/JAVA/String、StringBuilder和StringBuffer/";
-    this.page.identifier = "JAVA/String、StringBuilder和StringBuffer/";
-    this.page.title = 'String、StringBuilder和StringBuffer';
+    this.page.url = "https://geniusdsy.github.io/Linux/Linux入门（一）/";
+    this.page.identifier = "Linux/Linux入门（一）/";
+    this.page.title = 'Linux入门（一）';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
