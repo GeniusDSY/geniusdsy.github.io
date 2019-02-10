@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[初识Redis（二）之Jedis]]></title>
+    <url>%2FRedis%2F%E5%88%9D%E8%AF%86Redis%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B9%8BJedis%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>NoSql</tag>
+        <tag>Redis</tag>
+        <tag>Jedis</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux入门之认识Shell（一）]]></title>
     <url>%2FLinux%2FLinux%E5%85%A5%E9%97%A8%E4%B9%8B%E8%AE%A4%E8%AF%86Shell%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
     <content type="text"><![CDATA[一、认识Shell我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景： 简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令 查看当前系统时间和日期 查看当月的日历 查看磁盘驱动器已用、可用、挂载点 查看可用内存 退出终端 2、文件系统Linux系统中存在一个文件系统树，当然会涉及到很多的文件的操作指令，记录一下 查看当前工作目录 列出目录内容 一般情况 列出包含隐藏文件(以.开头的文件为隐藏文件) 更改当前工作目录 绝对路径名 相对路径名 一般在任何情况下都可以省略./，即： 切换到主目录 返回到上一次的工作目录 将工作目录更改为username所在的主目录 3、Linux系统未完待续……]]></content>
@@ -20,17 +34,20 @@
       </categories>
       <tags>
         <tag>Docker</tag>
+        <tag>安装</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[初识Redis（一）之安装]]></title>
-    <url>%2F%E6%95%B0%E6%8D%AE%E5%BA%93%2F%E5%88%9D%E8%AF%86Redis%EF%BC%88%E4%B8%80%EF%BC%89%E4%B9%8B%E5%AE%89%E8%A3%85%2F</url>
+    <url>%2FRedis%2F%E5%88%9D%E8%AF%86Redis%EF%BC%88%E4%B8%80%EF%BC%89%E4%B9%8B%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[一、安装Redis这里演示的是Linux系统的安装过程 官网地址：https://redis.io/ 第一步： 打开终端，在官网找到你想要的版本的链接，使用以下指令进行下载 12345$ wget http://download.redis.io/releases/redis-5.0.3.tar.gz$ tar xzf redis-5.0.3.tar.gz -C /opt (我这里将他解压到/opt目录下)$ cd /opt/redis-5.0.3$ make (因为redis是使用C语言所写的，所以需要使用make指令进行编译)$ make PREFIX=/usr/local/redis install (这里我将编译好的redis安装到/usr/local/redis目录下) 第二步：启动ｒｅｄｉｓ 12$ cd usr/local/redis (进入安装redis的目录)$ ls 这时候该redis目录下只有一个文件，是bin目录123$ cd bin/$ lsredis-benchmark redis-check-aof redis-check-rdb redis-cli redis-sentinel redis-server 该目录下有这5个可执行文件，分别具有的功能： 12345redis-benchmark -----性能测试工具redis-check-aof -----AOF文件修复工具redis-check-dump -----RDB文件检查工具(快件持久工具)redis-cli -----命令行客户端redis-server -----redis服务器启动命令 我们使用redis-server启动redis1$ ./redis-server 看到如下图，便安装并启动成功： 通过上图我们可以看到，redis已经启动成功，并且在6379端口监听。 我们发现了什么！这时候我们这个终端什么都不能干了，我们能不能让他在后台启动后台运行，不影响我们的后续操作呢！ 当然可以，我们去刚才make（编译）的目录下看看 看到了这个redis.conf就知道有救了，我们可以修改他的默认启动方式的配置进行后台启动 我们使用vim 指令进行编辑，找到其中的daemonize no，将他的no改为yes 这时候我们将修改后的redis.conf复制到/usr/local/redis目录下，使用： 1$ cp redis.conf /usr/local/redis 这时候我们切回到安装redis的/usr/local/redis目录下执行新的redis.conf重新启动redis 1$ ./bin/redis-server ./redis.conf 咦咦咦！！！这是什么情况！出现意外了！！！原来我们刚才运行的redis已经将端口占用了，我们去查询一下现在运行的相关redis进程都有哪些 1$ ps -ef | grep -i redis 我们要把这个正在运行的redis结束掉，有两种方法 kill -9 6894 ./bin redis-server shutdown 结束redis进程后我们重新启动，继续使用刚才修改的配置redis-conf进行启动 1$ ./bin/redis-server ./redis.conf 结果如下： 第三步：打开命令行客户端redis-cli进行简单的存储操作 1$ ./bin/redis-cli 通过下图的简单指令你可以简单的进行一些增删查操作： 二、为Python安装Redis客户端123$ wget -q http://peak.telecommunity.com/dist/ez_setup.py$ sudo python ez_setup.py$ sudo python -m easy_install redis hiredis 发现没有任何报错后进行测试 1234567$ python$ import redis$ conn = redis.Redis()$ conn.set('name','Hello!Redis')True$ conn.get('name')Hello!Redis 若与我上面的指令一样，而且未出现其他错误，即可认为自己的redis客户端安装成功]]></content>
       <categories>
-        <category>数据库</category>
+        <category>Redis</category>
       </categories>
       <tags>
+        <tag>安装</tag>
         <tag>NoSql</tag>
+        <tag>Redis</tag>
       </tags>
   </entry>
   <entry>
@@ -42,6 +59,7 @@
       </categories>
       <tags>
         <tag>Python</tag>
+        <tag>入门</tag>
       </tags>
   </entry>
   <entry>
@@ -79,10 +97,10 @@
   </entry>
   <entry>
     <title><![CDATA[简单工厂模式]]></title>
-    <url>%2F%E8%AE%BE%E8%AE%A1%2F%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%2F</url>
+    <url>%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2F%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[level 1拿到一个计算器的题目，大家一定会想到，使用switch判断符号，进入分支后计算 demo: 1234567891011121314151617181920212223242526272829Operation.java public static Operation getResult(double numberA,double numberB,String operate)&#123; double result = 0; //判断类型，创建对象 switch (operate)&#123; case &quot;+&quot;: result = numberA + numberB; break; case &quot;-&quot;: result = numberA - numberB; break; case &quot;*&quot;: result = numberA * numberB; break; case &quot;/&quot;: result = numberA / numberB; break; default: System.out.println(&quot;输入有误！请检查后重新输入!&quot;); &#125; return result; &#125; Client.java public static void main(String[] args)&#123; //此处略去输入赋值 double result = Operation.getResult(numberA,numberB,operate); System.out.println(&quot;计算结果为:&quot;+result); &#125; 这样一个简单的计算器就行写好了，但是你有没有发现一个问题，虽然将服务端和客户端进行了分离，但是如果需要完善这个计算器，增加新的运算方式，比如开平方的sqrt运算？？？如何解决？？ 解决方案：​​ 更改Operation.java文件，在switch中增加一个分支。 结果： 1、这样仅仅是增加一个新的算法，却要使所有的算法都重新进行编译，也就是一个算法可以影响到所有的算法，这样使代码的 耦合度太高，不利于再次开发与维护。 2、另一方面就是每次增加功能点，你需要在集合了所有的算法的类中进行修改，一个失误操作可以让整个项目陷入泥潭 level 2我们在level 1中的方案已经发现了他的利弊，那么如何来让自己的项目更加完善，使代码的耦合度降低，增大代码的可用性，可伸展性 我们可以试一试继承： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556Operation.java package designpatterns.simplefactorymode.service; /** * @author :DengSiYuan * @date :2018/12/2 10:47 * @desc : 该类是对数字的封装以及运算结果的处理 */ public class Operation &#123; private double numberA = 0; private double numberB = 0; public double getNumberA() &#123; return numberA; &#125; public void setNumberA(double numberA) &#123; this.numberA = numberA; &#125; public double getNumberB() &#123; return numberB; &#125; public void setNumberB(double numberB) &#123; this.numberB = numberB; &#125; //返回结果值的方法 public double getResult() throws Exception &#123; double result = 0; return result; &#125;&#125;OperationAdd.java package designpatterns.simplefactorymode.service;/** * @author :DengSiYuan * @date :2018/12/2 11:37 * @desc :加法运算 */public class OperationAdd extends Operation &#123; @Override public double getResult()&#123; double result = 0; result = getNumberA() + getNumberB(); return result; &#125;&#125;剩下的乘除亦然 这样使用继承，我们将所有运算共同需要的属性：两个数字和一个方法：算出结果，放入到他们共同的父类中，这样每次需要增加新的运算方式，只需要去继承这个Operation，如有其他特殊要求，进行扩展即可。 那么问题又来了：我们每次如何去判断这次是使用的什么运算方式（+？-？*？/），然后去创建相应的对象，这样我们就需要一个”工厂”来管理，举个例子： 我们去工厂告诉工厂主管说我们需要一个IPhone X,这时候他们知道了你所需要的手机类型后，告诉下面的工程师，创建了一个实体IPhone X对象。 程序中的工厂和现实中的一样，我们需要在程序的入口给工厂一个Type，他会根据你所告诉他的Type，创建一个你所需要使用的匹配的对象实体，调用使用他的方法 接下来我们来看Level 3 level 3到了我们的重点：简单工厂模式 先看一下他的UML图吧 这是一个简单的设计 start —&gt; OperationFactory —&gt; 判断类型，动态创建对象 —&gt; 确切的知道那个类，使用其方法 Operation.java(所有运算的父类)12345678910111213141516171819202122232425262728293031323334package designpatterns.simplefactorymode.service;/** * @author :DengSiYuan * @date :2018/12/2 10:47 * @desc : 该类是对数字的封装以及运算结果的处理 */public class Operation &#123; private double numberA = 0; private double numberB = 0; public double getNumberA() &#123; return numberA; &#125; public void setNumberA(double numberA) &#123; this.numberA = numberA; &#125; public double getNumberB() &#123; return numberB; &#125; public void setNumberB(double numberB) &#123; this.numberB = numberB; &#125; //返回结果值的方法 public double getResult() throws Exception &#123; double result = 0; return result; &#125;&#125; OperationFactory.java(管理对象的生成的工厂类)12345678910111213141516171819202122232425262728293031package designpatterns.simplefactorymode.service;/** * @author :DengSiYuan * @date :2018/12/2 12:19 * @desc :工厂模式，程序的入口，动态创建符合类型的对象 */public class OperationFactory &#123; public static Operation createOperation(String type)&#123; Operation operation = null; //判断类型，创建对象 switch (type)&#123; case &quot;+&quot;: operation = new OperationAdd(); break; case &quot;-&quot;: operation = new OperationSub(); break; case &quot;*&quot;: operation = new OperationMul(); break; case &quot;/&quot;: operation = new OperationDiv(); break; default: System.out.println(&quot;输入有误！请检查后重新输入!&quot;); &#125; return operation; &#125;&#125; OperationAdd.java(加法类)1234567891011121314151617package designpatterns.simplefactorymode.service;/** * @author :DengSiYuan * @date :2018/12/2 11:37 * @desc :加法运算 */public class OperationAdd extends Operation &#123; @Override public double getResult()&#123; double result = 0; result = getNumberA() + getNumberB(); return result; &#125;&#125; Client.java(客户端)大家可以去实现更加通用的，用户输入运算式，判断符号（封装成一个方法）1234567891011121314151617181920212223package designpatterns.simplefactorymode.client;import designpatterns.simplefactorymode.InputDeal;import designpatterns.simplefactorymode.service.Operation;import designpatterns.simplefactorymode.service.OperationFactory;import java.util.Scanner;/** * @author :DengSiYuan * @date :2018/12/2 12:27 * @desc :用户端 */public class UserClient &#123; public static void main(String[] args) throws Exception &#123; String[] test = &#123;&quot;5&quot;,&quot;+&quot;,&quot;8&quot;&#125;; String input = InputDeal.getEveryValue(test); Operation operation = OperationFactory.createOperation(input); operation.setNumberA(Integer.parseInt(test[0])); operation.setNumberB(Integer.parseInt(test[2])); System.out.println(operation.getResult()); &#125;&#125; 大家可以看到一个初级的使用简单工厂模式的计算器，根据一步一步的level比较，可以清楚的看到简单工厂模式存在的必要性以及他的优点。 持续更新设计模式！！]]></content>
       <categories>
-        <category>设计</category>
+        <category>设计模式</category>
       </categories>
       <tags>
         <tag>简单工厂模式</tag>
