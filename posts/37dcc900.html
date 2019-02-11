@@ -105,25 +105,31 @@
 
 
 
-  <meta name="description" content="NoSQL的特点 易扩展 大数据量，高性能 灵活的数据类型 高可用  一、键值类（key-value）1、相关产品 Tokyo Cabinet/Tyrant Redis（最常用） Voldemort Berkeley DB  2、应用场景内容缓存，主要用户处理大量数据的高访问负载 3、数据模型一系列键值对 4.优点快速查询 5、缺点存储的数据缺少结构化 二、列存储数据库1、相关产品 Cassand">
-<meta name="keywords" content="NoSql">
+  <meta name="description" content="一、安装Redis这里演示的是Linux系统的安装过程  官网地址：https://redis.io/   第一步： 打开终端，在官网找到你想要的版本的链接，使用以下指令进行下载  12345$ wget http://download.redis.io/releases/redis-5.0.3.tar.gz$ tar xzf redis-5.0.3.tar.gz -C /opt  (我这里将他解">
+<meta name="keywords" content="安装,Redis,NoSql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="四类NoSql数据库">
-<meta property="og:url" content="https://geniusdsy.github.io/数据库/四类NoSql数据库/index.html">
+<meta property="og:title" content="初识Redis（一）之安装">
+<meta property="og:url" content="https://geniusdsy.github.io/posts/37dcc900.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="NoSQL的特点 易扩展 大数据量，高性能 灵活的数据类型 高可用  一、键值类（key-value）1、相关产品 Tokyo Cabinet/Tyrant Redis（最常用） Voldemort Berkeley DB  2、应用场景内容缓存，主要用户处理大量数据的高访问负载 3、数据模型一系列键值对 4.优点快速查询 5、缺点存储的数据缺少结构化 二、列存储数据库1、相关产品 Cassand">
+<meta property="og:description" content="一、安装Redis这里演示的是Linux系统的安装过程  官网地址：https://redis.io/   第一步： 打开终端，在官网找到你想要的版本的链接，使用以下指令进行下载  12345$ wget http://download.redis.io/releases/redis-5.0.3.tar.gz$ tar xzf redis-5.0.3.tar.gz -C /opt  (我这里将他解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-25T06:52:13.909Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/2/168ac84129ccb0cc?w=1256&h=575&f=png&s=92705">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/2/168ac89036bd7e87?w=1007&h=58&f=png&s=13440">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/2/168ac961847ab945?w=758&h=59&f=png&s=11557">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/2/168ac9878f5c8df8?w=1025&h=93&f=png&s=19322">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/2/168ac9be601cfc38?w=469&h=213&f=png&s=21585">
+<meta property="og:updated_time" content="2019-02-11T02:46:01.987Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="四类NoSql数据库">
-<meta name="twitter:description" content="NoSQL的特点 易扩展 大数据量，高性能 灵活的数据类型 高可用  一、键值类（key-value）1、相关产品 Tokyo Cabinet/Tyrant Redis（最常用） Voldemort Berkeley DB  2、应用场景内容缓存，主要用户处理大量数据的高访问负载 3、数据模型一系列键值对 4.优点快速查询 5、缺点存储的数据缺少结构化 二、列存储数据库1、相关产品 Cassand">
+<meta name="twitter:title" content="初识Redis（一）之安装">
+<meta name="twitter:description" content="一、安装Redis这里演示的是Linux系统的安装过程  官网地址：https://redis.io/   第一步： 打开终端，在官网找到你想要的版本的链接，使用以下指令进行下载  12345$ wget http://download.redis.io/releases/redis-5.0.3.tar.gz$ tar xzf redis-5.0.3.tar.gz -C /opt  (我这里将他解">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/2/168ac84129ccb0cc?w=1256&h=575&f=png&s=92705">
 
 
 
 
 
 
-  <link rel="canonical" href="https://geniusdsy.github.io/数据库/四类NoSql数据库/">
+  <link rel="canonical" href="https://geniusdsy.github.io/posts/37dcc900.html">
 
 
 
@@ -133,7 +139,7 @@
   };
 </script>
 
-  <title>四类NoSql数据库 | 邓思远的Blog</title>
+  <title>初识Redis（一）之安装 | 邓思远的Blog</title>
   
 
 
@@ -378,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://geniusdsy.github.io/数据库/四类NoSql数据库/">
+    <link itemprop="mainEntityOfPage" href="https://geniusdsy.github.io/posts/37dcc900.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="邓思远">
@@ -395,7 +401,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">四类NoSql数据库
+          <h1 class="post-title" itemprop="name headline">初识Redis（一）之安装
 
               
             
@@ -421,12 +427,24 @@
                 
               
 
-              <time title="创建时间：2019-01-25 14:51:01 / 修改时间：14:52:13" itemprop="dateCreated datePublished" datetime="2019-01-25T14:51:01+08:00">2019-01-25</time>
+              <time title="创建时间：2019-02-02 12:08:10" itemprop="dateCreated datePublished" datetime="2019-02-02T12:08:10+08:00">2019-02-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-11 10:46:01" itemprop="dateModified" datetime="2019-02-11T10:46:01+08:00">2019-02-11</time>
               
             
           </span>
@@ -443,7 +461,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a></span>
 
                 
                 
@@ -461,8 +479,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/数据库/四类NoSql数据库/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数据库/四类NoSql数据库/" itemprop="commentCount"></span>
+                <a href="/posts/37dcc900.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/37dcc900.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -500,49 +518,54 @@
       
 
       
-        <h2 id="NoSQL的特点"><a href="#NoSQL的特点" class="headerlink" title="NoSQL的特点"></a>NoSQL的特点</h2><ul>
-<li>易扩展</li>
-<li>大数据量，高性能</li>
-<li>灵活的数据类型</li>
-<li>高可用</li>
+        <h1 id="一、安装Redis"><a href="#一、安装Redis" class="headerlink" title="一、安装Redis"></a>一、安装Redis</h1><p>这里演示的是Linux系统的安装过程</p>
+<blockquote>
+<p>官网地址：<a href="https://redis.io/" target="_blank" rel="noopener">https://redis.io/</a></p>
+</blockquote>
+<ul>
+<li>第一步： 打开终端，在官网找到你想要的版本的链接，使用以下指令进行下载</li>
 </ul>
-<h2 id="一、键值类（key-value）"><a href="#一、键值类（key-value）" class="headerlink" title="一、键值类（key-value）"></a>一、键值类（key-value）</h2><h4 id="1、相关产品"><a href="#1、相关产品" class="headerlink" title="1、相关产品"></a>1、相关产品</h4><ul>
-<li>Tokyo Cabinet/Tyrant</li>
-<li>Redis（最常用）</li>
-<li>Voldemort</li>
-<li>Berkeley DB</li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> wget http://download.redis.io/releases/redis-5.0.3.tar.gz</span><br><span class="line"><span class="meta">$</span> tar xzf redis-5.0.3.tar.gz -C /opt  (我这里将他解压到/opt目录下)</span><br><span class="line"><span class="meta">$</span> cd /opt/redis-5.0.3</span><br><span class="line"><span class="meta">$</span> make (因为redis是使用C语言所写的，所以需要使用make指令进行编译)</span><br><span class="line"><span class="meta">$</span> make PREFIX=/usr/local/redis install (这里我将编译好的redis安装到/usr/local/redis目录下)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二步：启动ｒｅｄｉｓ</li>
 </ul>
-<h4 id="2、应用场景"><a href="#2、应用场景" class="headerlink" title="2、应用场景"></a>2、应用场景</h4><p>内容缓存，主要用户处理大量数据的高访问负载</p>
-<h4 id="3、数据模型"><a href="#3、数据模型" class="headerlink" title="3、数据模型"></a>3、数据模型</h4><p>一系列键值对</p>
-<h4 id="4-优点"><a href="#4-优点" class="headerlink" title="4.优点"></a>4.优点</h4><p>快速查询</p>
-<h4 id="5、缺点"><a href="#5、缺点" class="headerlink" title="5、缺点"></a>5、缺点</h4><p>存储的数据缺少结构化</p>
-<h2 id="二、列存储数据库"><a href="#二、列存储数据库" class="headerlink" title="二、列存储数据库"></a>二、列存储数据库</h2><h4 id="1、相关产品-1"><a href="#1、相关产品-1" class="headerlink" title="1、相关产品"></a>1、相关产品</h4><ul>
-<li>Cassandra</li>
-<li>HBase</li>
-<li>Riak</li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd usr/local/redis (进入安装redis的目录)</span><br><span class="line"><span class="meta">$</span> ls</span><br></pre></td></tr></table></figure>
+<p>这时候该redis目录下只有一个文件，是bin目录<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd bin/</span><br><span class="line"><span class="meta">$</span> ls</span><br><span class="line">redis-benchmark  redis-check-aof  redis-check-rdb  redis-cli  redis-sentinel  redis-server</span><br></pre></td></tr></table></figure></p>
+<p>该目录下有这5个可执行文件，分别具有的功能：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis-benchmark    -----性能测试工具</span><br><span class="line">redis-check-aof    -----AOF文件修复工具</span><br><span class="line">redis-check-dump   -----RDB文件检查工具(快件持久工具)</span><br><span class="line">redis-cli          -----命令行客户端</span><br><span class="line">redis-server       -----redis服务器启动命令</span><br></pre></td></tr></table></figure>
+<p>我们使用redis-server启动redis<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./redis-server</span><br></pre></td></tr></table></figure></p>
+<p>看到如下图，便安装并启动成功：<br><img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac84129ccb0cc?w=1256&amp;h=575&amp;f=png&amp;s=92705" alt="redis启动成功"></p>
+<p>通过上图我们可以看到，redis已经启动成功，并且在6379端口监听。</p>
+<p>我们发现了什么！这时候我们这个终端什么都不能干了，我们能不能让他在后台启动后台运行，不影响我们的后续操作呢！</p>
+<p>当然可以，我们去刚才make（编译）的目录下看看</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac89036bd7e87?w=1007&amp;h=58&amp;f=png&amp;s=13440" alt="redis.conf"></p>
+<p>看到了这个redis.conf就知道有救了，我们可以修改他的默认启动方式的配置进行后台启动</p>
+<p>我们使用vim 指令进行编辑，找到其中的daemonize no，将他的no改为yes</p>
+<p>这时候我们将修改后的redis.conf复制到/usr/local/redis目录下，使用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cp redis.conf /usr/local/redis</span><br></pre></td></tr></table></figure>
+<p>这时候我们切回到安装redis的/usr/local/redis目录下执行新的redis.conf重新启动redis</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./bin/redis-server ./redis.conf</span><br></pre></td></tr></table></figure>
+<p>咦咦咦！！！这是什么情况！出现意外了！！！<br>原来我们刚才运行的redis已经将端口占用了，我们去查询一下现在运行的相关redis进程都有哪些</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ps -ef | grep -i redis</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac961847ab945?w=758&amp;h=59&amp;f=png&amp;s=11557" alt="进程"></p>
+<p>我们要把这个正在运行的redis结束掉，有两种方法</p>
+<ul>
+<li>kill -9 6894</li>
+<li>./bin redis-server shutdown</li>
 </ul>
-<h4 id="2、应用场景-1"><a href="#2、应用场景-1" class="headerlink" title="2、应用场景"></a>2、应用场景</h4><p>分布式的文件系统</p>
-<h4 id="3、数据模型-1"><a href="#3、数据模型-1" class="headerlink" title="3、数据模型"></a>3、数据模型</h4><p>以列簇式存储，将同一列数据存在一起</p>
-<h4 id="4-优点-1"><a href="#4-优点-1" class="headerlink" title="4.优点"></a>4.优点</h4><p>查询速度快，可扩展性强，更容易进行分布式扩展</p>
-<h4 id="5、缺点-1"><a href="#5、缺点-1" class="headerlink" title="5、缺点"></a>5、缺点</h4><p>功能相对局限</p>
-<h2 id="三、文档型数据库"><a href="#三、文档型数据库" class="headerlink" title="三、文档型数据库"></a>三、文档型数据库</h2><h4 id="1、相关产品-2"><a href="#1、相关产品-2" class="headerlink" title="1、相关产品"></a>1、相关产品</h4><ul>
-<li>CouchDB</li>
-<li>MongoDb</li>
+<p>结束redis进程后我们重新启动，继续使用刚才修改的配置redis-conf进行启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./bin/redis-server ./redis.conf</span><br></pre></td></tr></table></figure>
+<p>结果如下：<br><img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac9878f5c8df8?w=1025&amp;h=93&amp;f=png&amp;s=19322" alt=""></p>
+<ul>
+<li>第三步：打开命令行客户端redis-cli进行简单的存储操作</li>
 </ul>
-<h4 id="2、应用场景-2"><a href="#2、应用场景-2" class="headerlink" title="2、应用场景"></a>2、应用场景</h4><p>Web应用（与key-value类似，value是结构化的）</p>
-<h4 id="3、数据模型-2"><a href="#3、数据模型-2" class="headerlink" title="3、数据模型"></a>3、数据模型</h4><p>一系列键值对</p>
-<h4 id="4、优点"><a href="#4、优点" class="headerlink" title="4、优点"></a>4、优点</h4><p>数据结构要求不严格</p>
-<h4 id="5、缺点-2"><a href="#5、缺点-2" class="headerlink" title="5、缺点"></a>5、缺点</h4><p>查询性能不高，而且缺乏统一的查询语法</p>
-<h2 id="4、图形（Graph）数据库"><a href="#4、图形（Graph）数据库" class="headerlink" title="4、图形（Graph）数据库"></a>4、图形（Graph）数据库</h2><h4 id="1、相关产品-3"><a href="#1、相关产品-3" class="headerlink" title="1、相关产品"></a>1、相关产品</h4><ul>
-<li>Neo4j</li>
-<li>IofoGrid</li>
-<li>Infinite Graph</li>
-</ul>
-<h4 id="2、应用场景-3"><a href="#2、应用场景-3" class="headerlink" title="2、应用场景"></a>2、应用场景</h4><p>社交网络，推荐系统等，专注于构建关系图</p>
-<h4 id="3-数据模型"><a href="#3-数据模型" class="headerlink" title="3.数据模型"></a>3.数据模型</h4><p>图结构</p>
-<h4 id="4、优点-1"><a href="#4、优点-1" class="headerlink" title="4、优点"></a>4、优点</h4><p>利用图结构相关算法</p>
-<h4 id="5、缺点-3"><a href="#5、缺点-3" class="headerlink" title="5、缺点"></a>5、缺点</h4><p>需要对整个图做计算才能得出结果，不容易做分布式的集群方案</p>
-<h4 id="备注：以上是对四类NoSQL的简单介绍与区别，后期会对各类中典型的数据库进行介绍分析，有待完善"><a href="#备注：以上是对四类NoSQL的简单介绍与区别，后期会对各类中典型的数据库进行介绍分析，有待完善" class="headerlink" title="备注：以上是对四类NoSQL的简单介绍与区别，后期会对各类中典型的数据库进行介绍分析，有待完善"></a>备注：以上是对四类NoSQL的简单介绍与区别，后期会对各类中典型的数据库进行介绍分析，有待完善</h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./bin/redis-cli</span><br></pre></td></tr></table></figure>
+<p>通过下图的简单指令你可以简单的进行一些增删查操作：<br><img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac9be601cfc38?w=469&amp;h=213&amp;f=png&amp;s=21585" alt=""></p>
+<h1 id="二、为Python安装Redis客户端"><a href="#二、为Python安装Redis客户端" class="headerlink" title="二、为Python安装Redis客户端"></a>二、为Python安装Redis客户端</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> wget -q http://peak.telecommunity.com/dist/ez_setup.py</span><br><span class="line"><span class="meta">$</span> sudo python ez_setup.py</span><br><span class="line"><span class="meta">$</span> sudo python -m easy_install redis hiredis</span><br></pre></td></tr></table></figure>
+<p>发现没有任何报错后进行测试</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> python</span><br><span class="line"><span class="meta">$</span> import redis</span><br><span class="line"><span class="meta">$</span> conn = redis.Redis()</span><br><span class="line"><span class="meta">$</span> conn.set('name','Hello!Redis')</span><br><span class="line">True</span><br><span class="line"><span class="meta">$</span> conn.get('name')</span><br><span class="line">Hello!Redis</span><br></pre></td></tr></table></figure>
+<p>若与我上面的指令一样，而且未出现其他错误，即可认为自己的redis客户端安装成功</p>
+
       
     </div>
 
@@ -593,6 +616,10 @@
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/安装/" rel="tag"># 安装</a>
+          
+            <a href="/tags/Redis/" rel="tag"># Redis</a>
           
             <a href="/tags/NoSql/" rel="tag"># NoSql</a>
           
@@ -661,8 +688,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/工具/关于Git-Commit/" rel="next" title="关于Git Commit">
-                <i class="fa fa-chevron-left"></i> 关于Git Commit
+              <a href="/posts/d9ef328.html" rel="next" title="Python入门">
+                <i class="fa fa-chevron-left"></i> Python入门
               </a>
             
           </div>
@@ -671,8 +698,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Python/Python入门/" rel="prev" title="Python入门">
-                Python入门 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/6507e5e0.html" rel="prev" title="初识Docker（一）之安装">
+                初识Docker（一）之安装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -754,7 +781,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -834,7 +861,7 @@
                    <span class="site-state-item-name">访客量</span>
               </div>
               <div class="site-state-item site-state-posts">
-                    <span class="site-state-item-count">9.8k</span>
+                    <span class="site-state-item-count">12.1k</span>
                     <span class="site-state-item-name">总字数</span>
               </div>
             </nav>
@@ -918,7 +945,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSQL的特点"><span class="nav-number">1.</span> <span class="nav-text">NoSQL的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、键值类（key-value）"><span class="nav-number">2.</span> <span class="nav-text">一、键值类（key-value）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、相关产品"><span class="nav-number">2.0.1.</span> <span class="nav-text">1、相关产品</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、应用场景"><span class="nav-number">2.0.2.</span> <span class="nav-text">2、应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、数据模型"><span class="nav-number">2.0.3.</span> <span class="nav-text">3、数据模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-优点"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、缺点"><span class="nav-number">2.0.5.</span> <span class="nav-text">5、缺点</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#二、列存储数据库"><span class="nav-number">3.</span> <span class="nav-text">二、列存储数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、相关产品-1"><span class="nav-number">3.0.1.</span> <span class="nav-text">1、相关产品</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、应用场景-1"><span class="nav-number">3.0.2.</span> <span class="nav-text">2、应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、数据模型-1"><span class="nav-number">3.0.3.</span> <span class="nav-text">3、数据模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-优点-1"><span class="nav-number">3.0.4.</span> <span class="nav-text">4.优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、缺点-1"><span class="nav-number">3.0.5.</span> <span class="nav-text">5、缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、文档型数据库"><span class="nav-number">4.</span> <span class="nav-text">三、文档型数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、相关产品-2"><span class="nav-number">4.0.1.</span> <span class="nav-text">1、相关产品</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、应用场景-2"><span class="nav-number">4.0.2.</span> <span class="nav-text">2、应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、数据模型-2"><span class="nav-number">4.0.3.</span> <span class="nav-text">3、数据模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、优点"><span class="nav-number">4.0.4.</span> <span class="nav-text">4、优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、缺点-2"><span class="nav-number">4.0.5.</span> <span class="nav-text">5、缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、图形（Graph）数据库"><span class="nav-number">5.</span> <span class="nav-text">4、图形（Graph）数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、相关产品-3"><span class="nav-number">5.0.1.</span> <span class="nav-text">1、相关产品</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、应用场景-3"><span class="nav-number">5.0.2.</span> <span class="nav-text">2、应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-数据模型"><span class="nav-number">5.0.3.</span> <span class="nav-text">3.数据模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、优点-1"><span class="nav-number">5.0.4.</span> <span class="nav-text">4、优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、缺点-3"><span class="nav-number">5.0.5.</span> <span class="nav-text">5、缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#备注：以上是对四类NoSQL的简单介绍与区别，后期会对各类中典型的数据库进行介绍分析，有待完善"><span class="nav-number">5.0.6.</span> <span class="nav-text">备注：以上是对四类NoSQL的简单介绍与区别，后期会对各类中典型的数据库进行介绍分析，有待完善</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、安装Redis"><span class="nav-number">1.</span> <span class="nav-text">一、安装Redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、为Python安装Redis客户端"><span class="nav-number">2.</span> <span class="nav-text">二、为Python安装Redis客户端</span></a></li></ol></div>
             
 
           </div>
@@ -1098,9 +1125,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://geniusdsy.github.io/数据库/四类NoSql数据库/";
-    this.page.identifier = "数据库/四类NoSql数据库/";
-    this.page.title = '四类NoSql数据库';
+    this.page.url = "https://geniusdsy.github.io/posts/37dcc900.html";
+    this.page.identifier = "posts/37dcc900.html";
+    this.page.title = '初识Redis（一）之安装';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');

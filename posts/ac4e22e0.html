@@ -105,42 +105,25 @@
 
 
 
-  <meta name="description" content="一、认识Shell我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景：  简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令 查看当前系统时间和">
-<meta name="keywords" content="Shell">
+  <meta name="description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
+<meta name="keywords" content="java python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux入门之认识Shell（一）">
-<meta property="og:url" content="https://geniusdsy.github.io/Linux/Linux入门之认识Shell（一）/index.html">
+<meta property="og:title" content="初识Redis（三）之数据结构">
+<meta property="og:url" content="https://geniusdsy.github.io/posts/ac4e22e0.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="一、认识Shell我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景：  简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令 查看当前系统时间和">
+<meta property="og:description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2d3e29862108?w=333&h=34&f=png&s=2653">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2dd4c79855b8?w=329&h=36&f=png&s=5714">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2de2ee6cd539?w=269&h=141&f=png&s=9716">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2dfa5556aeca?w=690&h=184&f=png&s=29819">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2e44655ea1f2?w=720&h=74&f=png&s=10341">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2e6dfdc2fccc?w=362&h=35&f=png&s=4711">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2f492fc55c02?w=344&h=39&f=png&s=6651">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2f7c20104bd9?w=549&h=37&f=png&s=8658">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c30a582474d34?w=695&h=145&f=png&s=38048">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2f9d9a178f08?w=413&h=127&f=png&s=14843">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c3008eccf3bb8?w=352&h=57&f=png&s=5255">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c301a62a411db?w=342&h=57&f=png&s=5779">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c3036a094398b?w=333&h=55&f=png&s=5635">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c305723defd76?w=323&h=55&f=png&s=6519">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c306638c4fd9e?w=302&h=62&f=png&s=6777">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c307d15353813?w=424&h=57&f=png&s=7705">
-<meta property="og:updated_time" content="2019-02-10T03:27:47.910Z">
+<meta property="og:updated_time" content="2019-02-11T02:46:01.992Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux入门之认识Shell（一）">
-<meta name="twitter:description" content="一、认识Shell我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景：  简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令 查看当前系统时间和">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2d3e29862108?w=333&h=34&f=png&s=2653">
+<meta name="twitter:title" content="初识Redis（三）之数据结构">
+<meta name="twitter:description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
 
 
 
 
 
 
-  <link rel="canonical" href="https://geniusdsy.github.io/Linux/Linux入门之认识Shell（一）/">
+  <link rel="canonical" href="https://geniusdsy.github.io/posts/ac4e22e0.html">
 
 
 
@@ -150,7 +133,7 @@
   };
 </script>
 
-  <title>Linux入门之认识Shell（一） | 邓思远的Blog</title>
+  <title>初识Redis（三）之数据结构 | 邓思远的Blog</title>
   
 
 
@@ -395,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://geniusdsy.github.io/Linux/Linux入门之认识Shell（一）/">
+    <link itemprop="mainEntityOfPage" href="https://geniusdsy.github.io/posts/ac4e22e0.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="邓思远">
@@ -412,7 +395,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux入门之认识Shell（一）
+          <h1 class="post-title" itemprop="name headline">初识Redis（三）之数据结构
 
               
             
@@ -438,7 +421,7 @@
                 
               
 
-              <time title="创建时间：2019-02-06 20:18:46" itemprop="dateCreated datePublished" datetime="2019-02-06T20:18:46+08:00">2019-02-06</time>
+              <time title="创建时间：2019-02-10 13:14:45" itemprop="dateCreated datePublished" datetime="2019-02-10T13:14:45+08:00">2019-02-10</time>
             
 
             
@@ -455,29 +438,11 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-10 11:27:47" itemprop="dateModified" datetime="2019-02-10T11:27:47+08:00">2019-02-10</time>
+                <time title="修改时间：2019-02-11 10:46:01" itemprop="dateModified" datetime="2019-02-11T10:46:01+08:00">2019-02-11</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -490,8 +455,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/Linux/Linux入门之认识Shell（一）/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Linux/Linux入门之认识Shell（一）/" itemprop="commentCount"></span>
+                <a href="/posts/ac4e22e0.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/ac4e22e0.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -529,74 +494,7 @@
       
 
       
-        <h2 id="一、认识Shell"><a href="#一、认识Shell" class="headerlink" title="一、认识Shell"></a>一、认识Shell</h2><p>我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。</p>
-<p>我们打开终端，就可以看见下面的场景：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2d3e29862108?w=333&amp;h=34&amp;f=png&amp;s=2653" alt="终端"></p>
-<p>简单解释一下这些含义：</p>
-<p>用户名@机器名:当前工作目录$ 待输入的指令</p>
-<p>而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利</p>
-<h3 id="1、简单的命令"><a href="#1、简单的命令" class="headerlink" title="1、简单的命令"></a>1、简单的命令</h3><ul>
-<li>查看当前系统时间和日期</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2dd4c79855b8?w=329&amp;h=36&amp;f=png&amp;s=5714" alt=""></p>
-<ul>
-<li>查看当月的日历</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2de2ee6cd539?w=269&amp;h=141&amp;f=png&amp;s=9716" alt=""></p>
-<ul>
-<li>查看磁盘驱动器已用、可用、挂载点</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2dfa5556aeca?w=690&amp;h=184&amp;f=png&amp;s=29819" alt=""></p>
-<ul>
-<li>查看可用内存</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2e44655ea1f2?w=720&amp;h=74&amp;f=png&amp;s=10341" alt=""></p>
-<ul>
-<li>退出终端</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2e6dfdc2fccc?w=362&amp;h=35&amp;f=png&amp;s=4711" alt=""></p>
-<h3 id="2、文件系统"><a href="#2、文件系统" class="headerlink" title="2、文件系统"></a>2、文件系统</h3><p>Linux系统中存在一个文件系统树，当然会涉及到很多的文件的操作指令，记录一下</p>
-<ul>
-<li>查看当前工作目录</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2f492fc55c02?w=344&amp;h=39&amp;f=png&amp;s=6651" alt=""></p>
-<ul>
-<li><p>列出目录内容</p>
-<ul>
-<li>一般情况</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2f7c20104bd9?w=549&amp;h=37&amp;f=png&amp;s=8658" alt=""></p>
-<ul>
-<li>列出包含隐藏文件(以.开头的文件为隐藏文件)</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c30a582474d34?w=695&amp;h=145&amp;f=png&amp;s=38048" alt=""></p>
-</li>
-<li><p>更改当前工作目录</p>
-<ul>
-<li><p>绝对路径名</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2f9d9a178f08?w=413&amp;h=127&amp;f=png&amp;s=14843" alt=""></p>
-</li>
-<li><p>相对路径名</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c3008eccf3bb8?w=352&amp;h=57&amp;f=png&amp;s=5255" alt=""></p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c301a62a411db?w=342&amp;h=57&amp;f=png&amp;s=5779" alt=""></p>
-<p>一般在任何情况下都可以省略./，即：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c3036a094398b?w=333&amp;h=55&amp;f=png&amp;s=5635" alt=""></p>
-</li>
-</ul>
-</li>
-<li><p>切换到主目录</p>
-</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c305723defd76?w=323&amp;h=55&amp;f=png&amp;s=6519" alt=""></p>
-<ul>
-<li>返回到上一次的工作目录</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c306638c4fd9e?w=302&amp;h=62&amp;f=png&amp;s=6777" alt=""></p>
-<ul>
-<li>将工作目录更改为username所在的主目录</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c307d15353813?w=424&amp;h=57&amp;f=png&amp;s=7705" alt=""></p>
-<h3 id="3、Linux系统"><a href="#3、Linux系统" class="headerlink" title="3、Linux系统"></a>3、Linux系统</h3><h1 id="未完待续……"><a href="#未完待续……" class="headerlink" title="未完待续……"></a>未完待续……</h1>
+        
       
     </div>
 
@@ -645,12 +543,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Shell/" rel="tag"># Shell</a>
-          
-        </div>
       
 
       
@@ -715,8 +607,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/应用容器/初识Docker（一）之安装/" rel="next" title="初识Docker（一）之安装">
-                <i class="fa fa-chevron-left"></i> 初识Docker（一）之安装
+              <a href="/posts/388421ef.html" rel="next" title="初识Redis（二）之Jedis">
+                <i class="fa fa-chevron-left"></i> 初识Redis（二）之Jedis
               </a>
             
           </div>
@@ -724,10 +616,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Redis/初识Redis（二）之Jedis/" rel="prev" title="初识Redis（二）之Jedis">
-                初识Redis（二）之Jedis <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -781,17 +669,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -808,7 +687,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -888,7 +767,7 @@
                    <span class="site-state-item-name">访客量</span>
               </div>
               <div class="site-state-item site-state-posts">
-                    <span class="site-state-item-count">9.8k</span>
+                    <span class="site-state-item-count">12.1k</span>
                     <span class="site-state-item-name">总字数</span>
               </div>
             </nav>
@@ -961,23 +840,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、认识Shell"><span class="nav-number">1.</span> <span class="nav-text">一、认识Shell</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、简单的命令"><span class="nav-number">1.1.</span> <span class="nav-text">1、简单的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、文件系统"><span class="nav-number">1.2.</span> <span class="nav-text">2、文件系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、Linux系统"><span class="nav-number">1.3.</span> <span class="nav-text">3、Linux系统</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#未完待续……"><span class="nav-number"></span> <span class="nav-text">未完待续……</span></a></li></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
@@ -1152,9 +1014,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://geniusdsy.github.io/Linux/Linux入门之认识Shell（一）/";
-    this.page.identifier = "Linux/Linux入门之认识Shell（一）/";
-    this.page.title = 'Linux入门之认识Shell（一）';
+    this.page.url = "https://geniusdsy.github.io/posts/ac4e22e0.html";
+    this.page.identifier = "posts/ac4e22e0.html";
+    this.page.title = '初识Redis（三）之数据结构';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
