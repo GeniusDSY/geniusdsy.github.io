@@ -518,7 +518,7 @@
       
 
       
-        <h1><span id="一-安装redis">一、安装Redis</span></h1><p>这里演示的是Linux系统的安装过程</p>
+        <h1 id="一、安装Redis"><a href="#一、安装Redis" class="headerlink" title="一、安装Redis"></a>一、安装Redis</h1><p>这里演示的是Linux系统的安装过程</p>
 <blockquote>
 <p>官网地址：<a href="https://redis.io/" target="_blank" rel="noopener">https://redis.io/</a></p>
 </blockquote>
@@ -561,7 +561,7 @@
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./bin/redis-cli</span><br></pre></td></tr></table></figure>
 <p>通过下图的简单指令你可以简单的进行一些增删查操作：<br><img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac9be601cfc38?w=469&amp;h=213&amp;f=png&amp;s=21585" alt=""></p>
-<h1><span id="二-为python安装redis客户端">二、为Python安装Redis客户端</span></h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> wget -q http://peak.telecommunity.com/dist/ez_setup.py</span><br><span class="line"><span class="meta">$</span> sudo python ez_setup.py</span><br><span class="line"><span class="meta">$</span> sudo python -m easy_install redis hiredis</span><br></pre></td></tr></table></figure>
+<h1 id="二、为Python安装Redis客户端"><a href="#二、为Python安装Redis客户端" class="headerlink" title="二、为Python安装Redis客户端"></a>二、为Python安装Redis客户端</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> wget -q http://peak.telecommunity.com/dist/ez_setup.py</span><br><span class="line"><span class="meta">$</span> sudo python ez_setup.py</span><br><span class="line"><span class="meta">$</span> sudo python -m easy_install redis hiredis</span><br></pre></td></tr></table></figure>
 <p>发现没有任何报错后进行测试</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> python</span><br><span class="line"><span class="meta">$</span> import redis</span><br><span class="line"><span class="meta">$</span> conn = redis.Redis()</span><br><span class="line"><span class="meta">$</span> conn.set('name','Hello!Redis')</span><br><span class="line">True</span><br><span class="line"><span class="meta">$</span> conn.get('name')</span><br><span class="line">Hello!Redis</span><br></pre></td></tr></table></figure>
 <p>若与我上面的指令一样，而且未出现其他错误，即可认为自己的redis客户端安装成功</p>
@@ -945,7 +945,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">一、安装Redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">二、为Python安装Redis客户端</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、安装Redis"><span class="nav-number">1.</span> <span class="nav-text">一、安装Redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、为Python安装Redis客户端"><span class="nav-number">2.</span> <span class="nav-text">二、为Python安装Redis客户端</span></a></li></ol></div>
             
 
           </div>

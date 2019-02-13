@@ -512,8 +512,8 @@
       
 
       
-        <h1><span id="运行速度">运行速度</span></h1><p> StringBuilder &gt; StringBuffer &gt; String</p>
-<h3><span id="string运行速度慢的原因">String运行速度慢的原因</span></h3><ol>
+        <h1 id="运行速度"><a href="#运行速度" class="headerlink" title="运行速度"></a>运行速度</h1><p> StringBuilder &gt; StringBuffer &gt; String</p>
+<h3 id="String运行速度慢的原因"><a href="#String运行速度慢的原因" class="headerlink" title="String运行速度慢的原因"></a>String运行速度慢的原因</h3><ol>
 <li><p>数据类型的不同</p>
 <p>1）String为字符串常量</p>
 <p> 字符串常量存储于常量池中，不可以被更改</p>
@@ -523,10 +523,10 @@
 <p>   2)StringBuilder和StringBuffer为字符串变量</p>
 <p>字符串变量存放在栈中，从栈中读取数据的速度仅次于寄存器</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">与上面同样的操作</span><br><span class="line">StringBuffer str = new StringBuffer();</span><br><span class="line">StringBuffer str1 = mew StringBuffer(&quot;i am&quot;);</span><br><span class="line">StringBuffer str2 = new StringBuffer(&quot;Tom&quot;);</span><br><span class="line">str = str1 + str2;//此运行速度不是最快</span><br><span class="line">str = str.append(str1).append(str2);//使用Java中自带的函数，运行速度会加快，可以使语句在运行时，减少创建对象的数量，从而减少运行时间</span><br></pre></td></tr></table></figure>
-<h3><span id="线程安全">线程安全</span></h3><p>在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的</p>
+<h3 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h3><p>在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的</p>
 <p>　　如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有<a href="http://www.cnblogs.com/GnagWang/archive/2011/02/27/1966606.html" target="_blank" rel="noopener">synchronized</a>关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。</p>
 <p>所以如果要进行的操作是==多线程==的，那么就要使用==StringBuffer==，但是在==单线程==的情况下，还是建议使用速度比较快的==StringBuilder==。</p>
-<h3><span id="小结">小结</span></h3><h5><span id="string适用于少量的字符串操作的情况">String：适用于少量的字符串操作的情况</span></h5><h5><span id="stringbuilder适用于单线程下在字符缓冲区进行大量操作的情况">StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</span></h5><h5><span id="stringbuffer适用多线程下在字符缓冲区进行大量操作的情况">StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</span></h5>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><h5 id="String：适用于少量的字符串操作的情况"><a href="#String：适用于少量的字符串操作的情况" class="headerlink" title="String：适用于少量的字符串操作的情况"></a>String：适用于少量的字符串操作的情况</h5><h5 id="StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况"><a href="#StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况" class="headerlink" title="StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况"></a>StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</h5><h5 id="StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况"><a href="#StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况" class="headerlink" title="StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况"></a>StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</h5>
       
     </div>
 
@@ -902,7 +902,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">运行速度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">String运行速度慢的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">线程安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.</span> <span class="nav-text">小结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.0.1.</span> <span class="nav-text">String：适用于少量的字符串操作的情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.0.2.</span> <span class="nav-text">StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.0.3.</span> <span class="nav-text">StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#运行速度"><span class="nav-number">1.</span> <span class="nav-text">运行速度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String运行速度慢的原因"><span class="nav-number">1.0.1.</span> <span class="nav-text">String运行速度慢的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程安全"><span class="nav-number">1.0.2.</span> <span class="nav-text">线程安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.0.3.</span> <span class="nav-text">小结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#String：适用于少量的字符串操作的情况"><span class="nav-number">1.0.3.0.1.</span> <span class="nav-text">String：适用于少量的字符串操作的情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况"><span class="nav-number">1.0.3.0.2.</span> <span class="nav-text">StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况"><span class="nav-number">1.0.3.0.3.</span> <span class="nav-text">StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
