@@ -105,24 +105,30 @@
 
 
 
-  <meta name="description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
-<meta name="keywords" content="java python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="邓思远的Blog">
-<meta property="og:url" content="https://geniusdsy.github.io/categories/JAVA/index.html">
+  <meta name="description" content="[TOC] 操作文件与目录通配符我们在查找一些文件或者一些目录时，需要找到符合条件的所有文件，这时候就需要模糊查询。在模糊查询中，必不可少的就是通配符的使用。  表  通配符     通配符 匹配项     * 匹配任意多个字符（包括0个和2个）   ? 匹配任一单个字符（不包括0个）   [characters] 匹配任意一个属于字符集中的字符   [!characters] 匹配任意一个不属于">
+<meta name="keywords" content="Shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux入门之认识Shell（二）">
+<meta property="og:url" content="https://geniusdsy.github.io/posts/76aaa691.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
+<meta property="og:description" content="[TOC] 操作文件与目录通配符我们在查找一些文件或者一些目录时，需要找到符合条件的所有文件，这时候就需要模糊查询。在模糊查询中，必不可少的就是通配符的使用。  表  通配符     通配符 匹配项     * 匹配任意多个字符（包括0个和2个）   ? 匹配任一单个字符（不包括0个）   [characters] 匹配任意一个属于字符集中的字符   [!characters] 匹配任意一个不属于">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/12/168df9a3060d3338?w=496&h=59&f=png&s=11048">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/12/168dfa1f653e2fa4?w=471&h=74&f=png&s=15978">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/13/168e5cf42c5cbd4c?w=610&h=60&f=png&s=23429">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/13/168e5f07b249ee95?w=422&h=126&f=png&s=33898">
+<meta property="og:updated_time" content="2019-02-13T09:52:44.952Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="邓思远的Blog">
-<meta name="twitter:description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
+<meta name="twitter:title" content="Linux入门之认识Shell（二）">
+<meta name="twitter:description" content="[TOC] 操作文件与目录通配符我们在查找一些文件或者一些目录时，需要找到符合条件的所有文件，这时候就需要模糊查询。在模糊查询中，必不可少的就是通配符的使用。  表  通配符     通配符 匹配项     * 匹配任意多个字符（包括0个和2个）   ? 匹配任一单个字符（不包括0个）   [characters] 匹配任意一个属于字符集中的字符   [!characters] 匹配任意一个不属于">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/12/168df9a3060d3338?w=496&h=59&f=png&s=11048">
 
 
 
 
 
 
-  <link rel="canonical" href="https://geniusdsy.github.io/categories/JAVA/">
+  <link rel="canonical" href="https://geniusdsy.github.io/posts/76aaa691.html">
 
 
 
@@ -132,7 +138,7 @@
   };
 </script>
 
-  <title>分类: JAVA | 邓思远的Blog</title>
+  <title>Linux入门之认识Shell（二） | 邓思远的Blog</title>
   
 
 
@@ -180,7 +186,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/GeniusDSY" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -235,7 +241,7 @@
         
         
           
-          <li class="menu-item menu-item-分类 menu-item-active">
+          <li class="menu-item menu-item-分类">
 
     
     
@@ -357,83 +363,536 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>JAVA<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://geniusdsy.github.io/posts/76aaa691.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="邓思远">
+      <meta itemprop="description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
+      <meta itemprop="image" content="/images/userAvatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="邓思远的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/posts/2871eb40.html" itemprop="url">
-            
-              <span itemprop="name">String、StringBuilder和StringBuffer</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Linux入门之认识Shell（二）
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-24T21:04:56+08:00" content="2019-01-24">
-          01-24
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-12 10:13:24" itemprop="dateCreated datePublished" datetime="2019-02-12T10:13:24+08:00">2019-02-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-13 17:52:44" itemprop="dateModified" datetime="2019-02-13T17:52:44+08:00">2019-02-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/posts/76aaa691.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/76aaa691.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<h1 id="操作文件与目录"><a href="#操作文件与目录" class="headerlink" title="操作文件与目录"></a>操作文件与目录</h1><h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>我们在查找一些文件或者一些目录时，需要找到符合条件的所有文件，这时候就需要模糊查询。在模糊查询中，必不可少的就是通配符的使用。</p>
+<blockquote>
+<p>表  通配符</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>匹配项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>匹配任意多个字符（包括0个和2个）</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配任一单个字符（不包括0个）</td>
+</tr>
+<tr>
+<td>[characters]</td>
+<td>匹配任意一个属于字符集中的字符</td>
+</tr>
+<tr>
+<td>[!characters]</td>
+<td>匹配任意一个不属于字符集中的字符</td>
+</tr>
+<tr>
+<td>[[:class:]]</td>
+<td>匹配任意一个属于指定字符类中的字符</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>表  常用字符类</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>字符类</th>
+<th>匹配项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[:alnum:]</td>
+<td>匹配任意一个字母或数字</td>
+</tr>
+<tr>
+<td>[:alpha:]</td>
+<td>匹配任意一个字母</td>
+</tr>
+<tr>
+<td>[:digit]</td>
+<td>匹配任意一个数字</td>
+</tr>
+<tr>
+<td>[:lower:]</td>
+<td>匹配任意一个小写字母</td>
+</tr>
+<tr>
+<td>[:upper:]</td>
+<td>匹配任意一个大写字母</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><center><strong>字符范围</strong></center><br> 在Unix环境中，可能会遇到[A-Z]或[a-z]形式的字符范围表示法。这些是传统的Unix表示法，在早期版本的Linux仍然起作用，但在现在，使用时务必小心，可能会造成位置的严重后果。因此，我们需要避免使用，而是使用字符集</p>
+</blockquote>
+<h2 id="mkdir—-创建目录"><a href="#mkdir—-创建目录" class="headerlink" title="mkdir—-创建目录"></a>mkdir—-创建目录</h2><p>格式如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> mkdir directory1 directory2</span><br></pre></td></tr></table></figure>
+<p>可以同时创建多个目录</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/12/168df9a3060d3338?w=496&amp;h=59&amp;f=png&amp;s=11048" alt=""></p>
+<h2 id="cp—-复制文件和目录"><a href="#cp—-复制文件和目录" class="headerlink" title="cp—-复制文件和目录"></a>cp—-复制文件和目录</h2><p>具有两种不同的用法：</p>
+<h3 id="将单个文件或者目录item1复制到文件或目录item2中"><a href="#将单个文件或者目录item1复制到文件或目录item2中" class="headerlink" title="将单个文件或者目录item1复制到文件或目录item2中"></a>将单个文件或者目录item1复制到文件或目录item2中</h3><ul>
+<li>格式如下:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cp item1 item2</span><br></pre></td></tr></table></figure>
+<ul>
+<li>演示结果</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/12/168dfa1f653e2fa4?w=471&amp;h=74&amp;f=png&amp;s=15978" alt=""></p>
+<h3 id="将多个项目复制到一个目录中"><a href="#将多个项目复制到一个目录中" class="headerlink" title="将多个项目复制到一个目录中"></a>将多个项目复制到一个目录中</h3><ul>
+<li>格式如下:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cp item1 item2 directory</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>表  cp命令选项</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a,–archive</td>
+<td>复制文件和目录及其属性，包括所有权和权限。通常来说，赋值的文件具有用户所操作文件的默认属性</td>
+</tr>
+<tr>
+<td>-i,–interactive</td>
+<td>在覆盖一个已存在的文件前，提示用户进行确认。如果没有指定该选项，cp会默认覆盖</td>
+</tr>
+<tr>
+<td>-r,–recursive</td>
+<td>递归地复制目录及其内容。赋值目录时需要这个选项(或-a选项)</td>
+</tr>
+<tr>
+<td>-u,–update</td>
+<td>当将文件从一个目录复制到另一个目录时，只会复制那些目标目录中不存在的文件或时目标目录相应文件的更新文件</td>
+</tr>
+<tr>
+<td>-v, –verbose</td>
+<td>复制文件是，显示信息性消息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mv—-一处和重命名文件"><a href="#mv—-一处和重命名文件" class="headerlink" title="mv—-一处和重命名文件"></a>mv—-一处和重命名文件</h3><p>mv命令可以执行文件移动以及文件重命名操作，完成操作后，原来的文件名将不存在，他的用法与cp指令基本相似</p>
+<ul>
+<li>将文件（或目录）item1移动（或重命名）为item2</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> mv item1 item2</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将一个或多个条目从一个目录移动到另一个目录下</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> mv item... directory</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>表  mv选项</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i,  –interactive</td>
+<td>覆盖一个存在的文件之前，提示用户确认。未指定该选项，则会默认覆盖</td>
+</tr>
+<tr>
+<td>-u,  –update</td>
+<td>将文件从一个目录移动到另一个目录，只移动那些目标目录中不存在的文件或是目标目录里相文件的更新文件</td>
+</tr>
+<tr>
+<td>-v,  –verbose</td>
+<td>移动文件是显示信息性消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>演示结果</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/13/168e5cf42c5cbd4c?w=610&amp;h=60&amp;f=png&amp;s=23429" alt=""></p>
+<h3 id="rm—-删除文件和目录"><a href="#rm—-删除文件和目录" class="headerlink" title="rm—-删除文件和目录"></a>rm—-删除文件和目录</h3><p>rm命令用来删除文件和目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> rm item...</span><br></pre></td></tr></table></figure>
+<blockquote>
+<blockquote>
+<p><center><strong>小心rm命令</strong></center><br>在类Unix系统中，并不包含还原删除操作的命令。一旦使用rm命令删除掉，就彻底删除了。Linux认为操作用户是明智的，清楚自己再做些什么。<br>rm命令与通配符在一起时要尤其小心，如下所示：<br>rm <em>.html<br>        该指令会删掉所有后缀是html的文件，但若是在</em>与.html之间多打了一个空格，即:<br>rm * .html<br>        那么系统就会删掉所有文件，然后告诉用户没有找到叫做.html的文件<br><strong>提示</strong>：<br>        在使用rm指令时，可以先使用ls指令显示出自己要删除的文件，确认之后在使用rm指令删除掉。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>表  rm选项</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i,  –interactive</td>
+<td>删除一个已存在的文件前，提示用户确认（最好养成习惯加上该选项）</td>
+</tr>
+<tr>
+<td>-r,  –recursive</td>
+<td>递归地删除目录，将所选目录及其所有子目录一并递归删除（删除一个目录是必须指定该项）</td>
+</tr>
+<tr>
+<td>-f,  –force</td>
+<td>忽略不存在的文件并无需确认。该选项的优先级高于-i</td>
+</tr>
+<tr>
+<td>-v,  –verbose</td>
+<td>删除文件是显示信息性消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>演示结果</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/13/168e5f07b249ee95?w=422&amp;h=126&amp;f=png&amp;s=33898" alt=""></p>
+<h3 id="ln—-创建链接"><a href="#ln—-创建链接" class="headerlink" title="ln—-创建链接"></a>ln—-创建链接</h3><h4 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h4><p>硬链接是最初Unix创建链接的方式。默认情况下，每个文件有一个硬链接，该硬链接会给文件起名字。当创建一个硬链接的时候，会为这个文件创建一个额外的目录条目。</p>
+<ul>
+<li><p>局限性</p>
+<ul>
+<li>硬链接不能引用自身文件系统之外的文件。也就是说，链接不能引用与该链接不再同意磁盘分区的文件</li>
+<li>硬链接无法链接目录</li>
+</ul>
+</li>
+<li><p>创建硬链接</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ln file link</span><br></pre></td></tr></table></figure>
+<h4 id="符号链接"><a href="#符号链接" class="headerlink" title="符号链接"></a>符号链接</h4><p>符号链接是为了克服硬链接的局限性而创建的。通过创建一个特殊类型的文件来起作用的，该文件包含了只想引用文件或目录的文本指针。类似于Windows中的快捷方式</p>
+<ul>
+<li>创建符号链接</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ln -s item link</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Linux入门之认识Shell（一）"><a href="#Linux入门之认识Shell（一）" class="headerlink" title="Linux入门之认识Shell（一）"></a><a href="https://geniusdsy.github.io/posts/46bc4a49.html">Linux入门之认识Shell（一）</a></h1>
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>客官支持一下呗！你的支持是我更新的动力！！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://user-gold-cdn.xitu.io/2019/1/25/1688342d245fcbfd?w=713&h=714&f=jpeg&s=70072" alt="邓思远 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://user-gold-cdn.xitu.io/2019/1/25/16883441f27cb8ca?w=748&h=896&f=jpeg&s=146263" alt="邓思远 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Shell/" rel="tag"># Shell</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/ac4e22e0.html" rel="next" title="初识Redis（三）之数据结构">
+                <i class="fa fa-chevron-left"></i> 初识Redis（三）之数据结构
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -456,8 +915,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -628,6 +1096,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作文件与目录"><span class="nav-number">1.</span> <span class="nav-text">操作文件与目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通配符"><span class="nav-number">1.1.</span> <span class="nav-text">通配符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir—-创建目录"><span class="nav-number">1.2.</span> <span class="nav-text">mkdir—-创建目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp—-复制文件和目录"><span class="nav-number">1.3.</span> <span class="nav-text">cp—-复制文件和目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将单个文件或者目录item1复制到文件或目录item2中"><span class="nav-number">1.3.1.</span> <span class="nav-text">将单个文件或者目录item1复制到文件或目录item2中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将多个项目复制到一个目录中"><span class="nav-number">1.3.2.</span> <span class="nav-text">将多个项目复制到一个目录中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv—-一处和重命名文件"><span class="nav-number">1.3.3.</span> <span class="nav-text">mv—-一处和重命名文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm—-删除文件和目录"><span class="nav-number">1.3.4.</span> <span class="nav-text">rm—-删除文件和目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ln—-创建链接"><span class="nav-number">1.3.5.</span> <span class="nav-text">ln—-创建链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬链接"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">硬链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#符号链接"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">符号链接</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux入门之认识Shell（一）"><span class="nav-number">2.</span> <span class="nav-text">Linux入门之认识Shell（一）</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -782,6 +1267,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -795,9 +1284,28 @@
   <script id="dsq-count-scr" src="https://https-geniusdsy-github-io.disqus.com/count.js" async></script>
 
 
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://geniusdsy.github.io/posts/76aaa691.html";
+    this.page.identifier = "posts/76aaa691.html";
+    this.page.title = 'Linux入门之认识Shell（二）';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-geniusdsy-github-io.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
 
 
 
+
+
+  
 
 
   
