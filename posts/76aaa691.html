@@ -117,7 +117,15 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/12/168dfa1f653e2fa4?w=471&h=74&f=png&s=15978">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/13/168e5cf42c5cbd4c?w=610&h=60&f=png&s=23429">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/13/168e5f07b249ee95?w=422&h=126&f=png&s=33898">
-<meta property="og:updated_time" content="2019-02-13T10:29:38.850Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/13/168e73295ce1bd5f?w=366&h=72&f=png&s=13799">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/13/168e73b47496cd2c?w=389&h=111&f=png&s=28095">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/13/168e73e4337d20b9?w=379&h=36&f=png&s=8294">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/13/168e74455525301c?w=798&h=451&f=png&s=179086">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/13/168e74683743a9f7">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/13/168e74de450b2401?w=322&h=18&f=png&s=4240">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/13/168e74d34604c8df?w=901&h=622&f=png&s=155113">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/13/168e75530a9a3041?w=1030&h=690&f=png&s=235704">
+<meta property="og:updated_time" content="2019-02-13T14:49:21.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux入门之认识Shell（二）">
 <meta name="twitter:description" content="操作文件与目录通配符我们在查找一些文件或者一些目录时，需要找到符合条件的所有文件，这时候就需要模糊查询。在模糊查询中，必不可少的就是通配符的使用。  表  通配符     通配符 匹配项     * 匹配任意多个字符（包括0个和2个）   ? 匹配任一单个字符（不包括0个）   [characters] 匹配任意一个属于字符集中的字符   [!characters] 匹配任意一个不属于字符集中的字">
@@ -443,7 +451,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-13 18:29:38" itemprop="dateModified" datetime="2019-02-13T18:29:38+08:00">2019-02-13</time>
+                <time title="修改时间：2019-02-13 22:49:21" itemprop="dateModified" datetime="2019-02-13T22:49:21+08:00">2019-02-13</time>
               
             
           </span>
@@ -732,6 +740,114 @@
 <li>创建符号链接</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ln -s item link</span><br></pre></td></tr></table></figure>
+<h1 id="命令的使用"><a href="#命令的使用" class="headerlink" title="命令的使用"></a>命令的使用</h1><h2 id="什么是命令"><a href="#什么是命令" class="headerlink" title="什么是命令"></a>什么是命令</h2><p>一条命令不外乎以下4种情况：</p>
+<ul>
+<li>可执行程序</li>
+</ul>
+<p>可执行文件就像在/usr/bin目录里的那些文件一样。在该程序类别中，程序可以编译为二进制文件，比如C、C++语言编写的程序，也可以是shell、Python、Ruby等脚本语言编写的程序。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/13/168e73295ce1bd5f?w=366&amp;h=72&amp;f=png&amp;s=13799" alt=""></p>
+<ul>
+<li>shell内置命令</li>
+</ul>
+<p>bash支持许多内部称之为shell builtin的内置命令。例如：cd</p>
+<ul>
+<li>shell函数</li>
+</ul>
+<p>shell函数是合并到环境变量中的小型shell脚本</p>
+<ul>
+<li>alias命令</li>
+</ul>
+<p>在其他命令的基础上定义自己的命令（有点像自定义命令❔❔）</p>
+<h2 id="识别命令"><a href="#识别命令" class="headerlink" title="识别命令"></a>识别命令</h2><p>我们要去知道一些命令属于上面四种的哪一个，要用一些方法去辨别这些命令，Linux给我们提供了两个方法来识别命令类型。</p>
+<h3 id="type—-显示命令的类型"><a href="#type—-显示命令的类型" class="headerlink" title="type—-显示命令的类型"></a>type—-显示命令的类型</h3><p>type是一个shell内置命令，可以根据指定的命令名显示shell将要执行的命令类型。</p>
+<ul>
+<li>格式如下：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> type command</span><br></pre></td></tr></table></figure>
+<ul>
+<li>演示实例</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/13/168e73b47496cd2c?w=389&amp;h=111&amp;f=png&amp;s=28095" alt=""></p>
+<h3 id="which—-显示可执行程序的位置"><a href="#which—-显示可执行程序的位置" class="headerlink" title="which—-显示可执行程序的位置"></a>which—-显示可执行程序的位置</h3><p>在大型服务器中，可能会安装多个版本的可执行程序。使用which可以准确的显示该程序所处的准确位置。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> which ls</span><br></pre></td></tr></table></figure>
+<ul>
+<li>演示实例</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/13/168e73e4337d20b9?w=379&amp;h=36&amp;f=png&amp;s=8294" alt=""></p>
+<blockquote>
+<p>which只适用于可执行程序，其他种类的指令，只会无响应或者得到错误信息</p>
+</blockquote>
+<h2 id="获得命令文档"><a href="#获得命令文档" class="headerlink" title="获得命令文档"></a>获得命令文档</h2><p>每一类指令都会有文档作为他的使用须知，我们可以去阅读这些文档获得他的说明以及使用方法</p>
+<h3 id="help—-获得shell内置命令的帮助文档"><a href="#help—-获得shell内置命令的帮助文档" class="headerlink" title="help—-获得shell内置命令的帮助文档"></a>help—-获得shell内置命令的帮助文档</h3><p>bash为每一个shell内置命令提供了一个内置的帮助文档。输入help然后输入shell内置命令的名称即可使用该帮助文档。</p>
+<ul>
+<li>演示实例</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/13/168e74455525301c?w=798&amp;h=451&amp;f=png&amp;s=179086" alt=""></p>
+<h3 id="help—-显示命令的使用信息"><a href="#help—-显示命令的使用信息" class="headerlink" title="help—-显示命令的使用信息"></a>help—-显示命令的使用信息</h3><p>在可执行程序中，我们可以在其后跟上一个–help的选项进行获取帮助文档</p>
+<ul>
+<li>演示实例</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/13/168e74683743a9f7" alt=""></p>
+<p>即使有一些命令不支持–help选项，但是我们也应该去试一试，会获得错误信息以及相似命令的使用方法</p>
+<h3 id="man—-显示程序的手册页"><a href="#man—-显示程序的手册页" class="headerlink" title="man—-显示程序的手册页"></a>man—-显示程序的手册页</h3><p>大多数供命令行使用的可执行文件们提供一个陈志伟manual或者是man page的正式文档（有点像javadoc  api，开发者手册），这些文档可以使用一个叫做man的特殊分页程序来查看</p>
+<ul>
+<li>演示实例</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/13/168e74de450b2401?w=322&amp;h=18&amp;f=png&amp;s=4240" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/13/168e74d34604c8df?w=901&amp;h=622&amp;f=png&amp;s=155113" alt=""></p>
+<blockquote>
+<p>表  手册文档的组织结构</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>用户命令</td>
+</tr>
+<tr>
+<td>2</td>
+<td>内核系统调用的程序接口</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C库函数程序接口</td>
+</tr>
+<tr>
+<td>4</td>
+<td>特殊文件，如设备节点和驱动程序</td>
+</tr>
+<tr>
+<td>5</td>
+<td>文件格式</td>
+</tr>
+<tr>
+<td>6</td>
+<td>游戏和娱乐，例如：屏幕保护程序</td>
+</tr>
+<tr>
+<td>7</td>
+<td>其他杂项</td>
+</tr>
+<tr>
+<td>8</td>
+<td>系统管理命令</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>以文件格式展示passwd内容</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> man 5 passwd</span><br></pre></td></tr></table></figure>
+<ul>
+<li>演示实例</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/13/168e75530a9a3041?w=1030&amp;h=690&amp;f=png&amp;s=235704" alt=""></p>
 <hr>
 <h1 id="Linux入门之认识Shell（一）"><a href="#Linux入门之认识Shell（一）" class="headerlink" title="Linux入门之认识Shell（一）"></a><a href="https://geniusdsy.github.io/posts/46bc4a49.html">Linux入门之认识Shell（一）</a></h1>
       
@@ -862,6 +978,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/posts/3bb405c3.html" rel="prev" title="Linux入门之认识Shell（三）">
+                Linux入门之认识Shell（三） <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -941,7 +1061,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1021,7 +1141,7 @@
                    <span class="site-state-item-name">访客量</span>
               </div>
               <div class="site-state-item site-state-posts">
-                    <span class="site-state-item-count">13.5k</span>
+                    <span class="site-state-item-count">14.2k</span>
                     <span class="site-state-item-name">总字数</span>
               </div>
             </nav>
@@ -1105,7 +1225,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作文件与目录"><span class="nav-number">1.</span> <span class="nav-text">操作文件与目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通配符"><span class="nav-number">1.1.</span> <span class="nav-text">通配符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir—-创建目录"><span class="nav-number">1.2.</span> <span class="nav-text">mkdir—-创建目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp—-复制文件和目录"><span class="nav-number">1.3.</span> <span class="nav-text">cp—-复制文件和目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将单个文件或者目录item1复制到文件或目录item2中"><span class="nav-number">1.3.1.</span> <span class="nav-text">将单个文件或者目录item1复制到文件或目录item2中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将多个项目复制到一个目录中"><span class="nav-number">1.3.2.</span> <span class="nav-text">将多个项目复制到一个目录中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv—-一处和重命名文件"><span class="nav-number">1.3.3.</span> <span class="nav-text">mv—-一处和重命名文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm—-删除文件和目录"><span class="nav-number">1.3.4.</span> <span class="nav-text">rm—-删除文件和目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ln—-创建链接"><span class="nav-number">1.3.5.</span> <span class="nav-text">ln—-创建链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬链接"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">硬链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#符号链接"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">符号链接</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux入门之认识Shell（一）"><span class="nav-number">2.</span> <span class="nav-text">Linux入门之认识Shell（一）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作文件与目录"><span class="nav-number">1.</span> <span class="nav-text">操作文件与目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通配符"><span class="nav-number">1.1.</span> <span class="nav-text">通配符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir—-创建目录"><span class="nav-number">1.2.</span> <span class="nav-text">mkdir—-创建目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp—-复制文件和目录"><span class="nav-number">1.3.</span> <span class="nav-text">cp—-复制文件和目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将单个文件或者目录item1复制到文件或目录item2中"><span class="nav-number">1.3.1.</span> <span class="nav-text">将单个文件或者目录item1复制到文件或目录item2中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将多个项目复制到一个目录中"><span class="nav-number">1.3.2.</span> <span class="nav-text">将多个项目复制到一个目录中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv—-一处和重命名文件"><span class="nav-number">1.3.3.</span> <span class="nav-text">mv—-一处和重命名文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm—-删除文件和目录"><span class="nav-number">1.3.4.</span> <span class="nav-text">rm—-删除文件和目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ln—-创建链接"><span class="nav-number">1.3.5.</span> <span class="nav-text">ln—-创建链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬链接"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">硬链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#符号链接"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">符号链接</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令的使用"><span class="nav-number">2.</span> <span class="nav-text">命令的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是命令"><span class="nav-number">2.1.</span> <span class="nav-text">什么是命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#识别命令"><span class="nav-number">2.2.</span> <span class="nav-text">识别命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#type—-显示命令的类型"><span class="nav-number">2.2.1.</span> <span class="nav-text">type—-显示命令的类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#which—-显示可执行程序的位置"><span class="nav-number">2.2.2.</span> <span class="nav-text">which—-显示可执行程序的位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获得命令文档"><span class="nav-number">2.3.</span> <span class="nav-text">获得命令文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#help—-获得shell内置命令的帮助文档"><span class="nav-number">2.3.1.</span> <span class="nav-text">help—-获得shell内置命令的帮助文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#help—-显示命令的使用信息"><span class="nav-number">2.3.2.</span> <span class="nav-text">help—-显示命令的使用信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#man—-显示程序的手册页"><span class="nav-number">2.3.3.</span> <span class="nav-text">man—-显示程序的手册页</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux入门之认识Shell（一）"><span class="nav-number">3.</span> <span class="nav-text">Linux入门之认识Shell（一）</span></a></li></ol></div>
             
 
           </div>
