@@ -105,13 +105,13 @@
 
 
 
-  <meta name="description" content="[TOC] 一、认识Shell#我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景：  简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令# 查">
+  <meta name="description" content="一、认识Shell 1、简单的命令 2、文件系统 3、Linux系统 （1）最常用的命令 —ls （2）使用file命令确定文件类型 （3）使用less命令查看文件内容 （4）Linux的基础目录了解     Linux入门之认识Shell（二）     一、认识Shell#我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操">
 <meta name="keywords" content="Shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux入门之认识Shell（一）">
 <meta property="og:url" content="https://geniusdsy.github.io/posts/46bc4a49.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="[TOC] 一、认识Shell#我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景：  简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令# 查">
+<meta property="og:description" content="一、认识Shell 1、简单的命令 2、文件系统 3、Linux系统 （1）最常用的命令 —ls （2）使用file命令确定文件类型 （3）使用less命令查看文件内容 （4）Linux的基础目录了解     Linux入门之认识Shell（二）     一、认识Shell#我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2d3e29862108?w=333&h=34&f=png&s=2653">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2dd4c79855b8?w=329&h=36&f=png&s=5714">
@@ -143,10 +143,10 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/11/168da7adf9c0872f?w=546&h=325&f=png&s=63423">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/11/168dbb51c186eed8?w=798&h=65&f=png&s=13848">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/11/168dbbf8e4dccd3f?w=701&h=314&f=png&s=46427">
-<meta property="og:updated_time" content="2019-02-13T10:14:10.403Z">
+<meta property="og:updated_time" content="2019-02-13T10:18:17.684Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux入门之认识Shell（一）">
-<meta name="twitter:description" content="[TOC] 一、认识Shell#我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景：  简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令# 查">
+<meta name="twitter:description" content="一、认识Shell 1、简单的命令 2、文件系统 3、Linux系统 （1）最常用的命令 —ls （2）使用file命令确定文件类型 （3）使用less命令查看文件内容 （4）Linux的基础目录了解     Linux入门之认识Shell（二）     一、认识Shell#我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2d3e29862108?w=333&h=34&f=png&s=2653">
 
 
@@ -469,7 +469,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-13 18:14:10" itemprop="dateModified" datetime="2019-02-13T18:14:10+08:00">2019-02-13</time>
+                <time title="修改时间：2019-02-13 18:18:17" itemprop="dateModified" datetime="2019-02-13T18:18:17+08:00">2019-02-13</time>
               
             
           </span>
@@ -543,7 +543,27 @@
       
 
       
-        <p>[TOC]</p>
+        <div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#yi-ren-shi-shell">一、认识Shell</a><ul>
+<li><a href="#1-jian-dan-de-ming-ling">1、简单的命令</a></li>
+<li><a href="#2-wen-jian-xi-tong">2、文件系统</a></li>
+<li><a href="#3-linux-xi-tong">3、Linux系统</a><ul>
+<li><a href="#1-zui-chang-yong-de-ming-ling-ls">（1）最常用的命令 —ls</a></li>
+<li><a href="#2-shi-yong-file-ming-ling-que-ding-wen-jian-lei-xing">（2）使用file命令确定文件类型</a></li>
+<li><a href="#3-shi-yong-less-ming-ling-cha-kan-wen-jian-nei-rong">（3）使用less命令查看文件内容</a></li>
+<li><a href="#4-linux-de-ji-chu-mu-lu-liao-jie">（4）Linux的基础目录了解</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#linux-ru-men-zhi-ren-shi-shell-er-https-geniusdsy-github-io-posts-76aaa691-html">Linux入门之认识Shell（二）</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
 <h1><span id="yi-ren-shi-shell">一、认识Shell</span><a href="#yi-ren-shi-shell" class="header-anchor">#</a></h1><p>我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。</p>
 <p>我们打开终端，就可以看见下面的场景：</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2d3e29862108?w=333&amp;h=34&amp;f=png&amp;s=2653" alt="终端"></p>
@@ -1214,7 +1234,7 @@
                    <span class="site-state-item-name">访客量</span>
               </div>
               <div class="site-state-item site-state-posts">
-                    <span class="site-state-item-count">13.5k</span>
+                    <span class="site-state-item-count">14.2k</span>
                     <span class="site-state-item-name">总字数</span>
               </div>
             </nav>

@@ -105,22 +105,22 @@
 
 
 
-  <meta name="description" content="[TOC] python的语言格式不严格  弱数据类型语言，根据你的赋值情况来确定变量的类型  12345a = 10a = &amp;apos;还可以赋值字符串&amp;apos;int b = 10# b = &amp;apos;报错&amp;apos; 若使用具体的数据类型进行定义，则不能进行其他类型的数据进行更改数据  Python的注释是使用#进行注释  1、print# print (‘这样可以输出一句话’)  pr">
+  <meta name="description" content="1、print 2、变量 3、字符串的定义 4、if语句 5、for循环 6、List(有序) 7、tuple不可变数组 8、dict(无序) 9、set 10、函数 1、abs(x) 2、cmp(x,y) 3、int(x) 4、str(x) 5、sum(x)   11、编写函数 12、复杂表达式 13、条件过滤 14、多层表达式     python的语言格式不严格  弱数据类型语言，根">
 <meta name="keywords" content="Python,入门">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python入门">
 <meta property="og:url" content="https://geniusdsy.github.io/posts/d9ef328.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="[TOC] python的语言格式不严格  弱数据类型语言，根据你的赋值情况来确定变量的类型  12345a = 10a = &amp;apos;还可以赋值字符串&amp;apos;int b = 10# b = &amp;apos;报错&amp;apos; 若使用具体的数据类型进行定义，则不能进行其他类型的数据进行更改数据  Python的注释是使用#进行注释  1、print# print (‘这样可以输出一句话’)  pr">
+<meta property="og:description" content="1、print 2、变量 3、字符串的定义 4、if语句 5、for循环 6、List(有序) 7、tuple不可变数组 8、dict(无序) 9、set 10、函数 1、abs(x) 2、cmp(x,y) 3、int(x) 4、str(x) 5、sum(x)   11、编写函数 12、复杂表达式 13、条件过滤 14、多层表达式     python的语言格式不严格  弱数据类型语言，根">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/22/167d60be7fe73a27?w=236&h=58&f=png&s=8455">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/22/167d60c0fe3ecb28?w=236&h=84&f=png&s=12020">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/22/167d60c33dceeebe?w=236&h=90&f=png&s=13150">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/26/1688a0261d70ac62?w=157&h=132&f=png&s=5791">
-<meta property="og:updated_time" content="2019-02-13T09:53:05.286Z">
+<meta property="og:updated_time" content="2019-02-13T10:18:32.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python入门">
-<meta name="twitter:description" content="[TOC] python的语言格式不严格  弱数据类型语言，根据你的赋值情况来确定变量的类型  12345a = 10a = &amp;apos;还可以赋值字符串&amp;apos;int b = 10# b = &amp;apos;报错&amp;apos; 若使用具体的数据类型进行定义，则不能进行其他类型的数据进行更改数据  Python的注释是使用#进行注释  1、print# print (‘这样可以输出一句话’)  pr">
+<meta name="twitter:description" content="1、print 2、变量 3、字符串的定义 4、if语句 5、for循环 6、List(有序) 7、tuple不可变数组 8、dict(无序) 9、set 10、函数 1、abs(x) 2、cmp(x,y) 3、int(x) 4、str(x) 5、sum(x)   11、编写函数 12、复杂表达式 13、条件过滤 14、多层表达式     python的语言格式不严格  弱数据类型语言，根">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/12/22/167d60be7fe73a27?w=236&h=58&f=png&s=8455">
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-13 17:53:05" itemprop="dateModified" datetime="2019-02-13T17:53:05+08:00">2019-02-13</time>
+                <time title="修改时间：2019-02-13 18:18:32" itemprop="dateModified" datetime="2019-02-13T18:18:32+08:00">2019-02-13</time>
               
             
           </span>
@@ -517,7 +517,35 @@
       
 
       
-        <p>[TOC]</p>
+        <div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#1-print">1、print</a></li>
+<li><a href="#2-bian-liang">2、变量</a></li>
+<li><a href="#3-zi-fu-chuan-de-ding-yi">3、字符串的定义</a></li>
+<li><a href="#4-if-yu-ju">4、if语句</a></li>
+<li><a href="#5-for-xun-huan">5、for循环</a></li>
+<li><a href="#6-list-you-xu">6、List(有序)</a></li>
+<li><a href="#7-tuple-bu-ke-bian-shu-zu">7、tuple不可变数组</a></li>
+<li><a href="#8-dict-wu-xu">8、dict(无序)</a></li>
+<li><a href="#9-set">9、set</a></li>
+<li><a href="#10-han-shu">10、函数</a><ul>
+<li><a href="#1-abs-x">1、abs(x)</a></li>
+<li><a href="#2-cmp-x-y">2、cmp(x,y)</a></li>
+<li><a href="#3-int-x">3、int(x)</a></li>
+<li><a href="#4-str-x">4、str(x)</a></li>
+<li><a href="#5-sum-x">5、sum(x)</a></li>
+</ul>
+</li>
+<li><a href="#11-bian-xie-han-shu">11、编写函数</a></li>
+<li><a href="#12-fu-za-biao-da-shi">12、复杂表达式</a></li>
+<li><a href="#13-tiao-jian-guo-lu">13、条件过滤</a></li>
+<li><a href="#14-duo-ceng-biao-da-shi">14、多层表达式</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
 <p>python的语言格式不严格</p>
 <ul>
 <li>弱数据类型语言，根据你的赋值情况来确定变量的类型</li>
@@ -1094,7 +1122,7 @@ print &apos;&lt;/table&gt;&apos;
                    <span class="site-state-item-name">访客量</span>
               </div>
               <div class="site-state-item site-state-posts">
-                    <span class="site-state-item-count">13.5k</span>
+                    <span class="site-state-item-count">14.2k</span>
                     <span class="site-state-item-name">总字数</span>
               </div>
             </nav>
