@@ -105,18 +105,18 @@
 
 
 
-  <meta name="description" content="NoSQL的特点 一、键值类（key-value） 1、相关产品 2、应用场景 3、数据模型 4.优点 5、缺点   二、列存储数据库 1、相关产品 2、应用场景 3、数据模型 4.优点 5、缺点   三、文档型数据库 1、相关产品 2、应用场景 3、数据模型 4、优点 5、缺点   4、图形（Graph）数据库 1、相关产品 2、应用场景 3.数据模型 4、优点 5、缺点 备注：以上是对">
+  <meta name="description" content="NoSQL的特点 易扩展 大数据量，高性能 灵活的数据类型 高可用  一、键值类（key-value）1、相关产品 Tokyo Cabinet/Tyrant Redis（最常用） Voldemort Berkeley DB  2、应用场景内容缓存，主要用户处理大量数据的高访问负载 3、数据模型一系列键值对 4.优点快速查询 5、缺点存储的数据缺少结构化 二、列存储数据库1、相关产品 Cassand">
 <meta name="keywords" content="NoSql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="四类NoSql数据库">
 <meta property="og:url" content="https://geniusdsy.github.io/posts/666351ef.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="NoSQL的特点 一、键值类（key-value） 1、相关产品 2、应用场景 3、数据模型 4.优点 5、缺点   二、列存储数据库 1、相关产品 2、应用场景 3、数据模型 4.优点 5、缺点   三、文档型数据库 1、相关产品 2、应用场景 3、数据模型 4、优点 5、缺点   4、图形（Graph）数据库 1、相关产品 2、应用场景 3.数据模型 4、优点 5、缺点 备注：以上是对">
+<meta property="og:description" content="NoSQL的特点 易扩展 大数据量，高性能 灵活的数据类型 高可用  一、键值类（key-value）1、相关产品 Tokyo Cabinet/Tyrant Redis（最常用） Voldemort Berkeley DB  2、应用场景内容缓存，主要用户处理大量数据的高访问负载 3、数据模型一系列键值对 4.优点快速查询 5、缺点存储的数据缺少结构化 二、列存储数据库1、相关产品 Cassand">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-13T10:19:14.450Z">
+<meta property="og:updated_time" content="2019-02-13T10:21:52.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="四类NoSql数据库">
-<meta name="twitter:description" content="NoSQL的特点 一、键值类（key-value） 1、相关产品 2、应用场景 3、数据模型 4.优点 5、缺点   二、列存储数据库 1、相关产品 2、应用场景 3、数据模型 4.优点 5、缺点   三、文档型数据库 1、相关产品 2、应用场景 3、数据模型 4、优点 5、缺点   4、图形（Graph）数据库 1、相关产品 2、应用场景 3.数据模型 4、优点 5、缺点 备注：以上是对">
+<meta name="twitter:description" content="NoSQL的特点 易扩展 大数据量，高性能 灵活的数据类型 高可用  一、键值类（key-value）1、相关产品 Tokyo Cabinet/Tyrant Redis（最常用） Voldemort Berkeley DB  2、应用场景内容缓存，主要用户处理大量数据的高访问负载 3、数据模型一系列键值对 4.优点快速查询 5、缺点存储的数据缺少结构化 二、列存储数据库1、相关产品 Cassand">
 
 
 
@@ -438,7 +438,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-13 18:19:14" itemprop="dateModified" datetime="2019-02-13T18:19:14+08:00">2019-02-13</time>
+                <time title="修改时间：2019-02-13 18:21:52" itemprop="dateModified" datetime="2019-02-13T18:21:52+08:00">2019-02-13</time>
               
             
           </span>
@@ -512,93 +512,49 @@
       
 
       
-        <div class="toc">
-
-<!-- toc -->
-<ul>
-<li><a href="#nosql-de-te-dian">NoSQL的特点</a><ul>
-<li><a href="#yi-jian-zhi-lei-key-value">一、键值类（key-value）</a><ul>
-<li><a href="#1-xiang-guan-chan-pin">1、相关产品</a></li>
-<li><a href="#2-ying-yong-chang-jing">2、应用场景</a></li>
-<li><a href="#3-shu-ju-mo-xing">3、数据模型</a></li>
-<li><a href="#4-you-dian">4.优点</a></li>
-<li><a href="#5-que-dian">5、缺点</a></li>
-</ul>
-</li>
-<li><a href="#er-lie-cun-chu-shu-ju-ku">二、列存储数据库</a><ul>
-<li><a href="#1-xiang-guan-chan-pin-1">1、相关产品</a></li>
-<li><a href="#2-ying-yong-chang-jing-1">2、应用场景</a></li>
-<li><a href="#3-shu-ju-mo-xing-1">3、数据模型</a></li>
-<li><a href="#4-you-dian-1">4.优点</a></li>
-<li><a href="#5-que-dian-1">5、缺点</a></li>
-</ul>
-</li>
-<li><a href="#san-wen-dang-xing-shu-ju-ku">三、文档型数据库</a><ul>
-<li><a href="#1-xiang-guan-chan-pin-2">1、相关产品</a></li>
-<li><a href="#2-ying-yong-chang-jing-2">2、应用场景</a></li>
-<li><a href="#3-shu-ju-mo-xing-2">3、数据模型</a></li>
-<li><a href="#4-you-dian">4、优点</a></li>
-<li><a href="#5-que-dian-2">5、缺点</a></li>
-</ul>
-</li>
-<li><a href="#4-tu-xing-graph-shu-ju-ku">4、图形（Graph）数据库</a><ul>
-<li><a href="#1-xiang-guan-chan-pin-3">1、相关产品</a></li>
-<li><a href="#2-ying-yong-chang-jing-3">2、应用场景</a></li>
-<li><a href="#3-shu-ju-mo-xing">3.数据模型</a></li>
-<li><a href="#4-you-dian-1">4、优点</a></li>
-<li><a href="#5-que-dian-3">5、缺点</a></li>
-<li><a href="#bei-zhu-yi-shang-shi-dui-si-lei-nosql-de-jian-dan-jie-shao-yu-qu-bie-hou-qi-hui-dui-ge-lei-zhong-dian-xing-de-shu-ju-ku-jin-xing-jie-shao-fen-xi-you-dai-wan-shan">备注：以上是对四类NoSQL的简单介绍与区别，后期会对各类中典型的数据库进行介绍分析，有待完善</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-</div>
-
-<h1><span id="nosql-de-te-dian">NoSQL的特点</span><a href="#nosql-de-te-dian" class="header-anchor">#</a></h1><ul>
+        <h1><span id="nosql的特点">NoSQL的特点</span></h1><ul>
 <li>易扩展</li>
 <li>大数据量，高性能</li>
 <li>灵活的数据类型</li>
 <li>高可用</li>
 </ul>
-<h2><span id="yi-jian-zhi-lei-key-value">一、键值类（key-value）</span><a href="#yi-jian-zhi-lei-key-value" class="header-anchor">#</a></h2><h3><span id="1-xiang-guan-chan-pin">1、相关产品</span><a href="#1-xiang-guan-chan-pin" class="header-anchor">#</a></h3><ul>
+<h2><span id="一-键值类key-value">一、键值类（key-value）</span></h2><h3><span id="1-相关产品">1、相关产品</span></h3><ul>
 <li>Tokyo Cabinet/Tyrant</li>
 <li>Redis（最常用）</li>
 <li>Voldemort</li>
 <li>Berkeley DB</li>
 </ul>
-<h3><span id="2-ying-yong-chang-jing">2、应用场景</span><a href="#2-ying-yong-chang-jing" class="header-anchor">#</a></h3><p>内容缓存，主要用户处理大量数据的高访问负载</p>
-<h3><span id="3-shu-ju-mo-xing">3、数据模型</span><a href="#3-shu-ju-mo-xing" class="header-anchor">#</a></h3><p>一系列键值对</p>
-<h3><span id="4-you-dian">4.优点</span><a href="#4-you-dian" class="header-anchor">#</a></h3><p>快速查询</p>
-<h3><span id="5-que-dian">5、缺点</span><a href="#5-que-dian" class="header-anchor">#</a></h3><p>存储的数据缺少结构化</p>
-<h2><span id="er-lie-cun-chu-shu-ju-ku">二、列存储数据库</span><a href="#er-lie-cun-chu-shu-ju-ku" class="header-anchor">#</a></h2><h3><span id="1-xiang-guan-chan-pin">1、相关产品</span><a href="#1-xiang-guan-chan-pin" class="header-anchor">#</a></h3><ul>
+<h3><span id="2-应用场景">2、应用场景</span></h3><p>内容缓存，主要用户处理大量数据的高访问负载</p>
+<h3><span id="3-数据模型">3、数据模型</span></h3><p>一系列键值对</p>
+<h3><span id="4优点">4.优点</span></h3><p>快速查询</p>
+<h3><span id="5-缺点">5、缺点</span></h3><p>存储的数据缺少结构化</p>
+<h2><span id="二-列存储数据库">二、列存储数据库</span></h2><h3><span id="1-相关产品">1、相关产品</span></h3><ul>
 <li>Cassandra</li>
 <li>HBase</li>
 <li>Riak</li>
 </ul>
-<h3><span id="2-ying-yong-chang-jing">2、应用场景</span><a href="#2-ying-yong-chang-jing" class="header-anchor">#</a></h3><p>分布式的文件系统</p>
-<h3><span id="3-shu-ju-mo-xing">3、数据模型</span><a href="#3-shu-ju-mo-xing" class="header-anchor">#</a></h3><p>以列簇式存储，将同一列数据存在一起</p>
-<h3><span id="4-you-dian">4.优点</span><a href="#4-you-dian" class="header-anchor">#</a></h3><p>查询速度快，可扩展性强，更容易进行分布式扩展</p>
-<h3><span id="5-que-dian">5、缺点</span><a href="#5-que-dian" class="header-anchor">#</a></h3><p>功能相对局限</p>
-<h2><span id="san-wen-dang-xing-shu-ju-ku">三、文档型数据库</span><a href="#san-wen-dang-xing-shu-ju-ku" class="header-anchor">#</a></h2><h3><span id="1-xiang-guan-chan-pin">1、相关产品</span><a href="#1-xiang-guan-chan-pin" class="header-anchor">#</a></h3><ul>
+<h3><span id="2-应用场景">2、应用场景</span></h3><p>分布式的文件系统</p>
+<h3><span id="3-数据模型">3、数据模型</span></h3><p>以列簇式存储，将同一列数据存在一起</p>
+<h3><span id="4优点">4.优点</span></h3><p>查询速度快，可扩展性强，更容易进行分布式扩展</p>
+<h3><span id="5-缺点">5、缺点</span></h3><p>功能相对局限</p>
+<h2><span id="三-文档型数据库">三、文档型数据库</span></h2><h3><span id="1-相关产品">1、相关产品</span></h3><ul>
 <li>CouchDB</li>
 <li>MongoDb</li>
 </ul>
-<h3><span id="2-ying-yong-chang-jing">2、应用场景</span><a href="#2-ying-yong-chang-jing" class="header-anchor">#</a></h3><p>Web应用（与key-value类似，value是结构化的）</p>
-<h3><span id="3-shu-ju-mo-xing">3、数据模型</span><a href="#3-shu-ju-mo-xing" class="header-anchor">#</a></h3><p>一系列键值对</p>
-<h3><span id="4-you-dian">4、优点</span><a href="#4-you-dian" class="header-anchor">#</a></h3><p>数据结构要求不严格</p>
-<h3><span id="5-que-dian">5、缺点</span><a href="#5-que-dian" class="header-anchor">#</a></h3><p>查询性能不高，而且缺乏统一的查询语法</p>
-<h2><span id="4-tu-xing-graph-shu-ju-ku">4、图形（Graph）数据库</span><a href="#4-tu-xing-graph-shu-ju-ku" class="header-anchor">#</a></h2><h3><span id="1-xiang-guan-chan-pin">1、相关产品</span><a href="#1-xiang-guan-chan-pin" class="header-anchor">#</a></h3><ul>
+<h3><span id="2-应用场景">2、应用场景</span></h3><p>Web应用（与key-value类似，value是结构化的）</p>
+<h3><span id="3-数据模型">3、数据模型</span></h3><p>一系列键值对</p>
+<h3><span id="4-优点">4、优点</span></h3><p>数据结构要求不严格</p>
+<h3><span id="5-缺点">5、缺点</span></h3><p>查询性能不高，而且缺乏统一的查询语法</p>
+<h2><span id="4-图形graph数据库">4、图形（Graph）数据库</span></h2><h3><span id="1-相关产品">1、相关产品</span></h3><ul>
 <li>Neo4j</li>
 <li>IofoGrid</li>
 <li>Infinite Graph</li>
 </ul>
-<h3><span id="2-ying-yong-chang-jing">2、应用场景</span><a href="#2-ying-yong-chang-jing" class="header-anchor">#</a></h3><p>社交网络，推荐系统等，专注于构建关系图</p>
-<h3><span id="3-shu-ju-mo-xing">3.数据模型</span><a href="#3-shu-ju-mo-xing" class="header-anchor">#</a></h3><p>图结构</p>
-<h3><span id="4-you-dian">4、优点</span><a href="#4-you-dian" class="header-anchor">#</a></h3><p>利用图结构相关算法</p>
-<h3><span id="5-que-dian">5、缺点</span><a href="#5-que-dian" class="header-anchor">#</a></h3><p>需要对整个图做计算才能得出结果，不容易做分布式的集群方案</p>
-<h3><span id="bei-zhu-yi-shang-shi-dui-si-lei-nosql-de-jian-dan-jie-shao-yu-qu-bie-hou-qi-hui-dui-ge-lei-zhong-dian-xing-de-shu-ju-ku-jin-xing-jie-shao-fen-xi-you-dai-wan-shan">备注：以上是对四类NoSQL的简单介绍与区别，后期会对各类中典型的数据库进行介绍分析，有待完善</span><a href="#bei-zhu-yi-shang-shi-dui-si-lei-nosql-de-jian-dan-jie-shao-yu-qu-bie-hou-qi-hui-dui-ge-lei-zhong-dian-xing-de-shu-ju-ku-jin-xing-jie-shao-fen-xi-you-dai-wan-shan" class="header-anchor">#</a></h3>
+<h3><span id="2-应用场景">2、应用场景</span></h3><p>社交网络，推荐系统等，专注于构建关系图</p>
+<h3><span id="3数据模型">3.数据模型</span></h3><p>图结构</p>
+<h3><span id="4-优点">4、优点</span></h3><p>利用图结构相关算法</p>
+<h3><span id="5-缺点">5、缺点</span></h3><p>需要对整个图做计算才能得出结果，不容易做分布式的集群方案</p>
+<h3><span id="备注以上是对四类nosql的简单介绍与区别后期会对各类中典型的数据库进行介绍分析有待完善">备注：以上是对四类NoSQL的简单介绍与区别，后期会对各类中典型的数据库进行介绍分析，有待完善</span></h3>
       
     </div>
 
@@ -890,7 +846,7 @@
                    <span class="site-state-item-name">访客量</span>
               </div>
               <div class="site-state-item site-state-posts">
-                    <span class="site-state-item-count">14.2k</span>
+                    <span class="site-state-item-count">13.5k</span>
                     <span class="site-state-item-name">总字数</span>
               </div>
             </nav>
@@ -974,7 +930,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">NoSQL的特点#</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">一、键值类（key-value）#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、相关产品#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、应用场景#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、数据模型#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.优点#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.5.</span> <span class="nav-text">5、缺点#</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">二、列存储数据库#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、相关产品#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、应用场景#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.3.</span> <span class="nav-text">3、数据模型#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.优点#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.5.</span> <span class="nav-text">5、缺点#</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">三、文档型数据库#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.</span> <span class="nav-text">1、相关产品#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.2.</span> <span class="nav-text">2、应用场景#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.3.</span> <span class="nav-text">3、数据模型#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.4.</span> <span class="nav-text">4、优点#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.5.</span> <span class="nav-text">5、缺点#</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text">4、图形（Graph）数据库#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.1.</span> <span class="nav-text">1、相关产品#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.2.</span> <span class="nav-text">2、应用场景#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.3.</span> <span class="nav-text">3.数据模型#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.4.</span> <span class="nav-text">4、优点#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.5.</span> <span class="nav-text">5、缺点#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.6.</span> <span class="nav-text">备注：以上是对四类NoSQL的简单介绍与区别，后期会对各类中典型的数据库进行介绍分析，有待完善#</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">NoSQL的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">一、键值类（key-value）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、相关产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.5.</span> <span class="nav-text">5、缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">二、列存储数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、相关产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.3.</span> <span class="nav-text">3、数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.5.</span> <span class="nav-text">5、缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">三、文档型数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.</span> <span class="nav-text">1、相关产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.2.</span> <span class="nav-text">2、应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.3.</span> <span class="nav-text">3、数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.4.</span> <span class="nav-text">4、优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.5.</span> <span class="nav-text">5、缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text">4、图形（Graph）数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.1.</span> <span class="nav-text">1、相关产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.2.</span> <span class="nav-text">2、应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.3.</span> <span class="nav-text">3.数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.4.</span> <span class="nav-text">4、优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.5.</span> <span class="nav-text">5、缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.6.</span> <span class="nav-text">备注：以上是对四类NoSQL的简单介绍与区别，后期会对各类中典型的数据库进行介绍分析，有待完善</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

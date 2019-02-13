@@ -105,20 +105,20 @@
 
 
 
-  <meta name="description" content="安装Docker 1、安装环境 2、安装过程 （1）若之前安装过老版本，则先卸载掉之前的老版本 （2）安装docker-ce与密钥管理与下载相关工具 （3）下载并安装密钥 （4）查看密钥是否安装成功 （5）添加docker官方仓库 （6）更新仓库 （7）安装docker-ce （8）查看安装的版本信息 （9）验证docker是否被正确安装且能够正常使用   3、更换国内docker加速器">
+  <meta name="description" content="今天在虚拟机上乱搞，准备使用redis的端口开放给本机使用，结果防火墙没搞好，把之前的Docker给搞崩了，又只能卸载掉，重新装了一下，记录一下本次安装的过程，谨防下次搞崩重装，却不知所措。 安装Docker1、安装环境deepin系统15.8 2、安装过程深度官方deepin的应用仓库已经集成了docker，不过类似docker-ce这种最新版。要想使用最新版可以参考官网 debian 安装教程">
 <meta name="keywords" content="Docker,安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识Docker（一）之安装">
 <meta property="og:url" content="https://geniusdsy.github.io/posts/6507e5e0.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="安装Docker 1、安装环境 2、安装过程 （1）若之前安装过老版本，则先卸载掉之前的老版本 （2）安装docker-ce与密钥管理与下载相关工具 （3）下载并安装密钥 （4）查看密钥是否安装成功 （5）添加docker官方仓库 （6）更新仓库 （7）安装docker-ce （8）查看安装的版本信息 （9）验证docker是否被正确安装且能够正常使用   3、更换国内docker加速器">
+<meta property="og:description" content="今天在虚拟机上乱搞，准备使用redis的端口开放给本机使用，结果防火墙没搞好，把之前的Docker给搞崩了，又只能卸载掉，重新装了一下，记录一下本次安装的过程，谨防下次搞崩重装，却不知所措。 安装Docker1、安装环境deepin系统15.8 2、安装过程深度官方deepin的应用仓库已经集成了docker，不过类似docker-ce这种最新版。要想使用最新版可以参考官网 debian 安装教程">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/3/168b3e37b67cee11?w=1025&h=623&f=png&s=88518">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/3/168b3e436af69572?w=1027&h=623&f=png&s=102058">
-<meta property="og:updated_time" content="2019-02-13T10:18:50.240Z">
+<meta property="og:updated_time" content="2019-02-13T10:21:49.932Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Docker（一）之安装">
-<meta name="twitter:description" content="安装Docker 1、安装环境 2、安装过程 （1）若之前安装过老版本，则先卸载掉之前的老版本 （2）安装docker-ce与密钥管理与下载相关工具 （3）下载并安装密钥 （4）查看密钥是否安装成功 （5）添加docker官方仓库 （6）更新仓库 （7）安装docker-ce （8）查看安装的版本信息 （9）验证docker是否被正确安装且能够正常使用   3、更换国内docker加速器">
+<meta name="twitter:description" content="今天在虚拟机上乱搞，准备使用redis的端口开放给本机使用，结果防火墙没搞好，把之前的Docker给搞崩了，又只能卸载掉，重新装了一下，记录一下本次安装的过程，谨防下次搞崩重装，却不知所措。 安装Docker1、安装环境deepin系统15.8 2、安装过程深度官方deepin的应用仓库已经集成了docker，不过类似docker-ce这种最新版。要想使用最新版可以参考官网 debian 安装教程">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/3/168b3e37b67cee11?w=1025&h=623&f=png&s=88518">
 
 
@@ -441,7 +441,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-13 18:18:50" itemprop="dateModified" datetime="2019-02-13T18:18:50+08:00">2019-02-13</time>
+                <time title="修改时间：2019-02-13 18:21:49" itemprop="dateModified" datetime="2019-02-13T18:21:49+08:00">2019-02-13</time>
               
             
           </span>
@@ -515,50 +515,19 @@
       
 
       
-        <div class="toc">
-
-<!-- toc -->
-<ul>
-<li><a href="#an-zhuang-docker">安装Docker</a><ul>
-<li><a href="#1-an-zhuang-huan-jing">1、安装环境</a></li>
-<li><a href="#2-an-zhuang-guo-cheng">2、安装过程</a><ul>
-<li><a href="#1-ruo-zhi-qian-an-zhuang-guo-lao-ban-ben-ze-xian-xie-zai-diao-zhi-qian-de-lao-ban-ben">（1）若之前安装过老版本，则先卸载掉之前的老版本</a></li>
-<li><a href="#2-an-zhuang-docker-ce-yu-mi-yao-guan-li-yu-xia-zai-xiang-guan-gong-ju">（2）安装docker-ce与密钥管理与下载相关工具</a></li>
-<li><a href="#3-xia-zai-bing-an-zhuang-mi-yao">（3）下载并安装密钥</a></li>
-<li><a href="#4-cha-kan-mi-yao-shi-fou-an-zhuang-cheng-gong">（4）查看密钥是否安装成功</a></li>
-<li><a href="#5-tian-jia-docker-guan-fang-cang-ku">（5）添加docker官方仓库</a></li>
-<li><a href="#6-geng-xin-cang-ku">（6）更新仓库</a></li>
-<li><a href="#7-an-zhuang-docker-ce">（7）安装docker-ce</a></li>
-<li><a href="#8-cha-kan-an-zhuang-de-ban-ben-xin-xi">（8）查看安装的版本信息</a></li>
-<li><a href="#9-yan-zheng-docker-shi-fou-bei-zheng-que-an-zhuang-qie-neng-gou-zheng-chang-shi-yong">（9）验证docker是否被正确安装且能够正常使用</a></li>
-</ul>
-</li>
-<li><a href="#3-geng-huan-guo-nei-docker-jia-su-qi">3、更换国内docker加速器</a><ul>
-<li><a href="#1-fang-fa-yi-shi-yong-a-li-yun-de-docker-jia-su-qi">（1）方法一：使用阿里云的docker加速器</a></li>
-<li><a href="#2-fang-fa-er-shi-yong-docker-cn-ti-gong-de-jing-xiang-yuan">（2）方法二：使用docker-cn提供的镜像源</a></li>
-</ul>
-</li>
-<li><a href="#4-ke-shi-hua-guan-li">4、可视化管理</a></li>
-<li><a href="#5-jin-zhi-kai-ji-zi-qi">5、禁止开机自启</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-</div>
-
-<p>今天在虚拟机上乱搞，准备使用redis的端口开放给本机使用，结果防火墙没搞好，把之前的Docker给搞崩了，又只能卸载掉，重新装了一下，记录一下本次安装的过程，谨防下次搞崩重装，却不知所措。</p>
-<h1><span id="an-zhuang-docker">安装Docker</span><a href="#an-zhuang-docker" class="header-anchor">#</a></h1><h2><span id="1-an-zhuang-huan-jing">1、安装环境</span><a href="#1-an-zhuang-huan-jing" class="header-anchor">#</a></h2><p>deepin系统15.8</p>
-<h2><span id="2-an-zhuang-guo-cheng">2、安装过程</span><a href="#2-an-zhuang-guo-cheng" class="header-anchor">#</a></h2><p>深度官方deepin的应用仓库已经集成了docker，不过类似docker-ce这种最新版。要想使用最新版可以参考官网 debian 安装教程安装，不过由于深度15.4基于 sid 版本开发，通过 $(lsb_release -cs) 获取的版本信息为 unstable，而docker官方源并没提供 sid 这种unstable版本的docker，所以使用官方教程是安装不成功的。</p>
-<h3><span id="1-ruo-zhi-qian-an-zhuang-guo-lao-ban-ben-ze-xian-xie-zai-diao-zhi-qian-de-lao-ban-ben">（1）若之前安装过老版本，则先卸载掉之前的老版本</span><a href="#1-ruo-zhi-qian-an-zhuang-guo-lao-ban-ben-ze-xian-xie-zai-diao-zhi-qian-de-lao-ban-ben" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get remove docker.io docker-engine</span><br></pre></td></tr></table></figure>
-<h3><span id="2-an-zhuang-docker-ce-yu-mi-yao-guan-li-yu-xia-zai-xiang-guan-gong-ju">（2）安装docker-ce与密钥管理与下载相关工具</span><a href="#2-an-zhuang-docker-ce-yu-mi-yao-guan-li-yu-xia-zai-xiang-guan-gong-ju" class="header-anchor">#</a></h3><blockquote>
+        <p>今天在虚拟机上乱搞，准备使用redis的端口开放给本机使用，结果防火墙没搞好，把之前的Docker给搞崩了，又只能卸载掉，重新装了一下，记录一下本次安装的过程，谨防下次搞崩重装，却不知所措。</p>
+<h1><span id="安装docker">安装Docker</span></h1><h2><span id="1-安装环境">1、安装环境</span></h2><p>deepin系统15.8</p>
+<h2><span id="2-安装过程">2、安装过程</span></h2><p>深度官方deepin的应用仓库已经集成了docker，不过类似docker-ce这种最新版。要想使用最新版可以参考官网 debian 安装教程安装，不过由于深度15.4基于 sid 版本开发，通过 $(lsb_release -cs) 获取的版本信息为 unstable，而docker官方源并没提供 sid 这种unstable版本的docker，所以使用官方教程是安装不成功的。</p>
+<h3><span id="1若之前安装过老版本则先卸载掉之前的老版本">（1）若之前安装过老版本，则先卸载掉之前的老版本</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get remove docker.io docker-engine</span><br></pre></td></tr></table></figure>
+<h3><span id="2安装docker-ce与密钥管理与下载相关工具">（2）安装docker-ce与密钥管理与下载相关工具</span></h3><blockquote>
 <p>说明：这里主要提供curl命令、software-properties-common包提供的add-apt-repository和密钥管理工具</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install apt-transport-https ca-cerificates curl python-software-properties software-properties-common</span><br></pre></td></tr></table></figure>
-<h3><span id="3-xia-zai-bing-an-zhuang-mi-yao">（3）下载并安装密钥</span><a href="#3-xia-zai-bing-an-zhuang-mi-yao" class="header-anchor">#</a></h3><p>鉴于国内网络问题，强烈建议使用国内源，官方源请在注释中查看。 国内源可选用<a href="https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/" target="_blank">清华大学开源软件镜像站</a>或<a href="http://mirrors.ustc.edu.cn/" target="_blank">中科大开源镜像站</a>，示例选用了中科大的。<br>为了确认所下载软件包的合法性，需要添加软件源的 GPG 密钥。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/debian/gpg | sudo apt-key add -</span><br><span class="line">// 官方源，能否成功可能需要看运气。</span><br><span class="line">   $ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure></p>
-<h3><span id="4-cha-kan-mi-yao-shi-fou-an-zhuang-cheng-gong">（4）查看密钥是否安装成功</span><a href="#4-cha-kan-mi-yao-shi-fou-an-zhuang-cheng-gong" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-key fingerprint 0EBFCD88</span><br></pre></td></tr></table></figure>
+<h3><span id="3下载并安装密钥">（3）下载并安装密钥</span></h3><p>鉴于国内网络问题，强烈建议使用国内源，官方源请在注释中查看。 国内源可选用<a href="https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/" target="_blank">清华大学开源软件镜像站</a>或<a href="http://mirrors.ustc.edu.cn/" target="_blank">中科大开源镜像站</a>，示例选用了中科大的。<br>为了确认所下载软件包的合法性，需要添加软件源的 GPG 密钥。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/debian/gpg | sudo apt-key add -</span><br><span class="line">// 官方源，能否成功可能需要看运气。</span><br><span class="line">   $ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure></p>
+<h3><span id="4查看密钥是否安装成功">（4）查看密钥是否安装成功</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-key fingerprint 0EBFCD88</span><br></pre></td></tr></table></figure>
 <p>如果安装成功，会出现如下内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pub   4096R/0EBFCD88 2017-02-22              Key fingerprint = 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88  </span><br><span class="line">uid     Docker Release (CE deb) &lt;docker@docker.com&gt;  </span><br><span class="line">sub   4096R/F273FCD8 2017-02-22</span><br></pre></td></tr></table></figure>
-<h3><span id="5-tian-jia-docker-guan-fang-cang-ku">（5）添加docker官方仓库</span><a href="#5-tian-jia-docker-guan-fang-cang-ku" class="header-anchor">#</a></h3><p>然后，我们需要向 source.list 中添加 Docker CE 软件源：</p>
+<h3><span id="5添加docker官方仓库">（5）添加docker官方仓库</span></h3><p>然后，我们需要向 source.list 中添加 Docker CE 软件源：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository &quot;deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/debian  wheezy stable&quot;</span><br><span class="line">//官方源</span><br><span class="line">$ sudo add-apt-repository  &quot;deb [arch=amd64] https://download.docker.com/linux/debian wheezy stable&quot;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这点很奇怪，官方在 wheezy 位置使用的是 $(lsb_release -cs)，而在deepin下执行lsb_release -cs这个命令时，而deepin显示的是unstable，而默认debian根据正式发行版本会显示是 jessie 或者wheezy 这个如果不更改成特定版本信息，在sudo apt-get update更新时就不起作用。<br>更正： 之所以获取的 unstable 不成功，是因为docker官方没有提供sid版本的docker。想安装必须将该部分替换成相应版本。 </p>
@@ -571,14 +540,14 @@
 <p>例如对于deepin15.5，我操作上面的命令得到debain版本是8.0，debian 8.0的代号是jessie，把上面的wheezy替换成 jessie，就可以正常安装docker,当前docker的版本为17.12.0-ce.</p>
 </blockquote>
 </blockquote>
-<h3><span id="6-geng-xin-cang-ku">（6）更新仓库</span><a href="#6-geng-xin-cang-ku" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
-<h3><span id="7-an-zhuang-docker-ce">（7）安装docker-ce</span><a href="#7-an-zhuang-docker-ce" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install docker-ce</span><br></pre></td></tr></table></figure>
+<h3><span id="6更新仓库">（6）更新仓库</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h3><span id="7安装docker-ce">（7）安装docker-ce</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install docker-ce</span><br></pre></td></tr></table></figure>
 <p>在安装完后启动报错，查看docker.service的unit文件，路径为/lib/systemd/system/docker.service，把ExecStart=/usr/bin/dockerd -H fd:// 修改为ExecStart=/usr/bin/dockerd，则可以正常启动docker</p>
 <p>启动 命令为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl start docker</span><br></pre></td></tr></table></figure></p>
-<h3><span id="8-cha-kan-an-zhuang-de-ban-ben-xin-xi">（8）查看安装的版本信息</span><a href="#8-cha-kan-an-zhuang-de-ban-ben-xin-xi" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker version</span><br></pre></td></tr></table></figure>
-<h3><span id="9-yan-zheng-docker-shi-fou-bei-zheng-que-an-zhuang-qie-neng-gou-zheng-chang-shi-yong">（9）验证docker是否被正确安装且能够正常使用</span><a href="#9-yan-zheng-docker-shi-fou-bei-zheng-que-an-zhuang-qie-neng-gou-zheng-chang-shi-yong" class="header-anchor">#</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run hello-world</span><br></pre></td></tr></table></figure>
-<h2><span id="3-geng-huan-guo-nei-docker-jia-su-qi">3、更换国内docker加速器</span><a href="#3-geng-huan-guo-nei-docker-jia-su-qi" class="header-anchor">#</a></h2><p>若使用docker官方仓库，速度会很慢，所以更换国内加速器就显得尤为重要。</p>
-<h3><span id="1-fang-fa-yi-shi-yong-a-li-yun-de-docker-jia-su-qi">（1）方法一：使用阿里云的docker加速器</span><a href="#1-fang-fa-yi-shi-yong-a-li-yun-de-docker-jia-su-qi" class="header-anchor">#</a></h3><ul>
+<h3><span id="8查看安装的版本信息">（8）查看安装的版本信息</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker version</span><br></pre></td></tr></table></figure>
+<h3><span id="9验证docker是否被正确安装且能够正常使用">（9）验证docker是否被正确安装且能够正常使用</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run hello-world</span><br></pre></td></tr></table></figure>
+<h2><span id="3-更换国内docker加速器">3、更换国内docker加速器</span></h2><p>若使用docker官方仓库，速度会很慢，所以更换国内加速器就显得尤为重要。</p>
+<h3><span id="1方法一使用阿里云的docker加速器">（1）方法一：使用阿里云的docker加速器</span></h3><ul>
 <li><p>1、在阿里云申请一个账号</p>
 <p>  打开链接<a href="https://cr.console.aliyun.com/#/accelerator" target="_blank" rel="noopener">https://cr.console.aliyun.com/#/accelerator</a> 拷贝您的专属加速器地址</p>
 </li>
@@ -586,7 +555,7 @@
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mkdir -p /etc/docker</span><br><span class="line">$ sudo tee /etc/docker/daemon.json &lt;&lt;-&apos;EOF&apos;</span><br><span class="line">&#123;</span><br><span class="line">       &quot;registry-mirrors&quot;:[您的加速器地址]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">$ sudo systemctl daemon-reload</span><br><span class="line">$ sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
-<h3><span id="2-fang-fa-er-shi-yong-docker-cn-ti-gong-de-jing-xiang-yuan">（2）方法二：使用docker-cn提供的镜像源</span><a href="#2-fang-fa-er-shi-yong-docker-cn-ti-gong-de-jing-xiang-yuan" class="header-anchor">#</a></h3><ul>
+<h3><span id="2方法二使用docker-cn提供的镜像源">（2）方法二：使用docker-cn提供的镜像源</span></h3><ul>
 <li>1、编辑/etc/docker/daemon.json文件，并输入docker-cn镜像源地址</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo nano /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
@@ -596,14 +565,14 @@
 <li>2、重启docker服务</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service docker restart</span><br></pre></td></tr></table></figure>
-<h2><span id="4-ke-shi-hua-guan-li">4、可视化管理</span><a href="#4-ke-shi-hua-guan-li" class="header-anchor">#</a></h2><p>我这里是使用的Portainer作为容器的GUI管理方案</p>
+<h2><span id="4-可视化管理">4、可视化管理</span></h2><p>我这里是使用的Portainer作为容器的GUI管理方案</p>
 <p><a href="https://portainer.io/install.html" target="_blank" rel="noopener">Portainer官网</a></p>
 <p>安装指令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker volume create portainer_data</span><br><span class="line">$ docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</span><br></pre></td></tr></table></figure>
 <p>浏览器访问localhost:9000即可进入容器管理界面：</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/3/168b3e37b67cee11?w=1025&amp;h=623&amp;f=png&amp;s=88518" alt="portainer"></p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/3/168b3e436af69572?w=1027&amp;h=623&amp;f=png&amp;s=102058" alt="containers"></p>
-<h2><span id="5-jin-zhi-kai-ji-zi-qi">5、禁止开机自启</span><a href="#5-jin-zhi-kai-ji-zi-qi" class="header-anchor">#</a></h2><p>默认情况下Docker是开机自启的，如果我们想禁用开机自启，可以通过安装chkconfig命令来管理Deepin自启项</p>
+<h2><span id="5-禁止开机自启">5、禁止开机自启</span></h2><p>默认情况下Docker是开机自启的，如果我们想禁用开机自启，可以通过安装chkconfig命令来管理Deepin自启项</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 安装chkconfig</span><br><span class="line">$ sudo apt-get install chkconfig</span><br><span class="line"># 移除自启</span><br><span class="line">$ sudo chkconfig --del docker</span><br></pre></td></tr></table></figure>
 
       
@@ -899,7 +868,7 @@
                    <span class="site-state-item-name">访客量</span>
               </div>
               <div class="site-state-item site-state-posts">
-                    <span class="site-state-item-count">14.2k</span>
+                    <span class="site-state-item-count">13.5k</span>
                     <span class="site-state-item-name">总字数</span>
               </div>
             </nav>
@@ -983,7 +952,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">安装Docker#</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">1、安装环境#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">2、安装过程#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.1.</span> <span class="nav-text">（1）若之前安装过老版本，则先卸载掉之前的老版本#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.2.</span> <span class="nav-text">（2）安装docker-ce与密钥管理与下载相关工具#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.3.</span> <span class="nav-text">（3）下载并安装密钥#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.4.</span> <span class="nav-text">（4）查看密钥是否安装成功#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.5.</span> <span class="nav-text">（5）添加docker官方仓库#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.6.</span> <span class="nav-text">（6）更新仓库#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.7.</span> <span class="nav-text">（7）安装docker-ce#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.8.</span> <span class="nav-text">（8）查看安装的版本信息#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.9.</span> <span class="nav-text">（9）验证docker是否被正确安装且能够正常使用#</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">3、更换国内docker加速器#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.</span> <span class="nav-text">（1）方法一：使用阿里云的docker加速器#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.2.</span> <span class="nav-text">（2）方法二：使用docker-cn提供的镜像源#</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text">4、可视化管理#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.</span> <span class="nav-text">5、禁止开机自启#</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">安装Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">1、安装环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">2、安装过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.1.</span> <span class="nav-text">（1）若之前安装过老版本，则先卸载掉之前的老版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.2.</span> <span class="nav-text">（2）安装docker-ce与密钥管理与下载相关工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.3.</span> <span class="nav-text">（3）下载并安装密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.4.</span> <span class="nav-text">（4）查看密钥是否安装成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.5.</span> <span class="nav-text">（5）添加docker官方仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.6.</span> <span class="nav-text">（6）更新仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.7.</span> <span class="nav-text">（7）安装docker-ce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.8.</span> <span class="nav-text">（8）查看安装的版本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.9.</span> <span class="nav-text">（9）验证docker是否被正确安装且能够正常使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">3、更换国内docker加速器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.</span> <span class="nav-text">（1）方法一：使用阿里云的docker加速器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.2.</span> <span class="nav-text">（2）方法二：使用docker-cn提供的镜像源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text">4、可视化管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.</span> <span class="nav-text">5、禁止开机自启</span></a></li></ol></li></ol></div>
             
 
           </div>

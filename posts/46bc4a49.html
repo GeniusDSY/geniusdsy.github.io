@@ -105,13 +105,13 @@
 
 
 
-  <meta name="description" content="一、认识Shell 1、简单的命令 2、文件系统 3、Linux系统 （1）最常用的命令 —ls （2）使用file命令确定文件类型 （3）使用less命令查看文件内容 （4）Linux的基础目录了解     Linux入门之认识Shell（二）     一、认识Shell#我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操">
+  <meta name="description" content="一、认识Shell我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景：  简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令 查看当前系统时间和">
 <meta name="keywords" content="Shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux入门之认识Shell（一）">
 <meta property="og:url" content="https://geniusdsy.github.io/posts/46bc4a49.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="一、认识Shell 1、简单的命令 2、文件系统 3、Linux系统 （1）最常用的命令 —ls （2）使用file命令确定文件类型 （3）使用less命令查看文件内容 （4）Linux的基础目录了解     Linux入门之认识Shell（二）     一、认识Shell#我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操">
+<meta property="og:description" content="一、认识Shell我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景：  简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令 查看当前系统时间和">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2d3e29862108?w=333&h=34&f=png&s=2653">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2dd4c79855b8?w=329&h=36&f=png&s=5714">
@@ -143,10 +143,10 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/11/168da7adf9c0872f?w=546&h=325&f=png&s=63423">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/11/168dbb51c186eed8?w=798&h=65&f=png&s=13848">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/11/168dbbf8e4dccd3f?w=701&h=314&f=png&s=46427">
-<meta property="og:updated_time" content="2019-02-13T10:18:17.684Z">
+<meta property="og:updated_time" content="2019-02-13T10:22:00.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux入门之认识Shell（一）">
-<meta name="twitter:description" content="一、认识Shell 1、简单的命令 2、文件系统 3、Linux系统 （1）最常用的命令 —ls （2）使用file命令确定文件类型 （3）使用less命令查看文件内容 （4）Linux的基础目录了解     Linux入门之认识Shell（二）     一、认识Shell#我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操">
+<meta name="twitter:description" content="一、认识Shell我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。 我们打开终端，就可以看见下面的场景：  简单解释一下这些含义： 用户名@机器名:当前工作目录$ 待输入的指令 而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利 1、简单的命令 查看当前系统时间和">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/6/168c2d3e29862108?w=333&h=34&f=png&s=2653">
 
 
@@ -469,7 +469,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-13 18:18:17" itemprop="dateModified" datetime="2019-02-13T18:18:17+08:00">2019-02-13</time>
+                <time title="修改时间：2019-02-13 18:22:00" itemprop="dateModified" datetime="2019-02-13T18:22:00+08:00">2019-02-13</time>
               
             
           </span>
@@ -543,34 +543,13 @@
       
 
       
-        <div class="toc">
-
-<!-- toc -->
-<ul>
-<li><a href="#yi-ren-shi-shell">一、认识Shell</a><ul>
-<li><a href="#1-jian-dan-de-ming-ling">1、简单的命令</a></li>
-<li><a href="#2-wen-jian-xi-tong">2、文件系统</a></li>
-<li><a href="#3-linux-xi-tong">3、Linux系统</a><ul>
-<li><a href="#1-zui-chang-yong-de-ming-ling-ls">（1）最常用的命令 —ls</a></li>
-<li><a href="#2-shi-yong-file-ming-ling-que-ding-wen-jian-lei-xing">（2）使用file命令确定文件类型</a></li>
-<li><a href="#3-shi-yong-less-ming-ling-cha-kan-wen-jian-nei-rong">（3）使用less命令查看文件内容</a></li>
-<li><a href="#4-linux-de-ji-chu-mu-lu-liao-jie">（4）Linux的基础目录了解</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#linux-ru-men-zhi-ren-shi-shell-er-https-geniusdsy-github-io-posts-76aaa691-html">Linux入门之认识Shell（二）</a></li>
-</ul>
-<!-- tocstop -->
-</div>
-
-<h1><span id="yi-ren-shi-shell">一、认识Shell</span><a href="#yi-ren-shi-shell" class="header-anchor">#</a></h1><p>我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。</p>
+        <h1><span id="一-认识shell">一、认识Shell</span></h1><p>我们嘴上常说命令行、命令行。真正的命令行其实就是shell，shell就是一个接受由键盘输入的命令，之后将其提交给操作系统进行执行的程序。</p>
 <p>我们打开终端，就可以看见下面的场景：</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2d3e29862108?w=333&amp;h=34&amp;f=png&amp;s=2653" alt="终端"></p>
 <p>简单解释一下这些含义：</p>
 <p>用户名@机器名:当前工作目录$ 待输入的指令</p>
 <p>而若并不存在$而是一个#代替了它，则代表当前是超级管理员在使用终端进行操作，具有超级管理员的权利</p>
-<h2><span id="1-jian-dan-de-ming-ling">1、简单的命令</span><a href="#1-jian-dan-de-ming-ling" class="header-anchor">#</a></h2><ul>
+<h2><span id="1-简单的命令">1、简单的命令</span></h2><ul>
 <li>查看当前系统时间和日期</li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2dd4c79855b8?w=329&amp;h=36&amp;f=png&amp;s=5714" alt=""></p>
@@ -590,7 +569,7 @@
 <li>退出终端</li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c2e6dfdc2fccc?w=362&amp;h=35&amp;f=png&amp;s=4711" alt=""></p>
-<h2><span id="2-wen-jian-xi-tong">2、文件系统</span><a href="#2-wen-jian-xi-tong" class="header-anchor">#</a></h2><p>Linux系统中存在一个文件系统树，当然会涉及到很多的文件的操作指令，记录一下</p>
+<h2><span id="2-文件系统">2、文件系统</span></h2><p>Linux系统中存在一个文件系统树，当然会涉及到很多的文件的操作指令，记录一下</p>
 <ul>
 <li>查看当前工作目录</li>
 </ul>
@@ -631,7 +610,7 @@
 <li>将工作目录更改为username所在的主目录</li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/6/168c307d15353813?w=424&amp;h=57&amp;f=png&amp;s=7705" alt=""></p>
-<h2><span id="3-linux-xi-tong">3、Linux系统</span><a href="#3-linux-xi-tong" class="header-anchor">#</a></h2><h3><span id="1-zui-chang-yong-de-ming-ling-ls">（1）最常用的命令 —ls</span><a href="#1-zui-chang-yong-de-ming-ling-ls" class="header-anchor">#</a></h3><ul>
+<h2><span id="3-linux系统">3、Linux系统</span></h2><h3><span id="1最常用的命令-ls">（1）最常用的命令 —ls</span></h3><ul>
 <li>只用输入一个ls即可知道该目录下的文件以及子目录</li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/11/168da28da451cb90?w=553&amp;h=40&amp;f=png&amp;s=9071" alt=""></p>
@@ -643,7 +622,7 @@
 <li>也可以改变输出格式显示更多的细节（-l 以长格式显示）</li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/11/168da2cb9626c737?w=558&amp;h=165&amp;f=png&amp;s=37032" alt=""></p>
-<h4><span id="xuan-xiang-he-can-shu">①选项和参数</span><a href="#xuan-xiang-he-can-shu" class="header-anchor">#</a></h4><p>大部分命令都一个命令带有一个或多个选项，再之后回答有一个或多个参数，这些参数时命令作用的对象</p>
+<h4><span id="1选项和参数">①选项和参数</span></h4><p>大部分命令都一个命令带有一个或多个选项，再之后回答有一个或多个参数，这些参数时命令作用的对象</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command -options arguments</span><br></pre></td></tr></table></figure>
 <p>例如:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ls -lt</span><br></pre></td></tr></table></figure>
@@ -732,7 +711,7 @@
 <li>ls -l   ls -lt   ls -lt –reverse</li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/11/168da5ff0c32f337?w=565&amp;h=365&amp;f=png&amp;s=83195" alt=""></p>
-<h4><span id="chang-ge-shi-jian-jie">②长格式简介</span><a href="#chang-ge-shi-jian-jie" class="header-anchor">#</a></h4><p>-l输出的长格式中有很多信息，图如下：</p>
+<h4><span id="2长格式简介">②长格式简介</span></h4><p>-l输出的长格式中有很多信息，图如下：</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/11/168da7adf9c0872f?w=546&amp;h=325&amp;f=png&amp;s=63423" alt=""></p>
 <table>
 <thead>
@@ -772,13 +751,13 @@
 </tr>
 </tbody>
 </table>
-<h3><span id="2-shi-yong-file-ming-ling-que-ding-wen-jian-lei-xing">（2）使用file命令确定文件类型</span><a href="#2-shi-yong-file-ming-ling-que-ding-wen-jian-lei-xing" class="header-anchor">#</a></h3><p>我们在使用linux，拿到一个陌生的文件，这时候知道他的内容就非常有用了。为此，我们可以使用该命令进行查看文件类型。</p>
+<h3><span id="2使用file命令确定文件类型">（2）使用file命令确定文件类型</span></h3><p>我们在使用linux，拿到一个陌生的文件，这时候知道他的内容就非常有用了。为此，我们可以使用该命令进行查看文件类型。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> file filename</span><br></pre></td></tr></table></figure>
 <ul>
 <li>结果图</li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/11/168dbb51c186eed8?w=798&amp;h=65&amp;f=png&amp;s=13848" alt=""></p>
-<h3><span id="3-shi-yong-less-ming-ling-cha-kan-wen-jian-nei-rong">（3）使用less命令查看文件内容</span><a href="#3-shi-yong-less-ming-ling-cha-kan-wen-jian-nei-rong" class="header-anchor">#</a></h3><p>less是一种查看文本文件的程序的命令。通过less命令我们可以更好的去了解文本文件的内容，更好的去了解一些配置文件的内容，了解系统一节各种文件是如何运作的。</p>
+<h3><span id="3使用less命令查看文件内容">（3）使用less命令查看文件内容</span></h3><p>less是一种查看文本文件的程序的命令。通过less命令我们可以更好的去了解文本文件的内容，更好的去了解一些配置文件的内容，了解系统一节各种文件是如何运作的。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> less filename</span><br></pre></td></tr></table></figure>
 <p>我们可以查看文本内容，按Q键可以退出less程序</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> less /etc/passwd</span><br></pre></td></tr></table></figure>
@@ -839,7 +818,7 @@
 </tr>
 </tbody>
 </table>
-<h3><span id="4-linux-de-ji-chu-mu-lu-liao-jie">（4）Linux的基础目录了解</span><a href="#4-linux-de-ji-chu-mu-lu-liao-jie" class="header-anchor">#</a></h3><table>
+<h3><span id="4linux的基础目录了解">（4）Linux的基础目录了解</span></h3><table>
 <thead>
 <tr>
 <th style="text-align:left">目录</th>
@@ -942,7 +921,7 @@
 </tbody>
 </table>
 <hr>
-<h1><span id="linux-ru-men-zhi-ren-shi-shell-er"></span><a href="#linux-ru-men-zhi-ren-shi-shell-er" class="header-anchor">#</a></h1>
+<h1><span id="linux入门之认识shell二"></span></h1>
       
     </div>
 
@@ -1234,7 +1213,7 @@
                    <span class="site-state-item-name">访客量</span>
               </div>
               <div class="site-state-item site-state-posts">
-                    <span class="site-state-item-count">14.2k</span>
+                    <span class="site-state-item-count">13.5k</span>
                     <span class="site-state-item-name">总字数</span>
               </div>
             </nav>
@@ -1318,7 +1297,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">一、认识Shell#</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">1、简单的命令#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">2、文件系统#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">3、Linux系统#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.</span> <span class="nav-text">（1）最常用的命令 —ls#</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">①选项和参数#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">②长格式简介#</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.2.</span> <span class="nav-text">（2）使用file命令确定文件类型#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.3.</span> <span class="nav-text">（3）使用less命令查看文件内容#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.4.</span> <span class="nav-text">（4）Linux的基础目录了解#</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">#</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">一、认识Shell</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">1、简单的命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">2、文件系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">3、Linux系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.</span> <span class="nav-text">（1）最常用的命令 —ls</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">①选项和参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">②长格式简介</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.2.</span> <span class="nav-text">（2）使用file命令确定文件类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.3.</span> <span class="nav-text">（3）使用less命令查看文件内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.4.</span> <span class="nav-text">（4）Linux的基础目录了解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li></ol></div>
             
 
           </div>
