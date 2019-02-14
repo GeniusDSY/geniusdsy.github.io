@@ -36,9 +36,9 @@
       </categories>
       <tags>
         <tag>Java</tag>
+        <tag>NoSql</tag>
         <tag>Redis</tag>
         <tag>Jedis</tag>
-        <tag>NoSql</tag>
       </tags>
   </entry>
   <entry>
@@ -60,8 +60,8 @@
         <category>应用容器</category>
       </categories>
       <tags>
-        <tag>安装</tag>
         <tag>Docker</tag>
+        <tag>安装</tag>
       </tags>
   </entry>
   <entry>
@@ -72,9 +72,9 @@
         <category>Redis</category>
       </categories>
       <tags>
-        <tag>Redis</tag>
-        <tag>NoSql</tag>
         <tag>安装</tag>
+        <tag>NoSql</tag>
+        <tag>Redis</tag>
       </tags>
   </entry>
   <entry>
