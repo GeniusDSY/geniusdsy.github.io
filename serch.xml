@@ -3,7 +3,13 @@
   <entry>
     <title><![CDATA[Linux入门之认识Shell（三）]]></title>
     <url>%2Fposts%2F3bb405c3.html</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[重定向命令行最酷的功能—-IO重定向。我们可以将需要输入命令行的东西重定向到从文件中获取，也可以将输出内容输出到文件中。我们如果可以将多个命令行结合起来，那么就形成了强大的命令—-管道 标准输入、标准输出、标准错误标准输出重定向IO重定向功能可以重新定义标准输出内容发送到哪里。使用重定向操作符“&gt;”，后面接文件名，就可以将标准输出输出到指定文件中，而不显示在屏幕上。 Demo1 输出到屏幕上 输出到文件中 我们去看看文件 和之前屏幕上输出的一模一样 Demo2我们改一下，试一下将一个不存在的目录信息输出到文件中 演示实例 这时候我们看到，这里输出了错误的信息，接下来我们看到刚才输出文件的大小变成了0.原来错误信息输出到了屏幕，这时候输出文件中什么都没有写入，并且因为默认的写入方式是从头写入。 :heavy_check_mark:Get到了新技能:tada::tada:: ​ 我们新建一个文件或者要删除一个文件里面所有内容时，我们可以直接使用]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Shell</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Linux入门之认识Shell（二）]]></title>
