@@ -36,9 +36,9 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>NoSql</tag>
         <tag>Redis</tag>
         <tag>Jedis</tag>
+        <tag>NoSql</tag>
       </tags>
   </entry>
   <entry>
@@ -73,8 +73,8 @@
       </categories>
       <tags>
         <tag>安装</tag>
-        <tag>NoSql</tag>
         <tag>Redis</tag>
+        <tag>NoSql</tag>
       </tags>
   </entry>
   <entry>
