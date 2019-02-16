@@ -15,7 +15,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0"><link rel="manifest" href="/manifest.json">
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -105,13 +105,13 @@
 
 
 
-  <meta name="description" content="重定向命令行最酷的功能—-IO重定向。我们可以将需要输入命令行的东西重定向到从文件中获取，也可以将输出内容输出到文件中。我们如果可以将多个命令行结合起来，那么就形成了强大的命令—-管道 标准输入、标准输出、标准错误标准输出重定向IO重定向功能可以重新定义标准输出内容发送到哪里。使用重定向操作符“&amp;gt;”，后面接文件名，就可以将标准输出输出到指定文件中，而不显示在屏幕上。 Demo1 输出到屏幕上">
+  <meta name="description" content="重定向 命令行最酷的功能----IO重定向。我们可以将需要输入命令行的东西重定向到从文件中获取，也可以将输出内容输出到文件中。我们如果可以将多个命令行结合起来，那么就形成了强大的命令----管道 ¶标准输入、标准输出、标准错误 ¶标准输出重定向 IO重定向功能可以重新定义标准输出内容发送到哪里。使用重定向操作符“&amp;gt;”，后面接文件名，就可以将标准输出输出到指定文件中，而不显示在屏幕上。 ¶De">
 <meta name="keywords" content="Shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux入门之认识Shell（三）">
 <meta property="og:url" content="https://geniusdsy.github.io/posts/3bb405c3.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="重定向命令行最酷的功能—-IO重定向。我们可以将需要输入命令行的东西重定向到从文件中获取，也可以将输出内容输出到文件中。我们如果可以将多个命令行结合起来，那么就形成了强大的命令—-管道 标准输入、标准输出、标准错误标准输出重定向IO重定向功能可以重新定义标准输出内容发送到哪里。使用重定向操作符“&amp;gt;”，后面接文件名，就可以将标准输出输出到指定文件中，而不显示在屏幕上。 Demo1 输出到屏幕上">
+<meta property="og:description" content="重定向 命令行最酷的功能----IO重定向。我们可以将需要输入命令行的东西重定向到从文件中获取，也可以将输出内容输出到文件中。我们如果可以将多个命令行结合起来，那么就形成了强大的命令----管道 ¶标准输入、标准输出、标准错误 ¶标准输出重定向 IO重定向功能可以重新定义标准输出内容发送到哪里。使用重定向操作符“&amp;gt;”，后面接文件名，就可以将标准输出输出到指定文件中，而不显示在屏幕上。 ¶De">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/14/168eb0103727a5c9?w=873&h=236&f=png&s=80840">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/14/168eb026074c9d32?w=613&h=56&f=png&s=25196">
@@ -120,7 +120,7 @@
 <meta property="og:updated_time" content="2019-02-14T08:49:36.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux入门之认识Shell（三）">
-<meta name="twitter:description" content="重定向命令行最酷的功能—-IO重定向。我们可以将需要输入命令行的东西重定向到从文件中获取，也可以将输出内容输出到文件中。我们如果可以将多个命令行结合起来，那么就形成了强大的命令—-管道 标准输入、标准输出、标准错误标准输出重定向IO重定向功能可以重新定义标准输出内容发送到哪里。使用重定向操作符“&amp;gt;”，后面接文件名，就可以将标准输出输出到指定文件中，而不显示在屏幕上。 Demo1 输出到屏幕上">
+<meta name="twitter:description" content="重定向 命令行最酷的功能----IO重定向。我们可以将需要输入命令行的东西重定向到从文件中获取，也可以将输出内容输出到文件中。我们如果可以将多个命令行结合起来，那么就形成了强大的命令----管道 ¶标准输入、标准输出、标准错误 ¶标准输出重定向 IO重定向功能可以重新定义标准输出内容发送到哪里。使用重定向操作符“&amp;gt;”，后面接文件名，就可以将标准输出输出到指定文件中，而不显示在屏幕上。 ¶De">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/14/168eb0103727a5c9?w=873&h=236&f=png&s=80840">
 
 
@@ -492,7 +492,7 @@
             <span class="post-meta-divider">|</span>
             <span class="post-meta-item-icon">
             <i class="fa fa-eye"></i>
-             阅读次数： 
+             热度： 
             <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
@@ -517,9 +517,13 @@
       
 
       
-        <h1 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h1><p>命令行最酷的功能—-IO重定向。我们可以将需要输入命令行的东西重定向到从文件中获取，也可以将输出内容输出到文件中。我们如果可以将多个命令行结合起来，那么就形成了强大的命令—-管道</p>
-<h2 id="标准输入、标准输出、标准错误"><a href="#标准输入、标准输出、标准错误" class="headerlink" title="标准输入、标准输出、标准错误"></a>标准输入、标准输出、标准错误</h2><h3 id="标准输出重定向"><a href="#标准输出重定向" class="headerlink" title="标准输出重定向"></a>标准输出重定向</h3><p>IO重定向功能可以重新定义标准输出内容发送到哪里。使用重定向操作符“&gt;”，后面接文件名，就可以将标准输出输出到指定文件中，而不显示在屏幕上。</p>
-<h4 id="Demo1"><a href="#Demo1" class="headerlink" title="Demo1"></a>Demo1</h4><ul>
+        <h1>重定向</h1>
+<p>命令行最酷的功能----IO重定向。我们可以将需要输入命令行的东西重定向到从文件中获取，也可以将输出内容输出到文件中。我们如果可以将多个命令行结合起来，那么就形成了强大的命令----管道</p>
+<h2 id="标准输入-标准输出-标准错误"><a class="header-anchor" href="#标准输入-标准输出-标准错误">¶</a>标准输入、标准输出、标准错误</h2>
+<h3 id="标准输出重定向"><a class="header-anchor" href="#标准输出重定向">¶</a>标准输出重定向</h3>
+<p>IO重定向功能可以重新定义标准输出内容发送到哪里。使用重定向操作符“&gt;”，后面接文件名，就可以将标准输出输出到指定文件中，而不显示在屏幕上。</p>
+<h4 id="demo1"><a class="header-anchor" href="#demo1">¶</a>Demo1</h4>
+<ul>
 <li>输出到屏幕上</li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/14/168eb0103727a5c9?w=873&amp;h=236&amp;f=png&amp;s=80840" alt=""></p>
@@ -532,14 +536,15 @@
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/14/168eb03118d1811b?w=909&amp;h=678&amp;f=png&amp;s=275877" alt=""></p>
 <p>和之前屏幕上输出的一模一样</p>
-<h4 id="Demo2"><a href="#Demo2" class="headerlink" title="Demo2"></a>Demo2</h4><p>我们改一下，试一下将一个不存在的目录信息输出到文件中</p>
+<h4 id="demo2"><a class="header-anchor" href="#demo2">¶</a>Demo2</h4>
+<p>我们改一下，试一下将一个不存在的目录信息输出到文件中</p>
 <ul>
 <li>演示实例</li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/14/168eb0b8bf51418f?w=583&amp;h=75&amp;f=png&amp;s=31513" alt=""></p>
 <p>这时候我们看到，这里输出了错误的信息，接下来我们看到刚才输出文件的大小变成了0.原来错误信息输出到了屏幕，这时候输出文件中什么都没有写入，并且因为默认的写入方式是从头写入。</p>
-<p>:heavy_check_mark:Get到了新技能:tada::tada::</p>
-<p>​    我们新建一个文件或者要删除一个文件里面所有内容时，我们可以直接使用</p>
+<p>✔️Get到了新技能🎉🎉:</p>
+<p>​	我们新建一个文件或者要删除一个文件里面所有内容时，我们可以直接使用</p>
 
       
     </div>
@@ -828,7 +833,7 @@
                    <span class="site-state-item-name">访客量</span>
               </div>
               <div class="site-state-item site-state-posts">
-                    <span class="site-state-item-count">14.8k</span>
+                    <span class="site-state-item-count">14.7k</span>
                     <span class="site-state-item-name">总字数</span>
               </div>
             </nav>
@@ -912,7 +917,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#重定向"><span class="nav-number">1.</span> <span class="nav-text">重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标准输入、标准输出、标准错误"><span class="nav-number">1.1.</span> <span class="nav-text">标准输入、标准输出、标准错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标准输出重定向"><span class="nav-number">1.1.1.</span> <span class="nav-text">标准输出重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Demo1"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Demo1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Demo2"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Demo2</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标准输入-标准输出-标准错误"><span class="nav-number">1.1.</span> <span class="nav-text">¶标准输入、标准输出、标准错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标准输出重定向"><span class="nav-number">1.1.1.</span> <span class="nav-text">¶标准输出重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#demo1"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">¶Demo1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#demo2"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">¶Demo2</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1492,10 +1497,5 @@
 
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
-<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1550152019021')
-    .then(function () {console.log('ServiceWorker Register Successfully.')})
-    .catch(function (e) {console.error(e)});
-}
-</script></body>
+</body>
 </html>

@@ -15,7 +15,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0"><link rel="manifest" href="/manifest.json">
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -105,18 +105,18 @@
 
 
 
-  <meta name="description" content="Jedis的了解与简单实用1、什么是JedisJedis是Redis官方首选的Java客户端开发包。它集成了Redis的指令操作，封装了Redis的Java客户端，提供了连接池管理。一般不直接使用jedis，而是在其上在封装一层，作为业务的使用。  GitHub地址：https://github.com/xetorthio/jedis  2、Jedis的引入我们要在Java程序中使用Jedis，需">
-<meta name="keywords" content="Java,Redis,Jedis,NoSql">
+  <meta name="description" content="Jedis的了解与简单实用 ¶1、什么是Jedis Jedis是Redis官方首选的Java客户端开发包。它集成了Redis的指令操作，封装了Redis的Java客户端，提供了连接池管理。一般不直接使用jedis，而是在其上在封装一层，作为业务的使用。  GitHub地址：https://github.com/xetorthio/jedis  ¶2、Jedis的引入 我们要在Java程序中使用Je">
+<meta name="keywords" content="Java,NoSql,Redis,Jedis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识Redis（二）之Jedis">
 <meta property="og:url" content="https://geniusdsy.github.io/posts/388421ef.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="Jedis的了解与简单实用1、什么是JedisJedis是Redis官方首选的Java客户端开发包。它集成了Redis的指令操作，封装了Redis的Java客户端，提供了连接池管理。一般不直接使用jedis，而是在其上在封装一层，作为业务的使用。  GitHub地址：https://github.com/xetorthio/jedis  2、Jedis的引入我们要在Java程序中使用Jedis，需">
+<meta property="og:description" content="Jedis的了解与简单实用 ¶1、什么是Jedis Jedis是Redis官方首选的Java客户端开发包。它集成了Redis的指令操作，封装了Redis的Java客户端，提供了连接池管理。一般不直接使用jedis，而是在其上在封装一层，作为业务的使用。  GitHub地址：https://github.com/xetorthio/jedis  ¶2、Jedis的引入 我们要在Java程序中使用Je">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/10/168d5c17a51cb5e1?w=1129&h=874&f=png&s=49203">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/10/168d5cc3f9070426?w=1458&h=430&f=png&s=46680">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/10/168d5ce70592f627?w=941&h=300&f=png&s=34335">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/11/168daa1929e90ff0？w=722&h=29&f=png&s=4110">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/11/168daa1929e90ff0%EF%BC%9Fw=722&h=29&f=png&s=4110">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/11/168daa29b616c6d3?w=831&h=366&f=png&s=38047">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/11/168daa32011678c3?w=782&h=117&f=png&s=23280">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/11/168daa952a325119?w=590&h=169&f=png&s=22498">
@@ -126,7 +126,7 @@
 <meta property="og:updated_time" content="2019-02-13T10:21:44.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Redis（二）之Jedis">
-<meta name="twitter:description" content="Jedis的了解与简单实用1、什么是JedisJedis是Redis官方首选的Java客户端开发包。它集成了Redis的指令操作，封装了Redis的Java客户端，提供了连接池管理。一般不直接使用jedis，而是在其上在封装一层，作为业务的使用。  GitHub地址：https://github.com/xetorthio/jedis  2、Jedis的引入我们要在Java程序中使用Jedis，需">
+<meta name="twitter:description" content="Jedis的了解与简单实用 ¶1、什么是Jedis Jedis是Redis官方首选的Java客户端开发包。它集成了Redis的指令操作，封装了Redis的Java客户端，提供了连接池管理。一般不直接使用jedis，而是在其上在封装一层，作为业务的使用。  GitHub地址：https://github.com/xetorthio/jedis  ¶2、Jedis的引入 我们要在Java程序中使用Je">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/10/168d5c17a51cb5e1?w=1129&h=874&f=png&s=49203">
 
 
@@ -498,7 +498,7 @@
             <span class="post-meta-divider">|</span>
             <span class="post-meta-item-icon">
             <i class="fa fa-eye"></i>
-             阅读次数： 
+             热度： 
             <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
@@ -523,36 +523,47 @@
       
 
       
-        <h1 id="Jedis的了解与简单实用"><a href="#Jedis的了解与简单实用" class="headerlink" title="Jedis的了解与简单实用"></a>Jedis的了解与简单实用</h1><h2 id="1、什么是Jedis"><a href="#1、什么是Jedis" class="headerlink" title="1、什么是Jedis"></a>1、什么是Jedis</h2><p>Jedis是Redis官方首选的Java客户端开发包。它集成了Redis的指令操作，封装了Redis的Java客户端，提供了连接池管理。一般不直接使用jedis，而是在其上在封装一层，作为业务的使用。</p>
+        <h1>Jedis的了解与简单实用</h1>
+<h2 id="1-什么是jedis"><a class="header-anchor" href="#1-什么是jedis">¶</a>1、什么是Jedis</h2>
+<p>Jedis是Redis官方首选的Java客户端开发包。它集成了Redis的指令操作，封装了Redis的Java客户端，提供了连接池管理。一般不直接使用jedis，而是在其上在封装一层，作为业务的使用。</p>
 <blockquote>
 <p>GitHub地址：<a href="https://github.com/xetorthio/jedis" target="_blank" rel="noopener">https://github.com/xetorthio/jedis</a></p>
 </blockquote>
-<h2 id="2、Jedis的引入"><a href="#2、Jedis的引入" class="headerlink" title="2、Jedis的引入"></a>2、Jedis的引入</h2><p>我们要在Java程序中使用Jedis，需要以下几个前提条件：</p>
+<h2 id="2-jedis的引入"><a class="header-anchor" href="#2-jedis的引入">¶</a>2、Jedis的引入</h2>
+<p>我们要在Java程序中使用Jedis，需要以下几个前提条件：</p>
 <ul>
-<li><p>本机安装了Redis</p>
+<li>
+<p>本机安装了Redis</p>
 <p>Redis下载地址：<a href="https://redis.io/download" target="_blank" rel="noopener">https://redis.io/download</a></p>
 </li>
-<li><p>下载所需要的Jedis的Jar包</p>
+<li>
+<p>下载所需要的Jedis的Jar包</p>
 <ul>
-<li><p>手动导入Jar包</p>
+<li>
+<p>手动导入Jar包</p>
 <ul>
-<li><p>jedis-2.9.0.jar：<a href="http://central.maven.org/maven2/redis/clients/jedis/2.9.0/jedis-2.9.0.jar" target="_blank" rel="noopener">http://central.maven.org/maven2/redis/clients/jedis/2.9.0/jedis-2.9.0.jar</a></p>
+<li>
+<p>jedis-2.9.0.jar：<a href="http://central.maven.org/maven2/redis/clients/jedis/2.9.0/jedis-2.9.0.jar" target="_blank" rel="noopener">http://central.maven.org/maven2/redis/clients/jedis/2.9.0/jedis-2.9.0.jar</a></p>
 </li>
-<li><p>commons-pool2-2.4.2.jar: <a href="http://central.maven.org/maven2/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar" target="_blank" rel="noopener">http://central.maven.org/maven2/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar</a></p>
+<li>
+<p>commons-pool2-2.4.2.jar: <a href="http://central.maven.org/maven2/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar" target="_blank" rel="noopener">http://central.maven.org/maven2/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar</a></p>
 </li>
-<li><p>将刚才下载的Jar包导入</p>
+<li>
+<p>将刚才下载的Jar包导入</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/10/168d5c17a51cb5e1?w=1129&amp;h=874&amp;f=png&amp;s=49203" alt=""></p>
 </li>
 </ul>
 </li>
-<li><p>使用maven管理项目</p>
+<li>
+<p>使用maven管理项目</p>
 </li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-pool2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>将以上代码copy到你的pom.xml文件中</p>
 </li>
 </ul>
-<h2 id="3、Jedis的第一次使用"><a href="#3、Jedis的第一次使用" class="headerlink" title="3、Jedis的第一次使用"></a>3、Jedis的第一次使用</h2><ul>
+<h2 id="3-jedis的第一次使用"><a class="header-anchor" href="#3-jedis的第一次使用">¶</a>3、Jedis的第一次使用</h2>
+<ul>
 <li>使用控制台启动redis（这里是Windows系统进行演示）</li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/10/168d5cc3f9070426?w=1458&amp;h=430&amp;f=png&amp;s=46680" alt=""></p>
@@ -564,11 +575,12 @@
 <li>运行结果图</li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/10/168d5ce70592f627?w=941&amp;h=300&amp;f=png&amp;s=34335" alt=""></p>
-<h2 id="4、我们来试试连接虚拟机的Redis"><a href="#4、我们来试试连接虚拟机的Redis" class="headerlink" title="4、我们来试试连接虚拟机的Redis"></a>4、我们来试试连接虚拟机的Redis</h2><p>我这里是用的deepin，默认防火墙关闭，若是其他系统，这里写一下解决方案</p>
+<h2 id="4-我们来试试连接虚拟机的redis"><a class="header-anchor" href="#4-我们来试试连接虚拟机的redis">¶</a>4、我们来试试连接虚拟机的Redis</h2>
+<p>我这里是用的deepin，默认防火墙关闭，若是其他系统，这里写一下解决方案</p>
 <ul>
 <li>首先vim /etc/sysconfig/iptables 设置一下防火墙</li>
 </ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/11/168daa1929e90ff0？w=722&amp;h=29&amp;f=png&amp;s=4110" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/11/168daa1929e90ff0%EF%BC%9Fw=722&amp;h=29&amp;f=png&amp;s=4110" alt=""></p>
 <ul>
 <li>进来之后找到上面那行，yy(复制) + p(粘贴)，改一下端口号</li>
 </ul>
@@ -655,11 +667,11 @@
           
             <a href="/tags/Java/" rel="tag"># Java</a>
           
+            <a href="/tags/NoSql/" rel="tag"># NoSql</a>
+          
             <a href="/tags/Redis/" rel="tag"># Redis</a>
           
             <a href="/tags/Jedis/" rel="tag"># Jedis</a>
-          
-            <a href="/tags/NoSql/" rel="tag"># NoSql</a>
           
         </div>
       
@@ -899,7 +911,7 @@
                    <span class="site-state-item-name">访客量</span>
               </div>
               <div class="site-state-item site-state-posts">
-                    <span class="site-state-item-count">14.8k</span>
+                    <span class="site-state-item-count">14.7k</span>
                     <span class="site-state-item-name">总字数</span>
               </div>
             </nav>
@@ -983,7 +995,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Jedis的了解与简单实用"><span class="nav-number">1.</span> <span class="nav-text">Jedis的了解与简单实用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、什么是Jedis"><span class="nav-number">1.1.</span> <span class="nav-text">1、什么是Jedis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、Jedis的引入"><span class="nav-number">1.2.</span> <span class="nav-text">2、Jedis的引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Jedis的第一次使用"><span class="nav-number">1.3.</span> <span class="nav-text">3、Jedis的第一次使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、我们来试试连接虚拟机的Redis"><span class="nav-number">1.4.</span> <span class="nav-text">4、我们来试试连接虚拟机的Redis</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Jedis的了解与简单实用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-什么是jedis"><span class="nav-number">1.1.</span> <span class="nav-text">¶1、什么是Jedis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-jedis的引入"><span class="nav-number">1.2.</span> <span class="nav-text">¶2、Jedis的引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-jedis的第一次使用"><span class="nav-number">1.3.</span> <span class="nav-text">¶3、Jedis的第一次使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-我们来试试连接虚拟机的redis"><span class="nav-number">1.4.</span> <span class="nav-text">¶4、我们来试试连接虚拟机的Redis</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1563,10 +1575,5 @@
 
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
-<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1550152019021')
-    .then(function () {console.log('ServiceWorker Register Successfully.')})
-    .catch(function (e) {console.error(e)});
-}
-</script></body>
+</body>
 </html>

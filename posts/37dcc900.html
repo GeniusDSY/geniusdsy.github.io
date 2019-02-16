@@ -15,7 +15,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0"><link rel="manifest" href="/manifest.json">
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -105,13 +105,13 @@
 
 
 
-  <meta name="description" content="一、安装Redis这里演示的是Linux系统的安装过程  官网地址：https://redis.io/   第一步： 打开终端，在官网找到你想要的版本的链接，使用以下指令进行下载  12345$ wget http://download.redis.io/releases/redis-5.0.3.tar.gz$ tar xzf redis-5.0.3.tar.gz -C /opt  (我这里将他解">
-<meta name="keywords" content="安装,Redis,NoSql">
+  <meta name="description" content="一、安装Redis 这里演示的是Linux系统的安装过程  官网地址：https://redis.io/   第一步： 打开终端，在官网找到你想要的版本的链接，使用以下指令进行下载  12345$ wget http://download.redis.io/releases/redis-5.0.3.tar.gz$ tar xzf redis-5.0.3.tar.gz -C /opt  (我这里将他">
+<meta name="keywords" content="NoSql,Redis,安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识Redis（一）之安装">
 <meta property="og:url" content="https://geniusdsy.github.io/posts/37dcc900.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="一、安装Redis这里演示的是Linux系统的安装过程  官网地址：https://redis.io/   第一步： 打开终端，在官网找到你想要的版本的链接，使用以下指令进行下载  12345$ wget http://download.redis.io/releases/redis-5.0.3.tar.gz$ tar xzf redis-5.0.3.tar.gz -C /opt  (我这里将他解">
+<meta property="og:description" content="一、安装Redis 这里演示的是Linux系统的安装过程  官网地址：https://redis.io/   第一步： 打开终端，在官网找到你想要的版本的链接，使用以下指令进行下载  12345$ wget http://download.redis.io/releases/redis-5.0.3.tar.gz$ tar xzf redis-5.0.3.tar.gz -C /opt  (我这里将他">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/2/168ac84129ccb0cc?w=1256&h=575&f=png&s=92705">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/2/168ac89036bd7e87?w=1007&h=58&f=png&s=13440">
@@ -121,7 +121,7 @@
 <meta property="og:updated_time" content="2019-02-13T10:21:57.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Redis（一）之安装">
-<meta name="twitter:description" content="一、安装Redis这里演示的是Linux系统的安装过程  官网地址：https://redis.io/   第一步： 打开终端，在官网找到你想要的版本的链接，使用以下指令进行下载  12345$ wget http://download.redis.io/releases/redis-5.0.3.tar.gz$ tar xzf redis-5.0.3.tar.gz -C /opt  (我这里将他解">
+<meta name="twitter:description" content="一、安装Redis 这里演示的是Linux系统的安装过程  官网地址：https://redis.io/   第一步： 打开终端，在官网找到你想要的版本的链接，使用以下指令进行下载  12345$ wget http://download.redis.io/releases/redis-5.0.3.tar.gz$ tar xzf redis-5.0.3.tar.gz -C /opt  (我这里将他">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/2/168ac84129ccb0cc?w=1256&h=575&f=png&s=92705">
 
 
@@ -493,7 +493,7 @@
             <span class="post-meta-divider">|</span>
             <span class="post-meta-item-icon">
             <i class="fa fa-eye"></i>
-             阅读次数： 
+             热度： 
             <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
@@ -518,7 +518,8 @@
       
 
       
-        <h1 id="一、安装Redis"><a href="#一、安装Redis" class="headerlink" title="一、安装Redis"></a>一、安装Redis</h1><p>这里演示的是Linux系统的安装过程</p>
+        <h1>一、安装Redis</h1>
+<p>这里演示的是Linux系统的安装过程</p>
 <blockquote>
 <p>官网地址：<a href="https://redis.io/" target="_blank" rel="noopener">https://redis.io/</a></p>
 </blockquote>
@@ -530,11 +531,14 @@
 <li>第二步：启动ｒｅｄｉｓ</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd usr/local/redis (进入安装redis的目录)</span><br><span class="line"><span class="meta">$</span> ls</span><br></pre></td></tr></table></figure>
-<p>这时候该redis目录下只有一个文件，是bin目录<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd bin/</span><br><span class="line"><span class="meta">$</span> ls</span><br><span class="line">redis-benchmark  redis-check-aof  redis-check-rdb  redis-cli  redis-sentinel  redis-server</span><br></pre></td></tr></table></figure></p>
+<p>这时候该redis目录下只有一个文件，是bin目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd bin/</span><br><span class="line"><span class="meta">$</span> ls</span><br><span class="line">redis-benchmark  redis-check-aof  redis-check-rdb  redis-cli  redis-sentinel  redis-server</span><br></pre></td></tr></table></figure>
 <p>该目录下有这5个可执行文件，分别具有的功能：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis-benchmark    -----性能测试工具</span><br><span class="line">redis-check-aof    -----AOF文件修复工具</span><br><span class="line">redis-check-dump   -----RDB文件检查工具(快件持久工具)</span><br><span class="line">redis-cli          -----命令行客户端</span><br><span class="line">redis-server       -----redis服务器启动命令</span><br></pre></td></tr></table></figure>
-<p>我们使用redis-server启动redis<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./redis-server</span><br></pre></td></tr></table></figure></p>
-<p>看到如下图，便安装并启动成功：<br><img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac84129ccb0cc?w=1256&amp;h=575&amp;f=png&amp;s=92705" alt="redis启动成功"></p>
+<p>我们使用redis-server启动redis</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./redis-server</span><br></pre></td></tr></table></figure>
+<p>看到如下图，便安装并启动成功：<br>
+<img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac84129ccb0cc?w=1256&amp;h=575&amp;f=png&amp;s=92705" alt="redis启动成功"></p>
 <p>通过上图我们可以看到，redis已经启动成功，并且在6379端口监听。</p>
 <p>我们发现了什么！这时候我们这个终端什么都不能干了，我们能不能让他在后台启动后台运行，不影响我们的后续操作呢！</p>
 <p>当然可以，我们去刚才make（编译）的目录下看看</p>
@@ -545,7 +549,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cp redis.conf /usr/local/redis</span><br></pre></td></tr></table></figure>
 <p>这时候我们切回到安装redis的/usr/local/redis目录下执行新的redis.conf重新启动redis</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./bin/redis-server ./redis.conf</span><br></pre></td></tr></table></figure>
-<p>咦咦咦！！！这是什么情况！出现意外了！！！<br>原来我们刚才运行的redis已经将端口占用了，我们去查询一下现在运行的相关redis进程都有哪些</p>
+<p>咦咦咦！！！这是什么情况！出现意外了！！！<br>
+原来我们刚才运行的redis已经将端口占用了，我们去查询一下现在运行的相关redis进程都有哪些</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ps -ef | grep -i redis</span><br></pre></td></tr></table></figure>
 <p><img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac961847ab945?w=758&amp;h=59&amp;f=png&amp;s=11557" alt="进程"></p>
 <p>我们要把这个正在运行的redis结束掉，有两种方法</p>
@@ -555,13 +560,16 @@
 </ul>
 <p>结束redis进程后我们重新启动，继续使用刚才修改的配置redis-conf进行启动</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./bin/redis-server ./redis.conf</span><br></pre></td></tr></table></figure>
-<p>结果如下：<br><img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac9878f5c8df8?w=1025&amp;h=93&amp;f=png&amp;s=19322" alt=""></p>
+<p>结果如下：<br>
+<img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac9878f5c8df8?w=1025&amp;h=93&amp;f=png&amp;s=19322" alt=""></p>
 <ul>
 <li>第三步：打开命令行客户端redis-cli进行简单的存储操作</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./bin/redis-cli</span><br></pre></td></tr></table></figure>
-<p>通过下图的简单指令你可以简单的进行一些增删查操作：<br><img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac9be601cfc38?w=469&amp;h=213&amp;f=png&amp;s=21585" alt=""></p>
-<h1 id="二、为Python安装Redis客户端"><a href="#二、为Python安装Redis客户端" class="headerlink" title="二、为Python安装Redis客户端"></a>二、为Python安装Redis客户端</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> wget -q http://peak.telecommunity.com/dist/ez_setup.py</span><br><span class="line"><span class="meta">$</span> sudo python ez_setup.py</span><br><span class="line"><span class="meta">$</span> sudo python -m easy_install redis hiredis</span><br></pre></td></tr></table></figure>
+<p>通过下图的简单指令你可以简单的进行一些增删查操作：<br>
+<img src="https://user-gold-cdn.xitu.io/2019/2/2/168ac9be601cfc38?w=469&amp;h=213&amp;f=png&amp;s=21585" alt=""></p>
+<h1>二、为Python安装Redis客户端</h1>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> wget -q http://peak.telecommunity.com/dist/ez_setup.py</span><br><span class="line"><span class="meta">$</span> sudo python ez_setup.py</span><br><span class="line"><span class="meta">$</span> sudo python -m easy_install redis hiredis</span><br></pre></td></tr></table></figure>
 <p>发现没有任何报错后进行测试</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> python</span><br><span class="line"><span class="meta">$</span> import redis</span><br><span class="line"><span class="meta">$</span> conn = redis.Redis()</span><br><span class="line"><span class="meta">$</span> conn.set('name','Hello!Redis')</span><br><span class="line">True</span><br><span class="line"><span class="meta">$</span> conn.get('name')</span><br><span class="line">Hello!Redis</span><br></pre></td></tr></table></figure>
 <p>若与我上面的指令一样，而且未出现其他错误，即可认为自己的redis客户端安装成功</p>
@@ -617,11 +625,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/安装/" rel="tag"># 安装</a>
+            <a href="/tags/NoSql/" rel="tag"># NoSql</a>
           
             <a href="/tags/Redis/" rel="tag"># Redis</a>
           
-            <a href="/tags/NoSql/" rel="tag"># NoSql</a>
+            <a href="/tags/安装/" rel="tag"># 安装</a>
           
         </div>
       
@@ -861,7 +869,7 @@
                    <span class="site-state-item-name">访客量</span>
               </div>
               <div class="site-state-item site-state-posts">
-                    <span class="site-state-item-count">14.8k</span>
+                    <span class="site-state-item-count">14.7k</span>
                     <span class="site-state-item-name">总字数</span>
               </div>
             </nav>
@@ -945,7 +953,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、安装Redis"><span class="nav-number">1.</span> <span class="nav-text">一、安装Redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、为Python安装Redis客户端"><span class="nav-number">2.</span> <span class="nav-text">二、为Python安装Redis客户端</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">一、安装Redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">二、为Python安装Redis客户端</span></a></li></ol></div>
             
 
           </div>
@@ -1525,10 +1533,5 @@
 
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
-<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1550152019021')
-    .then(function () {console.log('ServiceWorker Register Successfully.')})
-    .catch(function (e) {console.error(e)});
-}
-</script></body>
+</body>
 </html>
