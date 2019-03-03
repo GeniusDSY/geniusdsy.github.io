@@ -105,24 +105,33 @@
 
 
 
-  <meta name="description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
-<meta name="keywords" content="java python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="邓思远的Blog">
-<meta property="og:url" content="https://geniusdsy.github.io/tags/Hadoop/index.html">
+  <meta name="description" content="版本3.0以后的Hadoop架构图  Hadoop的核心（一） ----HDFS hdfs是Hadoop的核心，是一个分布式文件系统，可以存储海量数据 ¶基本概念 ¶块 在Hadoop1.0-2.7.3版本中，默认大小为64M，之后的默认大小为128M，在Hadoop中，文件都被切成这样的块进行存储。 ¶NameNode 管理节点，存放文件元数据  文件与数据块的映射关系 数据块与数据节点的映射表">
+<meta name="keywords" content="Hadoop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop基础架构介绍">
+<meta property="og:url" content="https://geniusdsy.github.io/posts/e29dca0d.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
+<meta property="og:description" content="版本3.0以后的Hadoop架构图  Hadoop的核心（一） ----HDFS hdfs是Hadoop的核心，是一个分布式文件系统，可以存储海量数据 ¶基本概念 ¶块 在Hadoop1.0-2.7.3版本中，默认大小为64M，之后的默认大小为128M，在Hadoop中，文件都被切成这样的块进行存储。 ¶NameNode 管理节点，存放文件元数据  文件与数据块的映射关系 数据块与数据节点的映射表">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/3/169437bbe4968a6e?w=554&h=426&f=png&s=13469">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/3/16942cdacbf9ac1e?w=555&h=371&f=png&s=15432">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/3/16942da62df0cab8?w=692&h=340&f=png&s=47284">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/3/16942de56ed7097c?w=717&h=379&f=png&s=46931">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/3/169437ec5329e01b?w=708&h=611&f=png&s=243228">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/3/1694388ad2a69c89?w=945&h=574&f=png&s=162986">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/3/169439cdd331b2d9?w=1319&h=742&f=png&s=311361">
+<meta property="og:updated_time" content="2019-03-03T12:56:35.137Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="邓思远的Blog">
-<meta name="twitter:description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
+<meta name="twitter:title" content="Hadoop基础架构介绍">
+<meta name="twitter:description" content="版本3.0以后的Hadoop架构图  Hadoop的核心（一） ----HDFS hdfs是Hadoop的核心，是一个分布式文件系统，可以存储海量数据 ¶基本概念 ¶块 在Hadoop1.0-2.7.3版本中，默认大小为64M，之后的默认大小为128M，在Hadoop中，文件都被切成这样的块进行存储。 ¶NameNode 管理节点，存放文件元数据  文件与数据块的映射关系 数据块与数据节点的映射表">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/3/3/169437bbe4968a6e?w=554&h=426&f=png&s=13469">
 
 
 
 
 
 
-  <link rel="canonical" href="https://geniusdsy.github.io/tags/Hadoop/">
+  <link rel="canonical" href="https://geniusdsy.github.io/posts/e29dca0d.html">
 
 
 
@@ -132,7 +141,7 @@
   };
 </script>
 
-  <title>标签: Hadoop | 邓思远的Blog</title>
+  <title>Hadoop基础架构介绍 | 邓思远的Blog</title>
   
 
 
@@ -180,7 +189,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/GeniusDSY" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -252,7 +261,7 @@
         
         
           
-          <li class="menu-item menu-item-标签 menu-item-active">
+          <li class="menu-item menu-item-标签">
 
     
     
@@ -357,134 +366,402 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Hadoop<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://geniusdsy.github.io/posts/e29dca0d.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="邓思远">
+      <meta itemprop="description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
+      <meta itemprop="image" content="/images/userAvatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="邓思远的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/posts/e29dca0d.html" itemprop="url">
-            
-              <span itemprop="name">Hadoop基础架构介绍</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Hadoop基础架构介绍
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-03T15:04:28+08:00" content="2019-03-03">
-          03-03
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-03 15:04:28 / 修改时间：20:56:35" itemprop="dateCreated datePublished" datetime="2019-03-03T15:04:28+08:00">2019-03-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/大数据/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/posts/e29dca0d.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/e29dca0d.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             热度： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/1ce5e607.html" itemprop="url">
-            
-              <span itemprop="name">Hadoop的安装和配置</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-03T13:36:33+08:00" content="2019-03-03">
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/1ce5e607.html" itemprop="url">
-            
-              <span itemprop="name">Hadoop的安装和配置</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-03T13:36:33+08:00" content="2019-03-03">
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h1>版本3.0以后的Hadoop架构图</h1>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/3/169437bbe4968a6e?w=554&amp;h=426&amp;f=png&amp;s=13469" alt=""></p>
+<h1>Hadoop的核心（一） ----HDFS</h1>
+<p>hdfs是Hadoop的核心，是一个分布式文件系统，可以存储海量数据</p>
+<h2 id="基本概念"><a class="header-anchor" href="#基本概念">¶</a>基本概念</h2>
+<h3 id="块"><a class="header-anchor" href="#块">¶</a>块</h3>
+<p>在Hadoop1.0-2.7.3版本中，默认大小为64M，之后的默认大小为128M，在Hadoop中，文件都被切成这样的块进行存储。</p>
+<h3 id="namenode"><a class="header-anchor" href="#namenode">¶</a>NameNode</h3>
+<p>管理节点，存放文件元数据</p>
+<ul>
+<li>文件与数据块的映射关系</li>
+<li>数据块与数据节点的映射表</li>
+</ul>
+<h3 id="datanode"><a class="header-anchor" href="#datanode">¶</a>DataNode</h3>
+<p>工作节点，存放数据块，数据的实际存储位置</p>
+<h2 id="hdfs架构图"><a class="header-anchor" href="#hdfs架构图">¶</a>HDFS架构图</h2>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/3/16942cdacbf9ac1e?w=555&amp;h=371&amp;f=png&amp;s=15432" alt=""></p>
+<p>这里的SecondaryNameNode是NameNode的备份，一般DataNode会备份（三份），HDFS会进行心跳检测，当一个节点挂掉之后，会再去复制一份</p>
+<h2 id="hdfs读取流程"><a class="header-anchor" href="#hdfs读取流程">¶</a>HDFS读取流程</h2>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/3/16942da62df0cab8?w=692&amp;h=340&amp;f=png&amp;s=47284" alt=""></p>
+<h2 id="hdfs写入流程"><a class="header-anchor" href="#hdfs写入流程">¶</a>HDFS写入流程</h2>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/3/16942de56ed7097c?w=717&amp;h=379&amp;f=png&amp;s=46931" alt=""></p>
+<hr>
+<p>①将文件拆分成块<br>
+②查询NameNode，返回当前可用DataNode<br>
+③将分好的块写入DataNode<br>
+④流水线复制给其他备份<br>
+⑤更新NameNode数据<br>
+⑥更新NameNode备份SecondaryNode</p>
+<h2 id="hdfs特点"><a class="header-anchor" href="#hdfs特点">¶</a>HDFS特点</h2>
+<p>1、数据冗余，硬件容错（DataNode三备份，NameNode双备份）<br>
+2、流式数据访问<br>
+3、存储大文件（小文件成本大，尽量不存储，效率低下）</p>
+<h2 id="适用性"><a class="header-anchor" href="#适用性">¶</a>适用性</h2>
+<p>1、数据批量读写，吞吐量高<br>
+2、一次写入，多次读写，顺序流水读写</p>
+<h2 id="局限性"><a class="header-anchor" href="#局限性">¶</a>局限性</h2>
+<p>1、延迟高，不适合交互式应用（不如关系型数据库/非关系型数据库）<br>
+2、不支持多用户并发写相同的内容</p>
+<h1>Hadoop的核心（二） ----MapReduce</h1>
+<h2 id="什么是mapreduce"><a class="header-anchor" href="#什么是mapreduce">¶</a>什么是MapReduce</h2>
+<p>MapReduce是面向大数据并行处理的计算模型、框架和平台，包含以下几个方面的解读：</p>
+<ul>
+<li>（1）MapReduce是一个基于集群的高性能并行计算平台（Cluster Infrastructure）。它允许用市场上普通的商用服务器构成一个包含数十、数百至数千个节点的分布和并行计算集群。</li>
+<li>（2）MapReduce是一个并行计算与运行软件框架（Software Framework）。它提供了一个庞大但设计精良的并行计算软件框架，能自动完成计算任务的并行化处理，自动划分计算数据和计算任务，在集群节点上自动分配和执行任务以及收集计算结果，将数据分布存储、数据通信、容错处理等并行计算涉及到的很多系统底层的复杂细节交由系统负责处理，大大减少了软件开发人员的负担。</li>
+<li>（3）MapReduce是一个并行程序设计模型与方法（Programming Model &amp; Methodology）。它借助于函数式程序设计语言Lisp的设计思想，提供了一种简便的并行程序设计方法，用Map和Reduce两个函数编程实现基本的并行计算任务，提供了抽象的操作和并行编程接口，以简单方便地完成大规模数据的编程和计算处理 .</li>
+</ul>
+<h2 id="mapreduce能做什么？原理？"><a class="header-anchor" href="#mapreduce能做什么？原理？">¶</a>MapReduce能做什么？原理？</h2>
+<p>MapReducce模型适合处理大数据</p>
+<p>处理数据的思想<strong>分而治之&quot;</strong>,将一个任务分成多个小任务，然后分开执行处理，最后再将得到的结果</p>
+<h3 id="原理"><a class="header-anchor" href="#原理">¶</a>原理</h3>
+<h4 id="1-mapper负责-分"><a class="header-anchor" href="#1-mapper负责-分">¶</a>（1）Mapper负责“分”</h4>
+<p>mapper将一个大任务，分成一个个的小任务（“简单的任务”）：</p>
+<ul>
+<li>数据、计算规模比原来的小很多</li>
+<li>就近计算原则，任务会放到其所需数据的节点上进行执行，减少调度数据的时间</li>
+<li>小任务之间不会相互干扰，并行执行计算</li>
+</ul>
+<h4 id="2-reduce负责-合"><a class="header-anchor" href="#2-reduce负责-合">¶</a>（2）Reduce负责“合”</h4>
+<p>Reduce负责将各个map计算的结果进行合并汇总</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/3/169437ec5329e01b?w=708&amp;h=611&amp;f=png&amp;s=243228" alt=""></p>
+<p>MapReduce的整个工作过程如上图所示，它包含如下4个独立的实体：</p>
+<p>实体一：客户端，用来提交MapReduce作业。</p>
+<p>实体二：JobTracker，用来协调作业的运行。</p>
+<p>实体三：TaskTracker，用来处理作业划分后的任务。</p>
+<p>实体四：HDFS，用来在其它实体间共享作业文件。</p>
+<h2 id="节点map任务的个数"><a class="header-anchor" href="#节点map任务的个数">¶</a>节点Map任务的个数</h2>
+<p>数据从DataNode中取出后需要进行split进行分片操作，操作大致如下：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/3/1694388ad2a69c89?w=945&amp;h=574&amp;f=png&amp;s=162986" alt=""></p>
+<blockquote>
+<p>一个DataNode的Map任务数量10~100个最宜</p>
+</blockquote>
+<h3 id="控制map数量的方法"><a class="header-anchor" href="#控制map数量的方法">¶</a>控制Map数量的方法</h3>
+<ul>
+<li>增加Map个数，可以去增大mapred.map.tasks</li>
+<li>减少Map个数，可以去增大mapred.min.split.size</li>
+<li>小文件需要先合，在使用上一方法进行减少map个数</li>
+</ul>
+<h3 id="控制reduce数量的方法"><a class="header-anchor" href="#控制reduce数量的方法">¶</a>控制Reduce数量的方法</h3>
+<ul>
+<li>调节mapred,reduce.tasks</li>
+<li>代码中调用job.setNumReduceTasks(int n)</li>
+</ul>
+<h2 id="执行流程"><a class="header-anchor" href="#执行流程">¶</a>执行流程</h2>
+<h3 id="本地优化-combine"><a class="header-anchor" href="#本地优化-combine">¶</a>本地优化----Combine</h3>
+<p>逻辑和Reduce一致，也可以自己实现Combiner类来进行本地优化。<br>
+数据经过Map端输出后会先进行网络混洗，经过Shuffle后进入Reduce，大数据的情况下会产生大量的网络开销。因此在本地会先按照Key进行一轮的排序和合并，再给下一层进行混洗，这一过程就是Combine。</p>
+<h3 id="split-map-shuffle-reduce"><a class="header-anchor" href="#split-map-shuffle-reduce">¶</a>split----Map----Shuffle----Reduce</h3>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/3/169439cdd331b2d9?w=1319&amp;h=742&amp;f=png&amp;s=311361" alt=""></p>
+<h2 id="异常"><a class="header-anchor" href="#异常">¶</a>异常</h2>
+<p>若出现问题，数据拿不到：</p>
+<ul>
+<li>MapReduce会重复执行四次，重新获取数据，排除DataNode的问题</li>
+<li>重新开一个相同的任务，排除MapReduce的问题</li>
+</ul>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>客官支持一下呗！你的支持是我更新的动力！！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://user-gold-cdn.xitu.io/2019/1/25/1688342d245fcbfd?w=713&h=714&f=jpeg&s=70072" alt="邓思远 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://user-gold-cdn.xitu.io/2019/1/25/16883441f27cb8ca?w=748&h=896&f=jpeg&s=146263" alt="邓思远 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hadoop/" rel="tag"># Hadoop</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/1ce5e607.html" rel="next" title="Hadoop的安装和配置">
+                <i class="fa fa-chevron-left"></i> Hadoop的安装和配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -507,8 +784,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -683,6 +969,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">版本3.0以后的Hadoop架构图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Hadoop的核心（一） ----HDFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">2.1.</span> <span class="nav-text">¶基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块"><span class="nav-number">2.1.1.</span> <span class="nav-text">¶块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#namenode"><span class="nav-number">2.1.2.</span> <span class="nav-text">¶NameNode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#datanode"><span class="nav-number">2.1.3.</span> <span class="nav-text">¶DataNode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hdfs架构图"><span class="nav-number">2.2.</span> <span class="nav-text">¶HDFS架构图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hdfs读取流程"><span class="nav-number">2.3.</span> <span class="nav-text">¶HDFS读取流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hdfs写入流程"><span class="nav-number">2.4.</span> <span class="nav-text">¶HDFS写入流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hdfs特点"><span class="nav-number">2.5.</span> <span class="nav-text">¶HDFS特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适用性"><span class="nav-number">2.6.</span> <span class="nav-text">¶适用性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局限性"><span class="nav-number">2.7.</span> <span class="nav-text">¶局限性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Hadoop的核心（二） ----MapReduce</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是mapreduce"><span class="nav-number">3.1.</span> <span class="nav-text">¶什么是MapReduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapreduce能做什么？原理？"><span class="nav-number">3.2.</span> <span class="nav-text">¶MapReduce能做什么？原理？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">3.2.1.</span> <span class="nav-text">¶原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-mapper负责-分"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">¶（1）Mapper负责“分”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-reduce负责-合"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">¶（2）Reduce负责“合”</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#节点map任务的个数"><span class="nav-number">3.3.</span> <span class="nav-text">¶节点Map任务的个数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#控制map数量的方法"><span class="nav-number">3.3.1.</span> <span class="nav-text">¶控制Map数量的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制reduce数量的方法"><span class="nav-number">3.3.2.</span> <span class="nav-text">¶控制Reduce数量的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行流程"><span class="nav-number">3.4.</span> <span class="nav-text">¶执行流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地优化-combine"><span class="nav-number">3.4.1.</span> <span class="nav-text">¶本地优化----Combine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#split-map-shuffle-reduce"><span class="nav-number">3.4.2.</span> <span class="nav-text">¶split----Map----Shuffle----Reduce</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常"><span class="nav-number">3.5.</span> <span class="nav-text">¶异常</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -837,6 +1140,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -850,9 +1157,28 @@
   <script id="dsq-count-scr" src="https://https-geniusdsy-github-io.disqus.com/count.js" async></script>
 
 
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://geniusdsy.github.io/posts/e29dca0d.html";
+    this.page.identifier = "posts/e29dca0d.html";
+    this.page.title = 'Hadoop基础架构介绍';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-geniusdsy-github-io.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
 
 
 
+
+
+  
 
 
   
