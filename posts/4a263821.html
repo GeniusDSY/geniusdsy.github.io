@@ -105,28 +105,29 @@
 
 
 
-  <meta name="description" content="今天在虚拟机上乱搞，准备使用redis的端口开放给本机使用，结果防火墙没搞好，把之前的Docker给搞崩了，又只能卸载掉，重新装了一下，记录一下本次安装的过程，谨防下次搞崩重装，却不知所措。 安装Docker ¶1、安装环境 deepin系统15.8 ¶2、安装过程 深度官方deepin的应用仓库已经集成了docker，不过类似docker-ce这种最新版。要想使用最新版可以参考官网 debian">
-<meta name="keywords" content="Docker,安装">
+  <meta name="description" content="开始将MySQL进行体系学习，学习一个东西直接去了解它的内部或者底层，过于高深，咱搞不来，我们就从一个简单的SQL语句看起 1mysql&amp;gt;select * from user where id = 1; 这是一个简单的查询语句，我们输入这句话之后，按下Enter就会给我们一个返回结果。那他是怎么做到的输入这样一句话就可以给我们查到我们想要的数据的呢？？ 我们去一探究竟~ ~ ~ 我们先看看M">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初识Docker（一）之安装">
-<meta property="og:url" content="https://geniusdsy.github.io/posts/6507e5e0.html">
+<meta property="og:title" content="一条SQL查询语句">
+<meta property="og:url" content="https://geniusdsy.github.io/posts/4a263821.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="今天在虚拟机上乱搞，准备使用redis的端口开放给本机使用，结果防火墙没搞好，把之前的Docker给搞崩了，又只能卸载掉，重新装了一下，记录一下本次安装的过程，谨防下次搞崩重装，却不知所措。 安装Docker ¶1、安装环境 deepin系统15.8 ¶2、安装过程 深度官方deepin的应用仓库已经集成了docker，不过类似docker-ce这种最新版。要想使用最新版可以参考官网 debian">
+<meta property="og:description" content="开始将MySQL进行体系学习，学习一个东西直接去了解它的内部或者底层，过于高深，咱搞不来，我们就从一个简单的SQL语句看起 1mysql&amp;gt;select * from user where id = 1; 这是一个简单的查询语句，我们输入这句话之后，按下Enter就会给我们一个返回结果。那他是怎么做到的输入这样一句话就可以给我们查到我们想要的数据的呢？？ 我们去一探究竟~ ~ ~ 我们先看看M">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/3/168b3e37b67cee11?w=1025&h=623&f=png&s=88518">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/3/168b3e436af69572?w=1027&h=623&f=png&s=102058">
-<meta property="og:updated_time" content="2019-02-13T10:21:49.932Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/5/8/16a9748a948b66c0?w=1920&h=1440&f=png&s=706055">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/5/8/16a9765db54a56b5?w=793&h=162&f=png&s=17009">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/5/9/16a9a83c610f16e0?w=1696&h=202&f=png&s=32144">
+<meta property="og:updated_time" content="2019-05-09T06:17:50.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初识Docker（一）之安装">
-<meta name="twitter:description" content="今天在虚拟机上乱搞，准备使用redis的端口开放给本机使用，结果防火墙没搞好，把之前的Docker给搞崩了，又只能卸载掉，重新装了一下，记录一下本次安装的过程，谨防下次搞崩重装，却不知所措。 安装Docker ¶1、安装环境 deepin系统15.8 ¶2、安装过程 深度官方deepin的应用仓库已经集成了docker，不过类似docker-ce这种最新版。要想使用最新版可以参考官网 debian">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/3/168b3e37b67cee11?w=1025&h=623&f=png&s=88518">
+<meta name="twitter:title" content="一条SQL查询语句">
+<meta name="twitter:description" content="开始将MySQL进行体系学习，学习一个东西直接去了解它的内部或者底层，过于高深，咱搞不来，我们就从一个简单的SQL语句看起 1mysql&amp;gt;select * from user where id = 1; 这是一个简单的查询语句，我们输入这句话之后，按下Enter就会给我们一个返回结果。那他是怎么做到的输入这样一句话就可以给我们查到我们想要的数据的呢？？ 我们去一探究竟~ ~ ~ 我们先看看M">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/5/8/16a9748a948b66c0?w=1920&h=1440&f=png&s=706055">
 
 
 
 
 
 
-  <link rel="canonical" href="https://geniusdsy.github.io/posts/6507e5e0.html">
+  <link rel="canonical" href="https://geniusdsy.github.io/posts/4a263821.html">
 
 
 
@@ -136,7 +137,7 @@
   };
 </script>
 
-  <title>初识Docker（一）之安装 | 邓思远的Blog</title>
+  <title>一条SQL查询语句 | 邓思远的Blog</title>
   
 
 
@@ -381,7 +382,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://geniusdsy.github.io/posts/6507e5e0.html">
+    <link itemprop="mainEntityOfPage" href="https://geniusdsy.github.io/posts/4a263821.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="邓思远">
@@ -398,7 +399,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">初识Docker（一）之安装
+          <h1 class="post-title" itemprop="name headline">一条SQL查询语句
 
               
             
@@ -424,7 +425,7 @@
                 
               
 
-              <time title="创建时间：2019-02-03 18:55:52" itemprop="dateCreated datePublished" datetime="2019-02-03T18:55:52+08:00">2019-02-03</time>
+              <time title="创建时间：2019-05-08 19:21:25" itemprop="dateCreated datePublished" datetime="2019-05-08T19:21:25+08:00">2019-05-08</time>
             
 
             
@@ -441,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-13 18:21:49" itemprop="dateModified" datetime="2019-02-13T18:21:49+08:00">2019-02-13</time>
+                <time title="修改时间：2019-05-09 14:17:50" itemprop="dateModified" datetime="2019-05-09T14:17:50+08:00">2019-05-09</time>
               
             
           </span>
@@ -458,7 +459,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/应用容器/" itemprop="url" rel="index"><span itemprop="name">应用容器</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
 
                 
                 
@@ -476,8 +477,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/posts/6507e5e0.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/6507e5e0.html" itemprop="commentCount"></span>
+                <a href="/posts/4a263821.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/4a263821.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -515,88 +516,140 @@
       
 
       
-        <p>今天在虚拟机上乱搞，准备使用redis的端口开放给本机使用，结果防火墙没搞好，把之前的Docker给搞崩了，又只能卸载掉，重新装了一下，记录一下本次安装的过程，谨防下次搞崩重装，却不知所措。</p>
-<h1>安装Docker</h1>
-<h2 id="1-安装环境"><a class="header-anchor" href="#1-安装环境">¶</a>1、安装环境</h2>
-<p>deepin系统15.8</p>
-<h2 id="2-安装过程"><a class="header-anchor" href="#2-安装过程">¶</a>2、安装过程</h2>
-<p>深度官方deepin的应用仓库已经集成了docker，不过类似docker-ce这种最新版。要想使用最新版可以参考官网 debian 安装教程安装，不过由于深度15.4基于 sid 版本开发，通过 $(lsb_release -cs) 获取的版本信息为 unstable，而docker官方源并没提供 sid 这种unstable版本的docker，所以使用官方教程是安装不成功的。</p>
-<h3 id="1-若之前安装过老版本-则先卸载掉之前的老版本"><a class="header-anchor" href="#1-若之前安装过老版本-则先卸载掉之前的老版本">¶</a>（1）若之前安装过老版本，则先卸载掉之前的老版本</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get remove docker.io docker-engine</span><br></pre></td></tr></table></figure>
-<h3 id="2-安装docker-ce与密钥管理与下载相关工具"><a class="header-anchor" href="#2-安装docker-ce与密钥管理与下载相关工具">¶</a>（2）安装docker-ce与密钥管理与下载相关工具</h3>
-<blockquote>
-<p>说明：这里主要提供curl命令、software-properties-common包提供的add-apt-repository和密钥管理工具</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install apt-transport-https ca-cerificates curl python-software-properties software-properties-common</span><br></pre></td></tr></table></figure>
-<h3 id="3-下载并安装密钥"><a class="header-anchor" href="#3-下载并安装密钥">¶</a>（3）下载并安装密钥</h3>
-<p>鉴于国内网络问题，强烈建议使用国内源，官方源请在注释中查看。 国内源可选用<a href="https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/" target="_blank">清华大学开源软件镜像站</a>或<a href="http://mirrors.ustc.edu.cn/" target="_blank">中科大开源镜像站</a>，示例选用了中科大的。<br>
-为了确认所下载软件包的合法性，需要添加软件源的 GPG 密钥。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/debian/gpg | sudo apt-key add -</span><br><span class="line">// 官方源，能否成功可能需要看运气。</span><br><span class="line">   $ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
-<h3 id="4-查看密钥是否安装成功"><a class="header-anchor" href="#4-查看密钥是否安装成功">¶</a>（4）查看密钥是否安装成功</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-key fingerprint 0EBFCD88</span><br></pre></td></tr></table></figure>
-<p>如果安装成功，会出现如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pub   4096R/0EBFCD88 2017-02-22              Key fingerprint = 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88  </span><br><span class="line">uid     Docker Release (CE deb) &lt;docker@docker.com&gt;  </span><br><span class="line">sub   4096R/F273FCD8 2017-02-22</span><br></pre></td></tr></table></figure>
-<h3 id="5-添加docker官方仓库"><a class="header-anchor" href="#5-添加docker官方仓库">¶</a>（5）添加docker官方仓库</h3>
-<p>然后，我们需要向 source.list 中添加 Docker CE 软件源：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository &quot;deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/debian  wheezy stable&quot;</span><br><span class="line">//官方源</span><br><span class="line">$ sudo add-apt-repository  &quot;deb [arch=amd64] https://download.docker.com/linux/debian wheezy stable&quot;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这点很奇怪，官方在 wheezy 位置使用的是 $(lsb_release -cs)，而在deepin下执行lsb_release -cs这个命令时，而deepin显示的是unstable，而默认debian根据正式发行版本会显示是 jessie 或者wheezy 这个如果不更改成特定版本信息，在sudo apt-get update更新时就不起作用。<br>
-更正： 之所以获取的 unstable 不成功，是因为docker官方没有提供sid版本的docker。想安装必须将该部分替换成相应版本。</p>
-</blockquote>
-<blockquote>
-<p>这里例子的debian的版本代号是wheezy，应该替换成deepin基于的debian版本对应的代号，查看版本号命令：cat /etc/debian_version，再根据版本号对应的代号替换上面命令的wheezy即可。</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>例如对于deepin15.5，我操作上面的命令得到debain版本是8.0，debian 8.0的代号是jessie，把上面的wheezy替换成 jessie，就可以正常安装docker,当前docker的版本为17.12.0-ce.</p>
-</blockquote>
-</blockquote>
-<h3 id="6-更新仓库"><a class="header-anchor" href="#6-更新仓库">¶</a>（6）更新仓库</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
-<h3 id="7-安装docker-ce"><a class="header-anchor" href="#7-安装docker-ce">¶</a>（7）安装docker-ce</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install docker-ce</span><br></pre></td></tr></table></figure>
-<p>在安装完后启动报错，查看docker.service的unit文件，路径为/lib/systemd/system/docker.service，把ExecStart=/usr/bin/dockerd -H fd:// 修改为ExecStart=/usr/bin/dockerd，则可以正常启动docker</p>
-<p>启动 命令为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl start docker</span><br></pre></td></tr></table></figure>
-<h3 id="8-查看安装的版本信息"><a class="header-anchor" href="#8-查看安装的版本信息">¶</a>（8）查看安装的版本信息</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker version</span><br></pre></td></tr></table></figure>
-<h3 id="9-验证docker是否被正确安装且能够正常使用"><a class="header-anchor" href="#9-验证docker是否被正确安装且能够正常使用">¶</a>（9）验证docker是否被正确安装且能够正常使用</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run hello-world</span><br></pre></td></tr></table></figure>
-<h2 id="3-更换国内docker加速器"><a class="header-anchor" href="#3-更换国内docker加速器">¶</a>3、更换国内docker加速器</h2>
-<p>若使用docker官方仓库，速度会很慢，所以更换国内加速器就显得尤为重要。</p>
-<h3 id="1-方法一：使用阿里云的docker加速器"><a class="header-anchor" href="#1-方法一：使用阿里云的docker加速器">¶</a>（1）方法一：使用阿里云的docker加速器</h3>
+        <p>开始将MySQL进行体系学习，学习一个东西直接去了解它的内部或者底层，过于高深，咱搞不来，我们就从一个简单的SQL语句看起</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;select * from user where id = 1;</span><br></pre></td></tr></table></figure>
+<p>这是一个简单的查询语句，我们输入这句话之后，按下Enter就会给我们一个返回结果。那他是怎么做到的输入这样一句话就可以给我们查到我们想要的数据的呢？？</p>
+<p>我们去一探究竟~ ~ ~</p>
+<p>我们先看看MySQL的基本架构，它是由哪些功能模块组成的呢？？</p>
+<h1>MySQL的基本架构组成</h1>
+<p>SQL执行过程我用一张图片来表示一下：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/8/16a9748a948b66c0?w=1920&amp;h=1440&amp;f=png&amp;s=706055" alt=""></p>
+<p>这张图片很清楚的表现了一个SQL执行过程的逻辑流程，</p>
+<p>大体来说，MySQL可以分为Server层和引擎层两部分。</p>
 <ul>
 <li>
-<p>1、在阿里云申请一个账号</p>
-<p>打开链接https://cr.console.aliyun.com/#/accelerator 拷贝您的专属加速器地址</p>
+<p>Server层</p>
+<ul>
+<li>连接器</li>
+<li>查询缓存</li>
+<li>分析器</li>
+<li>执行器等</li>
+</ul>
+</li>
+</ul>
+<p>这一层涵盖可MySQL大多数核心服务功能，以及所有的内置函数（如日期、时间、数学和加密函数等），所有跨存储引擎的功能都在这一层实现，比如存储过程、触发器、视图等。</p>
+<ul>
+<li>存储引擎层</li>
+</ul>
+<p>负责数据的存储和提取。其架构模式是插件式的，支持InnoDB、MyISAM、Mymory等多个存储引擎。现在最常用的就是InnoDB引擎，他从MySQL5.5.5开始成为了默认的存储引擎。</p>
+<p>当然，你可以不使用默认的InnoDB，在创建一个Table的时候我们可以通过engine=Memory这样的语句去指定引擎创建表，不同存储引擎的表数据存取方式不同，支持的功能也不同。</p>
+<p>我们开始对Server层的组件进行介绍学习</p>
+<h2 id="连接器"><a class="header-anchor" href="#连接器">¶</a>连接器</h2>
+<p>我们要相对一个数据库进行操作，首先需要进行连接到该数据库上。连接是我们连接器去做的事情。负责跟客户端建立连接、获取权限、维持和管理连接。</p>
+<p>连接命令：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h ip -P port -u root -p</span><br></pre></td></tr></table></figure>
+<p>接下来会提示你输入密码，当然，你的密码也可以像用户名一样跟在-p后面，但是因为明文容易出现密码泄露等问题，强烈不建议明文输入密码。</p>
+<p>完成与MySQL的TCP握手之后，开始验证身份，无外乎出现以下两种情况：</p>
+<ul>
+<li>用户名或密码不对，返回错误</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)</span><br></pre></td></tr></table></figure>
+<p>然后客户端结束执行.</p>
+<ul>
+<li>用户名密码认证通过，连接器回到一张用户权限表中查询当前用户所具有的权限，之后的操作都会根据这个权限去先进行判断。</li>
+</ul>
+<p>如果你用管理员登陆之后，对已经连接着的用户进行权限更改，在该用户重新创建新连接之前，权限值并没有进行更新，仍为修改前的权限。</p>
+<p>我们可以通过下面的命令进行查询当前建立连接的用户以及状态：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show processlist;</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/8/16a9765db54a56b5?w=793&amp;h=162&amp;f=png&amp;s=17009" alt=""></p>
+<p>可以看到，这里有两个连接，有一个连接什么操作都没有，所以他的状态栏就写的sleep空闲连接。默认自动中断时间是8小时，是由wait_timeout控制的。</p>
+<h3 id="长连接和短连接"><a class="header-anchor" href="#长连接和短连接">¶</a>长连接和短连接</h3>
+<p>长连接是指连接成功后，如果客户端持续有请求，则一直使用同一个连接。<br>
+短连接事直每次执行完很少的几次查询之后就断开，下次查询会重新再连接一个。</p>
+<blockquote>
+<p>长短连接的利弊</p>
+</blockquote>
+<p>数据库的连接需要去调用相应的JDBC驱动去进行连接，比较耗费资源，所以我们尽量的去减少数据库连接操作，也就是尽量的去使用长连接。</p>
+<p>但是问题又来了，一直使用一个长连接的话，你会发现你的MySQL占用内存涨的非常快，这是因为只有断开连接的时候，才会继续进行一次资源的释放。所以如果长连积累下来，可能导致内存占用太大，强行被系统kill掉！</p>
+<p>当然，解决方案来了</p>
+<ul>
+<li>定期断开长连接。使用一段时间，或者进行了占用内存较大的查询后，就断开连接进行一次重新连接。</li>
+<li>你若使用的是MySQL5.7之后的版本，可以在每次执行完一个大操作之后进行mysql_reset_connection来重新初始化连接资源，这个过程是不需要重连和做权限验证的，会将连接恢复到刚刚创建完时的状态。</li>
+</ul>
+<h2 id="查询缓存"><a class="header-anchor" href="#查询缓存">¶</a>查询缓存</h2>
+<p>连接建立完成后我们就来执行SELECT语句，首先并不会直接去存储引擎里面去检索，而是会先在缓存中进行查询。</p>
+<p>只要是之前经过查询并且开启缓存机制，所拆卸难过的语句和结果会以key-value的的形式存在于缓存内存中。若你的SQL语句在缓存中的key有相同的值，那么会击中缓存，直接进行value的返回。</p>
+<blockquote>
+<p>不推荐使用缓存机制</p>
+</blockquote>
+<p>缓存的失效非常频繁，只要对任何一个表进行更新，那么该表上的所有缓存将被清空。也就是说，可能耗费了很大的资源把缓存进行存储了，但是随即而来的一个更新操作，可能让之前费了很大劲进行存储的缓存失效。</p>
+<p>因此，基于击中率极低的缓存，我们尽量不在频繁更新的表中使用，若是存在一些不经常更新的表或者一些静态表（系统配置表），这一类表我们比较适合使用缓存机制。</p>
+<p>然而，MySQL给我们准备了非常人性化的方式。我们可以将参数**“query_cache_type&quot;<strong>设置成</strong>&quot;DEMAND”<strong>,这样对于默认的SQL语句都不会查询缓存。而对于我们确定要去查询缓存的语句，我们可以去使用</strong>&quot;SQL_CACHE&quot;**去显式指定。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql &gt; select SQL_CACHE * from user where id = 10;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注：在MySQL8.0之后，MySQL删除了缓存功能！！</strong></p>
+</blockquote>
+<h2 id="分析器"><a class="header-anchor" href="#分析器">¶</a>分析器</h2>
+<p>缓存中没有，我们就要去存储引擎中去进行查询，当然在这之前，我们要对你输入的语句进行分析，要知道你在查什么？？那么就需要在分析器中进行SQL语句分析。</p>
+<ul>
+<li>词法分析</li>
+</ul>
+<p>你输入的语句是由多个字符串和空格组成的一条SQL语句，例如下面这条：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql &gt; select * from user where id = 1;</span><br></pre></td></tr></table></figure>
+<p>首先，他检测到米输入的第一个单词是select，这时候识别出了这是一个查询语句；</p>
+<p>第二步，检测到你要查询的数据是“*”，也就是一整条记录的所有信息；</p>
+<p>第三步，识别出表名user，知道你所要查询的信息在哪个表中；</p>
+<p>最后，将条件id = 1，识别成有一列叫id他的值要是1。</p>
+<ul>
+<li>语法分析</li>
+</ul>
+<p>做完词法分析之后，我们就要去进行语法分析，语法分析器根据语法规则，判断用户输入的SQL语句是不是满足MySQL的语法。我们试一个错误的语法：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql &gt; select * fromg user where user_id = "2017211005";</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/9/16a9a83c610f16e0?w=1696&amp;h=202&amp;f=png&amp;s=32144" alt=""></p>
+<p>我们可以看到报错</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 1064 (42000): You have an error in your SQL syntax; <span class="keyword">check</span> the <span class="keyword">manual</span> that corresponds <span class="keyword">to</span> your MySQL <span class="keyword">server</span> <span class="keyword">version</span> <span class="keyword">for</span> the <span class="keyword">right</span> syntax <span class="keyword">to</span> <span class="keyword">use</span> near <span class="string">'elect * from user where user_id="2017211005"'</span> <span class="keyword">at</span> line <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>这里的错误提示，我们看到user near ，一般提示的错误在语法第一次出现错误的地方，我们需要去关注。</p>
+<h2 id="优化器"><a class="header-anchor" href="#优化器">¶</a>优化器</h2>
+<p>过了分析器，分析了你的SQL语句，知道了你要做什么。但在开始执行之前，他还需要经过优化器的处理。</p>
+<ul>
+<li>
+<p>优化器的基本作用</p>
+<ul>
+<li>当你的表中具有多个索引的时候，优化器根据你的SQL选择你要去使用哪个索引。</li>
+<li>或者当你具有多表关联，可以去选择更好的连接顺序</li>
+</ul>
+</li>
+</ul>
+<p>比如下面的SQL语句</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from t1 join t2 using(ID) where t1.c=10 and t2.d=20;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>既可以先从表 t1 里面取出 c=10 的记录的 ID 值，再根据 ID 值关联到表 t2，再判断 t2 里面 d 的值是否等于 20。</p>
 </li>
 <li>
-<p>2、修改daemon配置文件/etc/docker/daemon.json俩使用加速器</p>
+<p>也可以先从表 t2 里面取出 d=20 的记录的 ID 值，再根据 ID 值关联到 t1，再判断 t1 里面 c 的值是否等于 10。</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mkdir -p /etc/docker</span><br><span class="line">$ sudo tee /etc/docker/daemon.json &lt;&lt;-&apos;EOF&apos;</span><br><span class="line">&#123;</span><br><span class="line">       &quot;registry-mirrors&quot;:[您的加速器地址]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">$ sudo systemctl daemon-reload</span><br><span class="line">$ sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
-<h3 id="2-方法二：使用docker-cn提供的镜像源"><a class="header-anchor" href="#2-方法二：使用docker-cn提供的镜像源">¶</a>（2）方法二：使用docker-cn提供的镜像源</h3>
+<p>这两种执行方法的逻辑结果是一样的，但是执行的效率会有不同，而优化器的作用就是决定选择使用哪一个方案。</p>
+<p>优化器阶段完成后，这个语句的执行方案就确定下来了，然后进入执行器阶段。</p>
+<h2 id="执行器"><a class="header-anchor" href="#执行器">¶</a>执行器</h2>
+<p>分析器知道了你要做什么，优化器知道了该怎么去做，现在就要去执行器执行语句了。</p>
+<p>开始执行的时候，就要先去判断你对这个表有没有操作权限，若没有权限就会出现下面的情形。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from T where ID=10;</span><br><span class="line"></span><br><span class="line">ERROR 1142 (42000): <span class="keyword">SELECT</span> command denied <span class="keyword">to</span> <span class="keyword">user</span> <span class="string">'b'</span>@<span class="string">'localhost'</span> <span class="keyword">for</span> <span class="keyword">table</span> <span class="string">'T'</span></span><br></pre></td></tr></table></figure>
+<p>如果有权限，就打开表继续执行。打开表的时候，执行器就会根据表的引擎定义，去使用这个引擎提供的接口。</p>
+<p>比如我们这个例子中的表 T 中，ID 字段没有索引，那么执行器的执行流程是这样的：</p>
 <ul>
-<li>1、编辑/etc/docker/daemon.json文件，并输入docker-cn镜像源地址</li>
+<li>1.调用 InnoDB 引擎接口取这个表的第一行，判断 ID 值是不是 10，如果不是则跳过，如果是则将这行存在结果集中；</li>
+<li>2.调用引擎接口取“下一行”，重复相同的判断逻辑，直到取到这个表的最后一行。</li>
+<li>3.执行器将上述遍历过程中所有满足条件的行组成的记录集作为结果集返回给客户端。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo nano /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
-<p>输入以下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        &quot;registry-mirrors&quot;: [&quot;https://registry.docker-cn.com&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>2、重启docker服务</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service docker restart</span><br></pre></td></tr></table></figure>
-<h2 id="4-可视化管理"><a class="header-anchor" href="#4-可视化管理">¶</a>4、可视化管理</h2>
-<p>我这里是使用的Portainer作为容器的GUI管理方案</p>
-<p><a href="https://portainer.io/install.html" target="_blank" rel="noopener">Portainer官网</a></p>
-<p>安装指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker volume create portainer_data</span><br><span class="line">$ docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</span><br></pre></td></tr></table></figure>
-<p>浏览器访问localhost:9000即可进入容器管理界面：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/3/168b3e37b67cee11?w=1025&amp;h=623&amp;f=png&amp;s=88518" alt="portainer"></p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/3/168b3e436af69572?w=1027&amp;h=623&amp;f=png&amp;s=102058" alt="containers"></p>
-<h2 id="5-禁止开机自启"><a class="header-anchor" href="#5-禁止开机自启">¶</a>5、禁止开机自启</h2>
-<p>默认情况下Docker是开机自启的，如果我们想禁用开机自启，可以通过安装chkconfig命令来管理Deepin自启项</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 安装chkconfig</span><br><span class="line">$ sudo apt-get install chkconfig</span><br><span class="line"># 移除自启</span><br><span class="line">$ sudo chkconfig --del docker</span><br></pre></td></tr></table></figure>
+<p>至此，这个语句就执行完成了。</p>
+<p>对于有索引的表，执行的逻辑也差不多。第一次调用的是“取满足条件的第一行”这个接口，之后循环取“满足条件的下一行”这个接口，这些接口都是引擎中已经定义好的。</p>
+<p>你会在数据库的慢查询日志中看到一个 <strong>“rows_examined”</strong> 的字段，表示这个语句执行过程中扫描了多少行。这个值就是在<strong>执行器每次调用引擎获取数据行的时候累加的</strong>。在有些场景下，执行器调用一次，在引擎内部则扫描了多行，因此<strong>引擎扫描行数跟 rows_examined 并不是完全相同的</strong>。</p>
+<p>本章提问：</p>
+<p>如果表 T 中没有字段 k，而你执行了这个语句 select * from T where k=1, 那肯定是会报“不存在这个列”的错误： “Unknown column ‘k’ in ‘where clause’”。你觉得这个错误是在我们上面提到的哪个阶段报出来的呢？</p>
+<p>答案：</p>
+<p>分析器。一方面受到Oracle设计思想的影响，另外在《高性能mysql》里提到解析器和预处理器。解析器处理语法和解析查询, 生成一课对应的解析树。预处理器进一步检查解析树的合法。比如: 数据表和数据列是否存在, 别名是否有歧义等。如果通过则生成新的解析树，再提交给优化器；</p>
 
       
     </div>
@@ -649,9 +702,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Docker/" rel="tag"># Docker</a>
-          
-            <a href="/tags/安装/" rel="tag"># 安装</a>
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
           
         </div>
       
@@ -718,8 +769,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/37dcc900.html" rel="next" title="初识Redis（一）之安装">
-                <i class="fa fa-chevron-left"></i> 初识Redis（一）之安装
+              <a href="/posts/d81b6328.html" rel="next" title="通过注解注入Bean">
+                <i class="fa fa-chevron-left"></i> 通过注解注入Bean
               </a>
             
           </div>
@@ -727,10 +778,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/46bc4a49.html" rel="prev" title="Linux入门之认识Shell（一）">
-                Linux入门之认识Shell（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -989,7 +1036,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">安装Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装环境"><span class="nav-number">1.1.</span> <span class="nav-text">¶1、安装环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装过程"><span class="nav-number">1.2.</span> <span class="nav-text">¶2、安装过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-若之前安装过老版本-则先卸载掉之前的老版本"><span class="nav-number">1.2.1.</span> <span class="nav-text">¶（1）若之前安装过老版本，则先卸载掉之前的老版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装docker-ce与密钥管理与下载相关工具"><span class="nav-number">1.2.2.</span> <span class="nav-text">¶（2）安装docker-ce与密钥管理与下载相关工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-下载并安装密钥"><span class="nav-number">1.2.3.</span> <span class="nav-text">¶（3）下载并安装密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-查看密钥是否安装成功"><span class="nav-number">1.2.4.</span> <span class="nav-text">¶（4）查看密钥是否安装成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-添加docker官方仓库"><span class="nav-number">1.2.5.</span> <span class="nav-text">¶（5）添加docker官方仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-更新仓库"><span class="nav-number">1.2.6.</span> <span class="nav-text">¶（6）更新仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-安装docker-ce"><span class="nav-number">1.2.7.</span> <span class="nav-text">¶（7）安装docker-ce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-查看安装的版本信息"><span class="nav-number">1.2.8.</span> <span class="nav-text">¶（8）查看安装的版本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-验证docker是否被正确安装且能够正常使用"><span class="nav-number">1.2.9.</span> <span class="nav-text">¶（9）验证docker是否被正确安装且能够正常使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-更换国内docker加速器"><span class="nav-number">1.3.</span> <span class="nav-text">¶3、更换国内docker加速器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-方法一：使用阿里云的docker加速器"><span class="nav-number">1.3.1.</span> <span class="nav-text">¶（1）方法一：使用阿里云的docker加速器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-方法二：使用docker-cn提供的镜像源"><span class="nav-number">1.3.2.</span> <span class="nav-text">¶（2）方法二：使用docker-cn提供的镜像源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-可视化管理"><span class="nav-number">1.4.</span> <span class="nav-text">¶4、可视化管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-禁止开机自启"><span class="nav-number">1.5.</span> <span class="nav-text">¶5、禁止开机自启</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">MySQL的基本架构组成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#连接器"><span class="nav-number">1.1.</span> <span class="nav-text">¶连接器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#长连接和短连接"><span class="nav-number">1.1.1.</span> <span class="nav-text">¶长连接和短连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询缓存"><span class="nav-number">1.2.</span> <span class="nav-text">¶查询缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析器"><span class="nav-number">1.3.</span> <span class="nav-text">¶分析器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化器"><span class="nav-number">1.4.</span> <span class="nav-text">¶优化器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行器"><span class="nav-number">1.5.</span> <span class="nav-text">¶执行器</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1169,9 +1216,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://geniusdsy.github.io/posts/6507e5e0.html";
-    this.page.identifier = "posts/6507e5e0.html";
-    this.page.title = '初识Docker（一）之安装';
+    this.page.url = "https://geniusdsy.github.io/posts/4a263821.html";
+    this.page.identifier = "posts/4a263821.html";
+    this.page.title = '一条SQL查询语句';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
