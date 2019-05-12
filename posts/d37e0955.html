@@ -105,24 +105,29 @@
 
 
 
-  <meta name="description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
-<meta name="keywords" content="java python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="邓思远的Blog">
-<meta property="og:url" content="https://geniusdsy.github.io/tags/简单工厂模式/index.html">
+  <meta name="description" content="UPDATE引发的一系列 ¶引言 通过上一篇文章我们知道，一条SQL查询语句的执行流程：连接器—&amp;gt;分析器—&amp;gt;优化器—&amp;gt;执行器等功能模块顺次执行的，最后到达存储引擎进行搜寻。 那么，一条UPDATE又是怎么样的呐？？我们来看看！ 我们先来说说经常听到的MySQL可以恢复到半个月内的任意一秒的状态，相信当我们听到这里的时候都比较惊叹，怎么会如此强大？？那么MySQL是怎么做到的呢？？">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一条SQL更新语句">
+<meta property="og:url" content="https://geniusdsy.github.io/posts/d37e0955.html">
 <meta property="og:site_name" content="邓思远的Blog">
-<meta property="og:description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
+<meta property="og:description" content="UPDATE引发的一系列 ¶引言 通过上一篇文章我们知道，一条SQL查询语句的执行流程：连接器—&amp;gt;分析器—&amp;gt;优化器—&amp;gt;执行器等功能模块顺次执行的，最后到达存储引擎进行搜寻。 那么，一条UPDATE又是怎么样的呐？？我们来看看！ 我们先来说说经常听到的MySQL可以恢复到半个月内的任意一秒的状态，相信当我们听到这里的时候都比较惊叹，怎么会如此强大？？那么MySQL是怎么做到的呢？？">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/5/8/16a9748a948b66c0?w=1920&h=1440&f=png&s=706055">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/5/12/16aa9e0c31d85f00?w=1142&h=856&f=png&s=59631">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/5/12/16aaa5889ff07003?w=1142&h=1522&f=png&s=549641">
+<meta property="og:updated_time" content="2019-05-12T06:25:58.824Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="邓思远的Blog">
-<meta name="twitter:description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
+<meta name="twitter:title" content="一条SQL更新语句">
+<meta name="twitter:description" content="UPDATE引发的一系列 ¶引言 通过上一篇文章我们知道，一条SQL查询语句的执行流程：连接器—&amp;gt;分析器—&amp;gt;优化器—&amp;gt;执行器等功能模块顺次执行的，最后到达存储引擎进行搜寻。 那么，一条UPDATE又是怎么样的呐？？我们来看看！ 我们先来说说经常听到的MySQL可以恢复到半个月内的任意一秒的状态，相信当我们听到这里的时候都比较惊叹，怎么会如此强大？？那么MySQL是怎么做到的呢？？">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/5/8/16a9748a948b66c0?w=1920&h=1440&f=png&s=706055">
 
 
 
 
 
 
-  <link rel="canonical" href="https://geniusdsy.github.io/tags/简单工厂模式/">
+  <link rel="canonical" href="https://geniusdsy.github.io/posts/d37e0955.html">
 
 
 
@@ -132,7 +137,7 @@
   };
 </script>
 
-  <title>标签: 简单工厂模式 | 邓思远的Blog</title>
+  <title>一条SQL更新语句 | 邓思远的Blog</title>
   
 
 
@@ -180,7 +185,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/GeniusDSY" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -252,7 +257,7 @@
         
         
           
-          <li class="menu-item menu-item-标签 menu-item-active">
+          <li class="menu-item menu-item-标签">
 
     
     
@@ -357,82 +362,388 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>简单工厂模式<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://geniusdsy.github.io/posts/d37e0955.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="邓思远">
+      <meta itemprop="description" content="邓思远的个人博客，放一些技术、生活上的随笔、心得体会以及生活感悟">
+      <meta itemprop="image" content="/images/userAvatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="邓思远的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/posts/6b3bea20.html" itemprop="url">
-            
-              <span itemprop="name">简单工厂模式</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">一条SQL更新语句
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-24T20:24:25+08:00" content="2019-01-24">
-          01-24
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-12 09:26:49 / 修改时间：14:25:58" itemprop="dateCreated datePublished" datetime="2019-05-12T09:26:49+08:00">2019-05-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/posts/d37e0955.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/d37e0955.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             热度： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1>UPDATE引发的一系列</h1>
+<h2 id="引言"><a class="header-anchor" href="#引言">¶</a>引言</h2>
+<p>通过上一篇文章我们知道，一条SQL查询语句的执行流程：连接器—&gt;分析器—&gt;优化器—&gt;执行器等功能模块顺次执行的，最后到达存储引擎进行搜寻。</p>
+<p>那么，一条UPDATE又是怎么样的呐？？我们来看看！</p>
+<p>我们先来说说经常听到的MySQL可以恢复到半个月内的任意一秒的状态，相信当我们听到这里的时候都比较惊叹，怎么会如此强大？？那么MySQL是怎么做到的呢？？</p>
+<p>这就得从我们的一个表的更新语句说起，下面这是一个表的创建语句，他有一个主键ID，和一个整形字段’C’:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table T(ID int primary key,c int);</span><br></pre></td></tr></table></figure>
+<p>若要将ID = 2 这一行的值增加1，SQL语句就是如下这样：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; update T set c = c + 1 where ID = 2;</span><br></pre></td></tr></table></figure>
+<p>根据上一张的SQL执行语句执行顺序的那张图，更新语句也是一样的流程，我们再拿过来看看：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/8/16a9748a948b66c0?w=1920&amp;h=1440&amp;f=png&amp;s=706055" alt=""></p>
+<p>你要去操作数据库，第一步肯定是要先去连接相应的数据库，这是连接器的工作。</p>
+<p>在查询中，记得提过一个缓存机制，但是在一张表被更新的的时候，缓存就会全部失效。因此，这句更新操作语句会将表T上的缓存结果全部清空。这也就是我们一般不推荐使用缓存机制的原因。</p>
+<p>接下来，分析器来分析这句SQL语句，通过词法和语法解析，知道这是一条UPDATE语句。优化器决定要使用ID这个索引。然后执行器负责具体的执行，进行索引遍历，找到ID=2的这一行，然后进行更新。</p>
+<p>当然，他也具有与查询语句大不同的地方，更新流程还涉及两个重要的日志模块：<strong>redo log(重做日志)<strong>和</strong>binlog(归档日志)</strong>。这两个日志在设计思路上非常有趣，可以去深究一下，用在自己的程序中。</p>
+<h2 id="重要的日志模块-redo-log"><a class="header-anchor" href="#重要的日志模块-redo-log">¶</a>重要的日志模块 ---- redo log</h2>
+<p>近代，很多酒店掌柜都有一个黑板，专门来记录客人的赊账情况。赊账的人少的话，他只用直接将赊账的人的名字写在黑板上，但是如果赊账的人多了，那么就需要一个记账本来专门记录了。</p>
+<p>这样的话，掌柜的一般有两种做法可以选择：</p>
+<ul>
+<li>直接在账本上进行操作，每次在账本上添加或者删除。</li>
+<li>现在黑板上记下这次的账，等到打烊了，再将今日的账总到赊账本上。</li>
+</ul>
+<p>一般精明的生意人自然会去选择第二种方法，前者对于账本的操作太频繁，并且账本本来就是一个大数据大容量的物品，每次的查找修改耗费太多的精力。</p>
+<p>相比之下，老板会选择在黑板上先记下当前赊账的人的名字和金额，之后再记在账本上比较高效！</p>
+<p>同样的，在MySQL中也会具有这样的问题，每一次的更新操作都要写入磁盘，然后磁盘也要进行搜索，找到那条数据进行写入更新。IO本来就是一个高消耗，高成本的操作。为了解决此类问题，MySQL的设计者就使用了一块“小黑板”来提升更新效率。</p>
+<p>黑板和账本完美的配合，类比到MySQL就是一个WAL技术（Write-Ahead Logging），他的关键就是先写日志，之后再写入磁盘。</p>
+<p>具体一点来说，当有一条记录需要更新的时候，InnoDB引擎就会先把记录写道redo log（黑板）里面，并更新内存，这时候对外显示的就是当前的更新已经完成了。同时，InnoDB引擎会在适当的时候，将这个操作记录更新到磁盘中去，而这个操作往往是在系统比较空闲的时候去进行的。</p>
+<p>当赊账(redo log)不多的时候，老板完全可以等到打烊(空闲)的时候进行写入操作，但是redo log满了呢？？那么老板只能放下手中的活，将之前的一部分写入到磁盘中，从redo log中擦掉这些记录，腾出新的空间。</p>
+<p>InnoDB中的redo log是固定大小的，比如可以配置为一组4个文件，每个文件的大小事1GB，那么这个redo log就可以总共记录4GB的操作。而它的设计者，更加完美的考虑，将他设计成了环形，这样就可以不断循环写入，就像下图这样：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/12/16aa9e0c31d85f00?w=1142&amp;h=856&amp;f=png&amp;s=59631" alt=""></p>
+<p>write pos 就是当前记录的位置，一边写一边后移，写道第3号文件末尾就回到0号文件的开头。chechpoint是当前要擦除的位置，也是往后推移并且循环的，擦除记录前要把记录更新到数据文件。</p>
+<p>write pos 和 checkpoint中间的位置就是当前还空闲的位置，如果write pos追上了checkpoint，，就表明这redo log被写满了，先去进行写入数据文件操作，然后将checkpoint向前推移，之后再继续写。</p>
+<p>有了redo log ，InnoDB就可以保证及时数据库发生异常重启，之前提交的记录都不会丢失，这个能力称为crash-safe。</p>
+<p>crach-safe也就是就算数据库异常重启，他仍然处于之前的状态，不会进行变化，可以继续运行。</p>
+<h2 id="重要的日志模块-binlog"><a class="header-anchor" href="#重要的日志模块-binlog">¶</a>重要的日志模块 ---- binlog</h2>
+<p>MySQL总体来分，有两个架构层：一个是Server层，主要负责功能层面的事情；另一个是存储引擎层，负责存储相关。redo log属于InnoDB引擎特有的日志。，而Server层也有属于自己的日志，称为binlog(归档日志).</p>
+<p>为什么要存在两份日志呢？？</p>
+<p>因为最开始并没有InnoDB，只有一个自带的引擎MyISAM,但是MyISAM并没有crash-safe能力，binlog日志只能用于归档。而InnoDB是另一个公司以插件的形式引入MySQL的。他们就使用InnoDB去实现了crash-safe能力，也就是InnoDB的日志系统------redo-log实现了。</p>
+<p>这两种日志的不同点：</p>
+<ul>
+<li>redo log是InnoDB特有的引擎；binlog是MySQL的Server层实现的，所有引擎都可以使用。</li>
+<li>redo log是物理日志，记录的是“在某个数据上进行了什么修改”；binglog是逻辑日志，记录的是这个语句的原始逻辑：“给ID=2这一行的c字段加上1”.</li>
+<li>redo log是循环写的。空间是固定的，会使用完。而binlog是可以追加写入的。当达到一定大小后，会切换到下一个，并且不会覆盖前一个。</li>
+</ul>
+<p>了解完这两个日志的概念之后，我们去看看执行器和InnoDB是如何执行这个简单的update的内部流程。</p>
+<ul>
+<li>执行器先找引擎拿到ID=2的这一行。ID是主键，引擎直接用<strong>树搜索</strong>找到这一行。如果ID=2这一行所在的数据页本来就存在于内存中，就直接返回给执行器，否则，先去磁盘中读取放入内存，之后再返回。</li>
+<li>执行器拿到引擎给的行数据之后，把这个值加1，得到新的一行数据，再调用引擎接口写入这行新数据。</li>
+<li>引擎将这行数据更新到内存中，同时将这个更新操作记录到redo log中，此时redo log处于prepare状态。然后告知执行器执行完成了，可以随时提交事务。</li>
+<li>执行器生成这个操作的binlog，并把binlog写入磁盘。</li>
+<li>执行器调用引擎的提交事务接口，引擎把刚刚写入的redo log改成提交（commit）状态，更新完成。</li>
+</ul>
+<p>这个update的执行流程如下图所示，浅色框表示在InnoDB内部执行的，深色表示是在执行器中执行的。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/12/16aaa5889ff07003?w=1142&amp;h=1522&amp;f=png&amp;s=549641" alt=""></p>
+<p>最后三步看上去优点绕，将 redo log 的写入拆成了两个步骤：prepare和cpmmit，这就是两阶段提交</p>
+<h2 id="两阶段提交"><a class="header-anchor" href="#两阶段提交">¶</a>两阶段提交</h2>
+<p>为什么要放着简单的一次提交不用，而非得去用什么两阶段提交呢？这是为了让两份日志之间的逻辑一致。这就涉及到了本文开头中所提到的问题：怎么让数据库恢复到半个月内任意一秒的状态呢？</p>
+<p>如果半个月之内的可以恢复，那么备份系统中一定保存了最近半个月的所有binlog，同时系统和会定期做整库备份。这里的定期，取决于数据库的重要性。</p>
+<p>当需要恢复到指定时间时候的数据库时，我们可以这样做：</p>
+<ul>
+<li>首先，找到最近一次全量辈份，若果运气好，可能就是昨天晚上刚备份的，直接恢复到临时库</li>
+<li>然后，从备份时间开始，将辈份的binlog依次取出，重新放到从备份时间到误删表的时刻。</li>
+</ul>
+<p>这时候就恢复到和误删时候一模一样了，然后从临时库中取出来，恢复到线上库去。</p>
+<p>话说回来，我们为什么要两阶段提交，我们试试反证法：</p>
+<p>redo log和binlog是两个独立的逻辑，如果不用两阶段提交，要么就是先写完redo log再写binlog，要么就是相反。</p>
+<p>假设c = 0，做c+1操作的update语句在写完第一个日志后，第二个日志还没有写完期间发生了crash，会出现什么情况呢？？</p>
+<ul>
+<li>先写redo log 后写 binlog</li>
+</ul>
+<p>假设在redo log写完，binlog还没写完的时候，MySQL进程异常重启。回复过来后根据redeo log进行重写恢复，c仍为1。</p>
+<p>但是因为binlog没写完就crash了，这时候binlog没有记录这个语句，因此，之后备份日志的时候，存起来的binlog就会少了这一条逻辑语句。那么后面用binlog去恢复临时库的话，就没有这条语句，则c = 0.</p>
+<ul>
+<li>先写binlog 后写redo log</li>
+</ul>
+<p>如果在binlog写完之后crash，由于redo log还没有写入，崩溃之后，该事务无效，因此等于0。但在恢复库的时候，直接去读binglog中的数据，读出来时已经更改为1，与源数据库不符。</p>
+<p>这个不只是应用在误删库后的恢复上，而且还会应用在主从数据库备份，复制上。保证了主从数据库的一致性。</p>
+<blockquote>
+<p>为了保证redo log的crash-safe能力，建议将innodb_flush_log_at_trx_commit设置为1，这样每次事务的redo log都直接持久化到磁盘。<br>
+binlog中的sync_binlog设置成1，保证每次事务的binlog持久化到磁盘</p>
+</blockquote>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>客官支持一下呗！你的支持是我更新的动力！！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://user-gold-cdn.xitu.io/2019/1/25/1688342d245fcbfd?w=713&h=714&f=jpeg&s=70072" alt="邓思远 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://user-gold-cdn.xitu.io/2019/1/25/16883441f27cb8ca?w=748&h=896&f=jpeg&s=146263" alt="邓思远 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/4a263821.html" rel="next" title="一条SQL查询语句">
+                <i class="fa fa-chevron-left"></i> 一条SQL查询语句
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -455,8 +766,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -641,6 +961,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">UPDATE引发的一系列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.1.</span> <span class="nav-text">¶引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要的日志模块-redo-log"><span class="nav-number">1.2.</span> <span class="nav-text">¶重要的日志模块 ---- redo log</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要的日志模块-binlog"><span class="nav-number">1.3.</span> <span class="nav-text">¶重要的日志模块 ---- binlog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两阶段提交"><span class="nav-number">1.4.</span> <span class="nav-text">¶两阶段提交</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -795,6 +1132,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -808,9 +1149,28 @@
   <script id="dsq-count-scr" src="https://https-geniusdsy-github-io.disqus.com/count.js" async></script>
 
 
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://geniusdsy.github.io/posts/d37e0955.html";
+    this.page.identifier = "posts/d37e0955.html";
+    this.page.title = '一条SQL更新语句';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-geniusdsy-github-io.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
 
 
 
+
+
+  
 
 
   
